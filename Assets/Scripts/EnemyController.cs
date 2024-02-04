@@ -4,7 +4,7 @@ public class EnemyController : MonoBehaviour
 {
     public Transform Player;
     public float moveSpeed = 1.5f;
-    public float attackRange = 3f;
+    public float attackRange = 4f;
     private Rigidbody2D rb;
     private Vector2 movement;
     public float groundCheckDistance = 1f;
