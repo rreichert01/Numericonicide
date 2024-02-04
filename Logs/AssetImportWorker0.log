@@ -338,3 +338,69 @@ Received Import Request.
   path: Packages/com.unity.analytics/DataPrivacy/DataPrivacyIcon.png
   artifactKey: Guid(599a5fd92bab81a4ab02e52d0b1b1c60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Packages/com.unity.analytics/DataPrivacy/DataPrivacyIcon.png using Guid(599a5fd92bab81a4ab02e52d0b1b1c60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '22eb88cabd75bd17cb3f39ea5990536d') in 2.761712 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 518.122988 seconds.
+  path: Assets/Prefab/machinegun.png
+  artifactKey: Guid(20f08e450884e4b4596e2af4ca9d36bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/machinegun.png using Guid(20f08e450884e4b4596e2af4ca9d36bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4e8c2c75538c4eac5cff4395e9185262') in 0.389305 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.002940 seconds.
+  path: Assets/Prefab/npc2.png
+  artifactKey: Guid(570bc47a0827b4e4f9adf3c82b215492) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/npc2.png using Guid(570bc47a0827b4e4f9adf3c82b215492) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eb6e66f65a4ae845b0291be8b4ac499d') in 0.043986 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000163 seconds.
+  path: Assets/Prefab/player.png
+  artifactKey: Guid(638d20c8d15d84f45a6f16b50697eca5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/player.png using Guid(638d20c8d15d84f45a6f16b50697eca5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4a9a7929ac120f5719e573186879bdee') in 0.025756 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.001542 seconds.
+  path: Assets/Prefab/npc6.png
+  artifactKey: Guid(d32ecd53301c34fa8a3e704af92a4f59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/npc6.png using Guid(d32ecd53301c34fa8a3e704af92a4f59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd56daf3233d4c9b82c278fabe12c9b0f') in 0.021749 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.002180 seconds.
+  path: Assets/Prefab/startergun.png
+  artifactKey: Guid(d5b8bf33cd4c042779d92b1ef1301a57) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/startergun.png using Guid(d5b8bf33cd4c042779d92b1ef1301a57) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba39429fe24aba512673328aa813f51f') in 0.030794 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.001185 seconds.
+  path: Assets/Prefab/npc5.png
+  artifactKey: Guid(39c58f485646f41a1a88a3c6369e5870) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/npc5.png using Guid(39c58f485646f41a1a88a3c6369e5870) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '270b5d2e14ddc3ae9919d1260f525ea4') in 0.039453 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.002897 seconds.
+  path: Assets/Prefab/npc3.png
+  artifactKey: Guid(a6b66f808038446fcb9917f8b02695cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/npc3.png using Guid(a6b66f808038446fcb9917f8b02695cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd7bdf86b607972739ee1deb3d72c23e5') in 0.051464 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 11.109527 seconds.
+  path: Assets/Sprites/machinegun.png
+  artifactKey: Guid(f3bd65d07d5504397a324fed93389c6e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/machinegun.png using Guid(f3bd65d07d5504397a324fed93389c6e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '43e9d877b1c10720a14e88592bf437ab') in 0.052387 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.019590 seconds.
+  path: Assets/Sprites/startergun.png
+  artifactKey: Guid(1930605aa07214155b1a3d60e468d044) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/startergun.png using Guid(1930605aa07214155b1a3d60e468d044) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e7f92bbd5b8453609d9be713bc40f1d8') in 0.023457 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000130 seconds.
+  path: Assets/Sprites/npc5.png
+  artifactKey: Guid(d4fdefb87e54c4719bd065b73142bb42) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/npc5.png using Guid(d4fdefb87e54c4719bd065b73142bb42) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6ae842025d8c8a3f3df4139bc5cb062b') in 0.033835 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000421 seconds.
+  path: Assets/Sprites/npc2.png
+  artifactKey: Guid(97c6449557f3b4eba8285539a86fbeab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/npc2.png using Guid(97c6449557f3b4eba8285539a86fbeab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '08ff8a5fb3d17abf5745d76fb285cd7e') in 0.025236 seconds 

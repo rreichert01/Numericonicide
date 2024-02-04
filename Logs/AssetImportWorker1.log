@@ -302,3 +302,36 @@ Received Import Request.
   path: Packages/com.unity.analytics/DataPrivacy/Unity.Analytics.DataPrivacy.asmdef
   artifactKey: Guid(0fda7ebe61ab2164383d10e32efb9c6e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Packages/com.unity.analytics/DataPrivacy/Unity.Analytics.DataPrivacy.asmdef using Guid(0fda7ebe61ab2164383d10e32efb9c6e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c7b1a30642346b280c13ae68c0ac272') in 1.721620 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 518.526543 seconds.
+  path: Assets/Prefab/npc1.png
+  artifactKey: Guid(3dace724221a5401b9049f02211f4f84) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/npc1.png using Guid(3dace724221a5401b9049f02211f4f84) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '586322e4f1fd6bb34adc019344a82354') in 2.769037 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.975215 seconds.
+  path: Assets/Sprites/npc1.png
+  artifactKey: Guid(9ada529ffc3ee421e83a6e6408068ab2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/npc1.png using Guid(9ada529ffc3ee421e83a6e6408068ab2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '058a75c8ad86ecf5bbe4d8899fe491cd') in 0.033083 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.002250 seconds.
+  path: Assets/Sprites/player.png
+  artifactKey: Guid(fbb5ea1a6168742039ac69de0dade9ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/player.png using Guid(fbb5ea1a6168742039ac69de0dade9ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e372c3e562c3b04f7942cd957cd116e3') in 0.025302 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.002882 seconds.
+  path: Assets/Sprites/npc3.png
+  artifactKey: Guid(86a9ce15b16264db7a1193059228bc75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/npc3.png using Guid(86a9ce15b16264db7a1193059228bc75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '51cf57b5507b9acbf50f16243b480781') in 0.023127 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000335 seconds.
+  path: Assets/Sprites/npc6.png
+  artifactKey: Guid(61849a128695e4d1fbe1ecfbcf416c1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/npc6.png using Guid(61849a128695e4d1fbe1ecfbcf416c1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '064f167c265db35ac3faa41289a350c6') in 0.025093 seconds 
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
