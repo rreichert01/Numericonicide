@@ -8,7 +8,7 @@ using System.Diagnostics;
 public class Player : MonoBehaviour
 {
 
-    public float jumpForce = 10f;
+    public float jumpForce = 8f;
     public float groundCheckDistance = 1f;
     public float moveSpeed = 5f;
     private Rigidbody2D rb;
@@ -45,7 +45,7 @@ public class Player : MonoBehaviour
     public bool IsOnTopOfObject()
     {
         RaycastHit2D[] hit = Physics2D.RaycastAll(transform.position, Vector2.down, groundCheckDistance, Physics.AllLayers);
-        return hit.Length > 2;
+        return hit.Length > 1.5;
     }
 
   
