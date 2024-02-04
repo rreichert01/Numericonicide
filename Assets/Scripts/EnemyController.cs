@@ -4,7 +4,7 @@ public class EnemyController : MonoBehaviour
 {
     public Transform Player;
     public float moveSpeed = 1.5f;
-    public float attackRange = 4f;
+    public float attackRange = 2.5f;
     private Rigidbody2D rb;
     private Vector2 movement;
     public float groundCheckDistance = 1f;
@@ -49,6 +49,6 @@ public class EnemyController : MonoBehaviour
 
     private void Jump()
     {
-        rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        //rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
     }
 }
