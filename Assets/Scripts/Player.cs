@@ -9,44 +9,61 @@ public class Player : MonoBehaviour
 {
 
     public float jumpForce = 8f;
-    public float groundCheckDistance = 1f;
+    public float groundCheckDistance = .5f;
     public float moveSpeed = 5f;
     private Rigidbody2D rb;
     private bool GameOver = false;
     private bool boxDone = false;
 
+     private bool isGrounded;
+
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        isGrounded = false;
       
     }
 
     void Update()
     {
-        UnityEngine.Debug.Log("Hello");
-        if (!GameOver)
+        if (isGrounded  && Input.GetKeyDown(KeyCode.Space))
         {
-            transform.position = transform.position + new Vector3(Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime, 0f, 0f);
-            UnityEngine.Debug.Log(Input.GetAxis("Horizontal"));
-
-            if (IsOnTopOfObject() && Input.GetKeyDown(KeyCode.UpArrow))
-            {
-                Jump();
-            }
+            Jump();
         }
+        Vector3 move = new Vector3(0f, 0f, 0f);
+        if (Input.GetKey(KeyCode.A))
+        {
+            move.x -= moveSpeed * Time.deltaTime;
+        }
+
+        if (Input.GetKey(KeyCode.D))
+        {
+            move.x += moveSpeed * Time.deltaTime;
+        }
+        transform.position += move;
+       
     }
 
     private void Jump()
     {
-        rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        rb.velocity = Vector2.up * jumpForce;
     }
 
-    public bool IsOnTopOfObject()
+   
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        RaycastHit2D[] hit = Physics2D.RaycastAll(transform.position, Vector2.down, groundCheckDistance, Physics.AllLayers);
-        return hit.Length > 1.5;
+        if (collision.collider.tag == "Platform")
+        {
+            isGrounded = true;
+        }
     }
-
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.collider.tag == "Platform")
+        {
+            isGrounded = false;
+        }
+    }
   
 }

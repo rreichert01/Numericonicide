@@ -38,7 +38,7 @@ public class EnemyController : MonoBehaviour
 
     void AttackPlayer()
     {
-        Destroy(Player.gameObject);
+       // Destroy(Player.gameObject);
     }
 
     public bool IsOnTopOfObject()
