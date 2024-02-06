@@ -24,11 +24,11 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        UnityEngine.Debug.Log("Hello");
+        //UnityEngine.Debug.Log("Hello");
         if (!GameOver)
         {
             transform.position = transform.position + new Vector3(Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime, 0f, 0f);
-            UnityEngine.Debug.Log(Input.GetAxis("Horizontal"));
+            //UnityEngine.Debug.Log(Input.GetAxis("Horizontal"));
 
             if (IsOnTopOfObject() && Input.GetKeyDown(KeyCode.UpArrow))
             {
@@ -45,7 +45,9 @@ public class Player : MonoBehaviour
     public bool IsOnTopOfObject()
     {
         RaycastHit2D[] hit = Physics2D.RaycastAll(transform.position, Vector2.down, groundCheckDistance, Physics.AllLayers);
+        UnityEngine.Debug.Log(hit);
         return hit.Length > 1.5;
+
     }
 
   

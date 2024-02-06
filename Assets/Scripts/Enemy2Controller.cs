@@ -9,10 +9,13 @@ public class Enemy2Controller : MonoBehaviour
     private Vector2 movement;
     public float groundCheckDistance = 1.5f;
     public float jumpForce = 5f;
-
+    public LayerMask groundLayer;
+    
+    public bool isGrounded = false;
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>(); 
+        groundLayer = LayerMask.GetMask("Ground");
     }
 
     void Update()
@@ -25,9 +28,10 @@ public class Enemy2Controller : MonoBehaviour
             AttackPlayer();
         }
        
-        if (IsOnTopOfObject())
+        if (isGrounded)
         {
             Jump();
+            //Debug.Log("jump");
         }
     }
 
@@ -38,8 +42,8 @@ public class Enemy2Controller : MonoBehaviour
 
     void MoveEnemy(Vector2 direction)
     {
-    Vector2 newPosition = new Vector2(transform.position.x + (direction.x * moveSpeed * Time.fixedDeltaTime), transform.position.y);
-    rb.MovePosition(newPosition);
+        Vector2 newPosition = new Vector2(transform.position.x + (direction.x * moveSpeed * Time.fixedDeltaTime), transform.position.y);
+        rb.MovePosition(newPosition);
     }
 
     void AttackPlayer()
@@ -47,11 +51,18 @@ public class Enemy2Controller : MonoBehaviour
         Destroy(Player.gameObject);
     }
 
-    public bool IsOnTopOfObject()
-    {
-        RaycastHit2D[] hit = Physics2D.RaycastAll(transform.position, Vector2.down, groundCheckDistance, Physics.AllLayers);
-        return hit.Length > 2;
+
+    void OnCollisionEnter2D(Collision2D collision){
+    if (collision.gameObject.name == "Ground"){
+        isGrounded = true;
+        }
+    }   
+
+    void OnCollisionExit2D(Collision2D collision){
+    if (collision.gameObject.name == "Ground"){
+        isGrounded = false;
     }
+}
 
     private void Jump()
     {
