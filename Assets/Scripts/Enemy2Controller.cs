@@ -9,13 +9,16 @@ public class Enemy2Controller : MonoBehaviour
     private Vector2 movement;
     public float groundCheckDistance = 1.5f;
     public float jumpForce = 5f;
-    public LayerMask groundLayer;
+    private float jumpCooldown = .5f; 
+    private float lastJumpTime;
     
-    public bool isGrounded = false;
+
+    private bool isGrounded;
+    
     void Start()
     {
         rb = GetComponent<Rigidbody2D>(); 
-        groundLayer = LayerMask.GetMask("Ground");
+        isGrounded = false;
     }
 
     void Update()
@@ -28,45 +31,49 @@ public class Enemy2Controller : MonoBehaviour
             AttackPlayer();
         }
        
-        if (isGrounded)
+        if (isGrounded && Time.time - lastJumpTime > jumpCooldown)
         {
             Jump();
-            //Debug.Log("jump");
+            lastJumpTime = Time.time; 
         }
     }
 
     void FixedUpdate()
     {
         MoveEnemy(movement);
+        
     }
 
     void MoveEnemy(Vector2 direction)
     {
-        Vector2 newPosition = new Vector2(transform.position.x + (direction.x * moveSpeed * Time.fixedDeltaTime), transform.position.y);
-        rb.MovePosition(newPosition);
+        Vector2 newVelocity = new Vector2(direction.x * moveSpeed, rb.velocity.y);
+        rb.velocity = newVelocity;
     }
 
     void AttackPlayer()
     {
-        Destroy(Player.gameObject);
+        //Destroy(Player.gameObject);
     }
 
 
-    void OnCollisionEnter2D(Collision2D collision){
-    if (collision.gameObject.name == "Ground"){
-        isGrounded = true;
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.tag == "Platform")
+        {   
+            isGrounded = true;
         }
-    }   
-
-    void OnCollisionExit2D(Collision2D collision){
-    if (collision.gameObject.name == "Ground"){
-        isGrounded = false;
     }
-}
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.collider.tag == "Platform")
+        {
+            isGrounded = false;
+        }
+    }
 
     private void Jump()
     {
-        rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        rb.velocity = Vector2.up * jumpForce;
     }
 
 }
