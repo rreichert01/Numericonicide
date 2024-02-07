@@ -27,7 +27,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if (isGrounded  && Input.GetKeyDown(KeyCode.Space))
+        if (isGrounded  && Input.GetKeyDown(KeyCode.W))
         {
             Jump();
         }
@@ -35,14 +35,20 @@ public class Player : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
             move.x -= moveSpeed * Time.deltaTime;
+            transform.eulerAngles = new Vector3(0f, 180f, 0f);
         }
 
         if (Input.GetKey(KeyCode.D))
         {
             move.x += moveSpeed * Time.deltaTime;
+            transform.eulerAngles = Vector3.zero; 
         }
         transform.position += move;
        
+    }
+
+    private void Shoot()
+    {
     }
 
     private void Jump()
