@@ -15,7 +15,6 @@ public class Weapon : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Debug.Log("BANG!!");
             Shoot(); 
         }
         

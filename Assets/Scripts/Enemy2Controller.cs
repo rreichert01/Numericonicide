@@ -62,6 +62,13 @@ public class Enemy2Controller : MonoBehaviour
         {   
             isGrounded = true;
         }
+
+        // Check if the colliding object has the tag "Bullet"
+        if (collision.gameObject.CompareTag("Bullet"))
+        {
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+        }
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
@@ -69,11 +76,11 @@ public class Enemy2Controller : MonoBehaviour
         {
             isGrounded = false;
         }
+
     }
 
     private void Jump()
     {
         rb.velocity = Vector2.up * jumpForce;
     }
-
 }

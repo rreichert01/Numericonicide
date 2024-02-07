@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using UnityEngine;
 
 public class EnemyController : MonoBehaviour
@@ -50,5 +51,15 @@ public class EnemyController : MonoBehaviour
     private void Jump()
     {
         //rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        // Check if the colliding object has the tag "Bullet"
+        if (collision.gameObject.CompareTag("Bullet"))
+        {
+            Destroy(collision.gameObject);
+            Destroy(gameObject); 
+        }
     }
 }
