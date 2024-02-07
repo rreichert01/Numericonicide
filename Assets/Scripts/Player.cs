@@ -14,8 +14,9 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb;
     private bool GameOver = false;
     private bool boxDone = false;
-
-     private bool isGrounded;
+    private float missileSpeed = 10;
+    private bool isGrounded;
+    //public Shooter bulletPrefab; 
 
 
     void Start()
@@ -27,6 +28,10 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    Shoot(); 
+        //}
         if (isGrounded  && Input.GetKeyDown(KeyCode.W))
         {
             Jump();
@@ -35,7 +40,7 @@ public class Player : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
             move.x -= moveSpeed * Time.deltaTime;
-            transform.eulerAngles = new Vector3(0f, 180f, 0f);
+            transform.eulerAngles = new Vector3(0f, 180f, 0); 
         }
 
         if (Input.GetKey(KeyCode.D))
@@ -47,9 +52,11 @@ public class Player : MonoBehaviour
        
     }
 
-    private void Shoot()
-    {
-    }
+    //private void Shoot()
+    //{
+    //    var laser = Instantiate(bullet, transform.position + transform.up, Quaternion.identity);
+    //    laser.GetComponent<Rigidbody2D>().velocity = transform.up * missleSpeed;
+    //}
 
     private void Jump()
     {
