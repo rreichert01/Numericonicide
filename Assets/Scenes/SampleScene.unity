@@ -552,6 +552,7 @@ MonoBehaviour:
   Player: {fileID: 1937855797}
   moveSpeed: 1.5
   attackRange: 2
+  health: 1
   groundCheckDistance: 1
 --- !u!50 &1015478396
 Rigidbody2D:
@@ -634,7 +635,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1015478393}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11, y: -3.54, z: 0}
+  m_LocalPosition: {x: 15.18, y: -3.54, z: 0}
   m_LocalScale: {x: 1.2587501, y: 0.9330455, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -903,6 +904,7 @@ MonoBehaviour:
   Player: {fileID: 1937855797}
   moveSpeed: 1.5
   attackRange: 2
+  health: 1
   groundCheckDistance: 1
 --- !u!50 &1492521187
 Rigidbody2D:
@@ -1338,7 +1340,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1780777439}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.82, y: -3.78, z: 0}
+  m_LocalPosition: {x: 38.15, y: -3.78, z: 0}
   m_LocalScale: {x: 0.8625, y: 1.1410547, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1407,6 +1409,7 @@ MonoBehaviour:
   Player: {fileID: 1937855797}
   moveSpeed: 2.5
   attackRange: 4
+  health: 2
   groundCheckDistance: 1
   jumpForce: 20
 --- !u!1 &1937855794

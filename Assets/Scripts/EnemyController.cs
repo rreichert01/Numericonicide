@@ -6,6 +6,7 @@ public class EnemyController : MonoBehaviour
     public Transform Player;
     public float moveSpeed = 1.5f;
     public float attackRange = 2.5f;
+    public int health = 1;
     private Rigidbody2D rb;
     private Vector2 movement;
     public float groundCheckDistance = 1f;
@@ -58,8 +59,13 @@ public class EnemyController : MonoBehaviour
         // Check if the colliding object has the tag "Bullet"
         if (collision.gameObject.CompareTag("Bullet"))
         {
-            Destroy(collision.gameObject);
-            Destroy(gameObject); 
+            HandleAttack(collision.gameObject);
         }
+    }
+
+    void HandleAttack(GameObject bullet) 
+    {
+        Destroy(bullet);
+        if (--health <= 0) { Destroy(gameObject);}
     }
 }
