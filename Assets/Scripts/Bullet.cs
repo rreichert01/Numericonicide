@@ -20,4 +20,12 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.tag == "Platform")
+        {
+            Destroy(gameObject);
+        }
+
+    }
 }
