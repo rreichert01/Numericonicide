@@ -49,6 +49,11 @@ public class Player : MonoBehaviour
             transform.eulerAngles = Vector3.zero; 
         }
         transform.position += move;
+
+        if (!isGrounded && Input.GetKey(KeyCode.S))
+        {
+            Down();
+        }
        
     }
 
@@ -61,6 +66,11 @@ public class Player : MonoBehaviour
     private void Jump()
     {
         rb.velocity = Vector2.up * jumpForce;
+    }
+
+    private void Down()
+    {
+        rb.velocity = Vector2.down * jumpForce;
     }
 
    
