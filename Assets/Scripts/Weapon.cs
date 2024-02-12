@@ -16,7 +16,6 @@ public class Weapon : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && IsChild())
         {
-            UnityEngine.Debug.Log(Input.GetKeyDown(KeyCode.Space) && IsChild());
             Shoot();
         }
         
