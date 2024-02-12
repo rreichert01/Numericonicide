@@ -186,6 +186,8 @@ MonoBehaviour:
   attackRange: 2
   health: 1
   groundCheckDistance: 1
+  detectionDistance: 18
+  player: {fileID: 1937855794}
 --- !u!50 &78488663
 Rigidbody2D:
   serializedVersion: 4
@@ -541,7 +543,9 @@ MonoBehaviour:
   rb: {fileID: 0}
   speed: 40
   player: {fileID: 1937855794}
-  fireRate: 4
+  fireRate: 5
+  reloadTime: 2
+  magazineCapacity: 20
 --- !u!1 &460731085
 GameObject:
   m_ObjectHideFlags: 0
@@ -644,6 +648,8 @@ MonoBehaviour:
   rb: {fileID: 0}
   speed: 20
   player: {fileID: 1937855794}
+  reloadTime: 1
+  magazineCapacity: 8
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -809,6 +815,8 @@ MonoBehaviour:
   attackRange: 2
   health: 3
   groundCheckDistance: 1
+  detectionDistance: 18
+  player: {fileID: 1937855794}
 --- !u!50 &537516353
 Rigidbody2D:
   serializedVersion: 4
@@ -1093,6 +1101,8 @@ MonoBehaviour:
   attackRange: 2
   health: 1
   groundCheckDistance: 1
+  detectionDistance: 18
+  player: {fileID: 1937855794}
 --- !u!50 &1015478396
 Rigidbody2D:
   serializedVersion: 4
@@ -1476,6 +1486,8 @@ MonoBehaviour:
   attackRange: 2
   health: 1
   groundCheckDistance: 1
+  detectionDistance: 18
+  player: {fileID: 1937855794}
 --- !u!50 &1436407449
 Rigidbody2D:
   serializedVersion: 4
@@ -1627,6 +1639,8 @@ MonoBehaviour:
   attackRange: 2
   health: 3
   groundCheckDistance: 1
+  detectionDistance: 18
+  player: {fileID: 1937855794}
 --- !u!50 &1492521187
 Rigidbody2D:
   serializedVersion: 4
@@ -1886,6 +1900,8 @@ MonoBehaviour:
   health: 2
   groundCheckDistance: 1
   jumpForce: 10
+  detectionDistance: 18
+  player: {fileID: 1937855794}
 --- !u!61 &1694000486
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2285,6 +2301,8 @@ MonoBehaviour:
   health: 2
   groundCheckDistance: 1
   jumpForce: 10
+  detectionDistance: 18
+  player: {fileID: 1937855794}
 --- !u!1 &1827325946
 GameObject:
   m_ObjectHideFlags: 0
@@ -2348,6 +2366,8 @@ MonoBehaviour:
   attackRange: 2
   health: 3
   groundCheckDistance: 1
+  detectionDistance: 18
+  player: {fileID: 1937855794}
 --- !u!50 &1827325949
 Rigidbody2D:
   serializedVersion: 4

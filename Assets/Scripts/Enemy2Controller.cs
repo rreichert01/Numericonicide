@@ -12,7 +12,10 @@ public class Enemy2Controller : MonoBehaviour
     public float jumpForce = 5f;
     private float jumpCooldown = .5f; 
     private float lastJumpTime;
-    
+    private bool detectedPlayer = false;
+    public float detectionDistance = 18f;
+    public GameObject player;
+
 
     private bool isGrounded;
     
@@ -24,6 +27,8 @@ public class Enemy2Controller : MonoBehaviour
 
     void Update()
     {
+        isDetected();
+
         Vector2 direction = new Vector2((Player.position.x - transform.position.x)/2, 0).normalized;
         movement = direction;
 
@@ -32,7 +37,7 @@ public class Enemy2Controller : MonoBehaviour
             AttackPlayer();
         }
        
-        if (isGrounded && Time.time - lastJumpTime > jumpCooldown)
+        if (isGrounded && Time.time - lastJumpTime > jumpCooldown && detectedPlayer)
         {
             Jump();
             lastJumpTime = Time.time; 
@@ -41,10 +46,15 @@ public class Enemy2Controller : MonoBehaviour
 
     void FixedUpdate()
     {
-        MoveEnemy(movement);
-        
+        if (detectedPlayer) { MoveEnemy(movement); }
+         
     }
 
+    public void isDetected()
+    {
+        detectedPlayer = Mathf.Abs(gameObject.transform.position.x - player.transform.position.x) < detectionDistance ? true : false;
+        
+    }
     void MoveEnemy(Vector2 direction)
     {
         Vector2 newVelocity = new Vector2(direction.x * moveSpeed, rb.velocity.y);
