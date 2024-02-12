@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Diagnostics;
+using System.Reflection;
+using System;
 
 public class Player : MonoBehaviour
 {
@@ -16,6 +18,9 @@ public class Player : MonoBehaviour
     private bool boxDone = false;
     private float missileSpeed = 10;
     private bool isGrounded;
+    public GameObject defaultGun;
+    public GameObject upgradeGun;
+    public float switchDistance = 5f;
     //public Shooter bulletPrefab; 
 
 
@@ -32,7 +37,7 @@ public class Player : MonoBehaviour
         //{
         //    Shoot(); 
         //}
-        if (isGrounded  && Input.GetKeyDown(KeyCode.W))
+        if (isGrounded && Input.GetKeyDown(KeyCode.W))
         {
             Jump();
         }
@@ -40,13 +45,13 @@ public class Player : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
             move.x -= moveSpeed * Time.deltaTime;
-            transform.eulerAngles = new Vector3(0f, 180f, 0); 
+            transform.eulerAngles = new Vector3(0f, 180f, 0);
         }
 
         if (Input.GetKey(KeyCode.D))
         {
             move.x += moveSpeed * Time.deltaTime;
-            transform.eulerAngles = Vector3.zero; 
+            transform.eulerAngles = Vector3.zero;
         }
         transform.position += move;
 
@@ -54,9 +59,58 @@ public class Player : MonoBehaviour
         {
             Down();
         }
-       
+        if (Input.GetKeyDown(KeyCode.Q) && isCloseEnough())
+        {
+
+            SwitchHierarchiesAndPositions();
+
+        }
+
     }
 
+    public void SwitchHierarchiesAndPositions()
+    {
+        // Store the parent of defaultGun
+        Transform parent1 = defaultGun.transform.parent;
+
+        // Store the parent of upgradeGun
+        Transform parent2 = upgradeGun.transform.parent;
+
+        // Store the position of defaultGun
+        Vector3 position1 = defaultGun.transform.position;
+
+        // Store the position of upgradeGun
+        Vector3 position2 = upgradeGun.transform.position;
+
+        // Store the rotation of defaultGun
+        Quaternion rotation1 = defaultGun.transform.rotation;
+
+        // Store the rotation of upgradeGun
+        Quaternion rotation2 = upgradeGun.transform.rotation;
+
+        // Set defaultGun's parent to upgradeGun's parent
+        defaultGun.transform.SetParent(parent2, true);
+
+        // Set upgradeGun's parent to defaultGun's parent
+        upgradeGun.transform.SetParent(parent1, true);
+
+        // Set defaultGun's position and rotation to upgradeGun's original position and rotation
+        defaultGun.transform.position = position2;
+        defaultGun.transform.rotation = rotation2;
+
+        // Set upgradeGun's position and rotation to defaultGun's original position and rotation
+        upgradeGun.transform.position = position1;
+        upgradeGun.transform.rotation = rotation1;
+    }
+
+
+    public bool isCloseEnough()
+    {
+
+        float distance = Vector3.Distance(defaultGun.transform.position, upgradeGun.transform.position);
+
+        return distance < switchDistance;
+    }
     //private void Shoot()
     //{
     //    var laser = Instantiate(bullet, transform.position + transform.up, Quaternion.identity);
@@ -64,29 +118,29 @@ public class Player : MonoBehaviour
     //}
 
     private void Jump()
-    {
-        rb.velocity = Vector2.up * jumpForce;
-    }
+        {
+            rb.velocity = Vector2.up * jumpForce;
+        }
 
-    private void Down()
-    {
-        rb.velocity = Vector2.down * jumpForce;
-    }
+        private void Down()
+        {
+            rb.velocity = Vector2.down * jumpForce;
+        }
 
    
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.collider.tag == "Platform")
+        private void OnCollisionEnter2D(Collision2D collision)
         {
-            isGrounded = true;
+            if (collision.collider.tag == "Platform")
+            {
+                isGrounded = true;
+            }
         }
-    }
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.collider.tag == "Platform")
+        private void OnCollisionExit2D(Collision2D collision)
         {
-            isGrounded = false;
+            if (collision.collider.tag == "Platform")
+            {
+                isGrounded = false;
+            }
         }
-    }
   
-}
+    }
