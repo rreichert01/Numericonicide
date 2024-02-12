@@ -39,14 +39,29 @@ public class Player : MonoBehaviour
         Vector3 move = new Vector3(0f, 0f, 0f);
         if (Input.GetKey(KeyCode.A))
         {
-            move.x -= moveSpeed * Time.deltaTime;
-            transform.eulerAngles = new Vector3(0f, 180f, 0); 
+            if (Input.GetKey(KeyCode.RightShift) || Input.GetKey(KeyCode.LeftShift))
+            {
+                move.x -= moveSpeed * Time.deltaTime * 2;
+            }
+            else
+            {
+                move.x -= moveSpeed * Time.deltaTime;
+            }
+            transform.eulerAngles = new Vector3(0f, 180f, 0);
+            
         }
 
         if (Input.GetKey(KeyCode.D))
         {
-            move.x += moveSpeed * Time.deltaTime;
-            transform.eulerAngles = Vector3.zero; 
+            if (Input.GetKey(KeyCode.RightShift) || Input.GetKey(KeyCode.LeftShift))
+            {
+                move.x += moveSpeed * Time.deltaTime * 2;
+            }
+            else
+            {
+                move.x += moveSpeed * Time.deltaTime;
+            }
+            transform.eulerAngles = Vector3.zero;
         }
         transform.position += move;
 
@@ -73,7 +88,6 @@ public class Player : MonoBehaviour
         rb.velocity = Vector2.down * jumpForce;
     }
 
-   
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.tag == "Platform")
