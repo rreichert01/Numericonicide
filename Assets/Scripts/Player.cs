@@ -25,7 +25,7 @@ public class Player : MonoBehaviour
     public int health; 
     public int maxHealth = 10; 
     //ublic int Score; 
-    //public TMP_Text textDisplay; 
+    //public TextMeshProUGUI textDisplay; 
     //public Shooter bulletPrefab; 
 
 
@@ -35,7 +35,7 @@ public class Player : MonoBehaviour
         isGrounded = false;
         health = maxHealth; 
 
-        //textDisplay = GetComponent<TMP_Text>(); 
+        //textDisplay = GetComponent<TextMeshProUGUI>(); 
       
     }
 
