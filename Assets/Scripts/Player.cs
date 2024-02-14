@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.Reflection;
 using System;
 
+
 public class Player : MonoBehaviour
 {
 
@@ -23,6 +24,8 @@ public class Player : MonoBehaviour
     public float switchDistance = 5f;
     public int health; 
     public int maxHealth = 10; 
+    //ublic int Score; 
+    //public TMP_Text textDisplay; 
     //public Shooter bulletPrefab; 
 
 
@@ -31,15 +34,15 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         isGrounded = false;
         health = maxHealth; 
+
+        //textDisplay = GetComponent<TMP_Text>(); 
       
     }
 
     void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.Space))
-        //{
-        //    Shoot(); 
-        //}
+        //textDisplay.SetText("health"); 
+        
         if (isGrounded && Input.GetKeyDown(KeyCode.W))
         {
             Jump();
@@ -167,6 +170,12 @@ public class Player : MonoBehaviour
             Destroy(gameObject); 
         }
     }
+
+    // private void ScorePointsInternal(int delta)
+    // {
+    //     Score += delta;
+    //     textDisplay.text = Score.ToString();
+    // }
 
 
 }
