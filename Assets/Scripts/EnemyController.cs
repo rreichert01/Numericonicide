@@ -7,16 +7,26 @@ public class EnemyController : MonoBehaviour
     public float moveSpeed = 1.5f;
     public float attackRange = 2.5f;
     public int health = 1;
+    public int damage = 1; 
     private Rigidbody2D rb;
     private Vector2 movement;
     public float groundCheckDistance = 1f;
     private bool detectedPlayer = false;
     public float detectionDistance = 18f;
     public GameObject player;
+    public Player playerScript;
+     
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        // player = GameObject.FindWithTag("Player"); 
+        // if (player != null)
+        // {
+        //     playerScript = player.GetComponent<Player>(); 
+
+        //}
     }
 
     void Update()
@@ -73,6 +83,14 @@ public class EnemyController : MonoBehaviour
         {
             HandleAttack(collision.gameObject);
         }
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            if(playerScript != null)
+            {
+                playerScript.TakeDamage(damage);
+            }
+             
+        }
     }
 
     void HandleAttack(GameObject bullet) 
@@ -80,4 +98,6 @@ public class EnemyController : MonoBehaviour
         Destroy(bullet);
         if (--health <= 0) { Destroy(gameObject);}
     }
+
+
 }

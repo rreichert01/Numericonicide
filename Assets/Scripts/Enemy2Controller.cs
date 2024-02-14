@@ -6,6 +6,7 @@ public class Enemy2Controller : MonoBehaviour
     public float moveSpeed = 2.5f;
     public float attackRange = 2.5f;
     public int health = 1;
+    public int damage = 1; 
     private Rigidbody2D rb;
     private Vector2 movement;
     public float groundCheckDistance = 1.5f;
@@ -15,6 +16,7 @@ public class Enemy2Controller : MonoBehaviour
     private bool detectedPlayer = false;
     public float detectionDistance = 18f;
     public GameObject player;
+    public Player playerScript;
 
 
     private bool isGrounded;
@@ -78,6 +80,15 @@ public class Enemy2Controller : MonoBehaviour
         if (collision.gameObject.CompareTag("Bullet"))
         {
             HandleAttack(collision.gameObject);
+        }
+
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            if(playerScript != null)
+            {
+                playerScript.TakeDamage(damage);
+            }
+             
         }
     }
     private void OnCollisionExit2D(Collision2D collision)

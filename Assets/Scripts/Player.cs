@@ -15,12 +15,14 @@ public class Player : MonoBehaviour
     public float moveSpeed = 5f;
     private Rigidbody2D rb;
     private bool GameOver = false;
-    private bool boxDone = false;
+    //private bool boxDone = false;
     private float missileSpeed = 10;
     private bool isGrounded;
     public GameObject defaultGun;
     public GameObject upgradeGun;
     public float switchDistance = 5f;
+    public int health; 
+    public int maxHealth = 10; 
     //public Shooter bulletPrefab; 
 
 
@@ -28,6 +30,7 @@ public class Player : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         isGrounded = false;
+        health = maxHealth; 
       
     }
 
@@ -156,5 +159,14 @@ public class Player : MonoBehaviour
             isGrounded = false;
         }
     }
-  
+
+    public void TakeDamage(int amount)
+    {
+        health -= amount; 
+        if(health <= 0){
+            Destroy(gameObject); 
+        }
+    }
+
+
 }
