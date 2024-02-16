@@ -10,7 +10,7 @@ public class Weapon : MonoBehaviour
     public Rigidbody2D rb; 
     public float speed = 20f;
     public GameObject player;
-
+    public UIManager uiManager;
     public float reloadTime = 1f; // Length of reload time
     public int magazineCapacity = 8; // Number of rounds in the magazine
     private int currentAmmo; // Current ammo count in the magazine
@@ -45,7 +45,7 @@ public class Weapon : MonoBehaviour
         currentAmmo--;
         var bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation); 
         bullet.GetComponent<Rigidbody2D>().velocity = transform.right * speed; 
-
+        uiManager.UpdateBulletCountUI(currentAmmo);
     }
 
     IEnumerator Reload()
@@ -61,6 +61,7 @@ public class Weapon : MonoBehaviour
 
         // Set reloading flag to false
         isReloading = false;
+        uiManager.UpdateBulletCountUI(currentAmmo);
     }
 
     public bool IsChild()
