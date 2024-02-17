@@ -25,8 +25,10 @@ public class Enemy3Controller : MonoBehaviour
     void Update()
     {
         isDetected();
+        Vector2 direction = new Vector2(0, Mathf.Sign(Player.position.y - transform.position.y)).normalized;
 
-        Vector2 direction = new Vector2(0, (Player.position.y - transform.position.y)/2).normalized;
+
+        //Vector2 direction = new Vector2(0, (Player.position.y - transform.position.y)/2).normalized;
         movement = direction;
 
         if (Vector3.Distance(transform.position, Player.position) < attackRange)
