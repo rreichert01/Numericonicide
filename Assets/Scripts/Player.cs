@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
     public float switchDistance = 5f;
     public int health; 
     public int maxHealth = 10; 
-    public UIManager uiManager;
+    public UIManager UIManagerScript;
     //ublic int Score; 
     //public TextMeshProUGUI textDisplay; 
     //public Shooter bulletPrefab; 
@@ -167,7 +167,7 @@ public class Player : MonoBehaviour
     public void TakeDamage(int amount)
     {
         health -= amount; 
-        uiManager.UpdateHealthUI(health);
+        UIManagerScript.UpdateHealthUI(health);
         if(health <= 0){
             Destroy(gameObject); 
         }
