@@ -20,20 +20,13 @@ public class Enemy3Controller : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
-        // player = GameObject.FindWithTag("Player"); 
-        // if (player != null)
-        // {
-        //     playerScript = player.GetComponent<Player>(); 
-
-        //}
     }
 
     void Update()
     {
         isDetected();
 
-        Vector2 direction = new Vector2((Player.position.y - transform.position.y)/2, 0).normalized;
+        Vector2 direction = new Vector2(0, (Player.position.y - transform.position.y)/2).normalized;
         movement = direction;
 
         if (Vector3.Distance(transform.position, Player.position) < attackRange)
