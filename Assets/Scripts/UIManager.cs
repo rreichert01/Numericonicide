@@ -9,7 +9,7 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI PlayerHealthText;
     public void UpdateBulletCountUI(int count) {
         if(count == 0){
-           BulletCountText.text = "Reload with 'r'"; 
+           BulletCountText.text = "Reload!"; 
         }
         else{
             BulletCountText.text = "Ammo: " + count.ToString();

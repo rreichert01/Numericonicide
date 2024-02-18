@@ -31,7 +31,7 @@ public class CamController : MonoBehaviour
 
     public void Awake()
     {
-        GetComponent<Camera>().orthographicSize = (Screen.height / 50f); 
+        GetComponent<Camera>().orthographicSize = (Screen.height / 120f); 
     }
 
     void Update()

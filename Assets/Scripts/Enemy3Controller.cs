@@ -3,79 +3,72 @@ using UnityEngine;
 
 public class Enemy3Controller : MonoBehaviour
 {
-    public Transform Player;
+    
     public float moveSpeed = 1.5f;
     public float attackRange = 2.5f;
     public int health = 1;
     public int damage = 1; 
     private Rigidbody2D rb;
     private Vector2 movement;
-    public float groundCheckDistance = 1f;
-    private bool detectedPlayer = false;
-    public float detectionDistance = 18f;
-    public GameObject player;
+    public GameObject projectilePrefab;
+    public float dropInterval = 3f; 
+    private float nextDropTime = 3f;
+    private bool movingRight = true;
+    public float movementDistance = 10f; 
+    private float startingXPosition;
+   
     public Player playerScript;
     
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        startingXPosition = transform.position.x; 
+        dropInterval = Random.Range(2f, 4f);
+        nextDropTime = Time.time + dropInterval; 
+         
+    
     }
 
     void Update()
     {
-        isDetected();
-        Vector2 direction = new Vector2(0, Mathf.Sign(Player.position.y - transform.position.y)).normalized;
-
-
-        //Vector2 direction = new Vector2(0, (Player.position.y - transform.position.y)/2).normalized;
-        movement = direction;
-
-        if (Vector3.Distance(transform.position, Player.position) < attackRange)
+        MoveBackAndForth();
+        DropProjectile();
+    }
+    void MoveBackAndForth()
+    {
+        float rightLimit = startingXPosition + movementDistance;
+        float leftLimit = startingXPosition - movementDistance;
+        if (movingRight && transform.position.x >= rightLimit)
         {
-            AttackPlayer();
+            movingRight = false;
+        }
+        else if (!movingRight && transform.position.x <= leftLimit)
+        {
+            movingRight = true;
+        }
+
+        float moveDirection = movingRight ? 1 : -1;
+        rb.velocity = new Vector2(moveDirection * moveSpeed, rb.velocity.y);
+    }
+
+
+     void DropProjectile()
+    {
+        if (Time.time >= nextDropTime)
+        {
+            Vector3 spawnPosition = transform.position + new Vector3(0, -.3f, 0); 
+            //Instantiate(projectilePrefab, spawnPosition, Quaternion.identity);
+            GameObject projectileInstance = Instantiate(projectilePrefab, spawnPosition, Quaternion.identity);
+
+            Rigidbody2D rb = projectileInstance.GetComponent<Rigidbody2D>();
+            nextDropTime = Time.time + dropInterval;
         }
     }
 
-    void FixedUpdate()
-    {
-        if (detectedPlayer) { MoveEnemy(movement); }
-
-    }
-
-    // public void isDetected()
-    // {
-    //     detectedPlayer = Mathf.Abs(gameObject.transform.position.y - player.transform.position.y) < detectionDistance && Mathf.Abs(gameObject.transform.position.x - player.transform.position.x) < detectionDistance;
-    // }
 
 
-    public void isDetected()
-    {
-        detectedPlayer = Mathf.Abs(gameObject.transform.position.x - player.transform.position.x) < detectionDistance ? true : false;
 
-    }
-
-    void MoveEnemy(Vector2 direction)
-    {
-
-        rb.MovePosition((Vector2)transform.position + (direction * moveSpeed * Time.fixedDeltaTime));
-    }
-
-    void AttackPlayer()
-    {
-       // Destroy(Player.gameObject);
-    }
-
-    public bool IsOnTopOfObject()
-    {
-        RaycastHit2D[] hit = Physics2D.RaycastAll(transform.position, Vector2.down, groundCheckDistance, Physics.AllLayers);
-        return hit.Length > 2;
-    }
-
-    private void Jump()
-    {
-        //rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-    }
 
     void OnCollisionEnter2D(Collision2D collision)
     {

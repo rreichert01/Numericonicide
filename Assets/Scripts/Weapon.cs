@@ -20,6 +20,7 @@ public class Weapon : MonoBehaviour
     void Start()
     {
         currentAmmo = magazineCapacity; // Initialize current ammo count to full magazine
+        uiManager.UpdateBulletCountUI(currentAmmo);
     }
 
     // Update is called once per frame

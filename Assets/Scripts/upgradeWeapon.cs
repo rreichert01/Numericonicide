@@ -13,6 +13,7 @@ public class upgradeWeapon : MonoBehaviour
 
     public float fireRate = 10f;
     private float nextTimeToFire = 0f;
+    public UIManager uiManager;
 
     public float reloadTime = 2f; // Length of reload time
     public int magazineCapacity = 20; // Number of rounds in the magazine
@@ -48,7 +49,7 @@ public class upgradeWeapon : MonoBehaviour
         currentAmmo--;
         var bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         bullet.GetComponent<Rigidbody2D>().velocity = transform.right * speed;
-
+        uiManager.UpdateBulletCountUI(currentAmmo);
     }
 
 
@@ -65,6 +66,7 @@ public class upgradeWeapon : MonoBehaviour
 
         // Set reloading flag to false
         isReloading = false;
+        uiManager.UpdateBulletCountUI(currentAmmo);
     }
 
 
