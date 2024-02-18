@@ -25,6 +25,7 @@ public class Player : MonoBehaviour
     public int health; 
     public int maxHealth = 10; 
     public UIManager UIManagerScript;
+    public GameObject playeric2; 
     //ublic int Score; 
     //public TextMeshProUGUI textDisplay; 
     //public Shooter bulletPrefab; 
@@ -148,6 +149,16 @@ public class Player : MonoBehaviour
         {
             rb.velocity = Vector2.down * jumpForce;
         }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("playerc"))
+        {
+            Destroy(gameObject);
+            Destroy(collision.gameObject); 
+            Instantiate(playeric2, transform.position, Quaternion.identity);
+        }
+    }
 
 
     private void OnCollisionEnter2D(Collision2D collision)
