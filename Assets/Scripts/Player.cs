@@ -164,8 +164,11 @@ public class Player : MonoBehaviour
                 spriteRenderer.sprite = newSprite; 
                 transform.localScale *= scaleFactor;
                 Vector3 gunPosition = defaultGun.transform.position;
-                Vector3 offset = transform.position - gunPosition;
-                transform.position = new Vector3(gunPosition.x - 6, gunPosition.y - 3, transform.position.z);
+                //defaultGun.x += .35f; 
+                //defaultGun.y += .7f;
+                //transform.position = defaultGun.transform.position + new Vector3(0.5f, -0.3f, 0);
+                //Vector3 offset = transform.position - gunPosition;
+                //transform.position = new Vector3(gunPosition.x, gunPosition.y, transform.position.z) + offset;
             }
             // Destroy(gameObject);
             // Destroy(collision.gameObject); 
