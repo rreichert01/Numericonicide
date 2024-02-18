@@ -25,7 +25,8 @@ public class Player : MonoBehaviour
     public int health; 
     public int maxHealth = 10; 
     public UIManager UIManagerScript;
-    public GameObject playeric2; 
+    //public GameObject playeric2; 
+    public Sprite newSprite; 
     //ublic int Score; 
     //public TextMeshProUGUI textDisplay; 
     //public Shooter bulletPrefab; 
@@ -154,9 +155,15 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("playerc"))
         {
-            Destroy(gameObject);
-            Destroy(collision.gameObject); 
-            Instantiate(playeric2, transform.position, Quaternion.identity);
+            SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>(); 
+            if (spriteRenderer != null && newSprite != null)
+            {
+                Destroy(collision.gameObject); 
+                spriteRenderer.sprite = newSprite; 
+            }
+            // Destroy(gameObject);
+            // Destroy(collision.gameObject); 
+            // Instantiate(playeric2, transform.position, Quaternion.identity);
         }
     }
 
