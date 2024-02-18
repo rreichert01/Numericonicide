@@ -27,6 +27,7 @@ public class Player : MonoBehaviour
     public UIManager UIManagerScript;
     //public GameObject playeric2; 
     public Sprite newSprite; 
+    public float scaleFactor = 2.0f; 
     //ublic int Score; 
     //public TextMeshProUGUI textDisplay; 
     //public Shooter bulletPrefab; 
@@ -159,7 +160,12 @@ public class Player : MonoBehaviour
             if (spriteRenderer != null && newSprite != null)
             {
                 Destroy(collision.gameObject); 
+                
                 spriteRenderer.sprite = newSprite; 
+                transform.localScale *= scaleFactor;
+                Vector3 gunPosition = defaultGun.transform.position;
+                Vector3 offset = transform.position - gunPosition;
+                transform.position = new Vector3(gunPosition.x - 6, gunPosition.y - 3, transform.position.z);
             }
             // Destroy(gameObject);
             // Destroy(collision.gameObject); 
