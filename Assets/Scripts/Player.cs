@@ -35,6 +35,7 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         isGrounded = false;
         health = maxHealth; 
+        UIManagerScript.UpdateHealthUI(maxHealth);
 
         //textDisplay = GetComponent<TextMeshProUGUI>(); 
       
