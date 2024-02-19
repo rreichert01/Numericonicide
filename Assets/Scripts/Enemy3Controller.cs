@@ -57,7 +57,7 @@ public class Enemy3Controller : MonoBehaviour
     {
         if (Time.time >= nextDropTime)
         {
-            Vector3 spawnPosition = transform.position + new Vector3(0, -.3f, 0); 
+            Vector3 spawnPosition = transform.position + new Vector3(-.8f, -.3f, 0); 
             //Instantiate(projectilePrefab, spawnPosition, Quaternion.identity);
             GameObject projectileInstance = Instantiate(projectilePrefab, spawnPosition, Quaternion.identity);
 

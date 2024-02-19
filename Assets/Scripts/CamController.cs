@@ -15,6 +15,7 @@ public class CamController : MonoBehaviour
     public float lookAheadMoveThreshold = 0.1f;
 
     private float offsetZ;
+    private float offsetY;
     private Vector3 lastTargetPosition;
     private Vector3 currentVelocity;
     private Vector3 lookAheadPos;
@@ -25,6 +26,7 @@ public class CamController : MonoBehaviour
     {
         lastTargetPosition = player.position;
         offsetZ = transform.position.z - player.position.z;
+        
         transform.parent = null;
     }
 
