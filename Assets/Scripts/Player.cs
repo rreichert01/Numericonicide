@@ -11,7 +11,7 @@ using System;
 public class Player : MonoBehaviour
 {
 
-    public float jumpForce = 8f;
+    public float jumpForce = 11f;
     public float groundCheckDistance = .5f;
     public float moveSpeed = 5f;
     private Rigidbody2D rb;
@@ -27,6 +27,7 @@ public class Player : MonoBehaviour
     public UIManager UIManagerScript;
     //public GameObject playeric2; 
     public Sprite newSprite; 
+    
     //ublic int Score; 
     //public TextMeshProUGUI textDisplay; 
     //public Shooter bulletPrefab; 
