@@ -27,6 +27,7 @@ public class Player : MonoBehaviour
     public UIManager UIManagerScript;
     //public GameObject playeric2; 
     public Sprite newSprite; 
+    public float scaleFactor = 2.0f; 
     
     //ublic int Score; 
     //public TextMeshProUGUI textDisplay; 
@@ -92,6 +93,7 @@ public class Player : MonoBehaviour
         }
 
     }
+
 
     public void SwitchHierarchiesAndPositions()
     {
@@ -161,6 +163,7 @@ public class Player : MonoBehaviour
             {
                 Destroy(collision.gameObject); 
                 spriteRenderer.sprite = newSprite; 
+                transform.localScale *= scaleFactor;
             }
             // Destroy(gameObject);
             // Destroy(collision.gameObject); 
