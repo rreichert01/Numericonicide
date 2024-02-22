@@ -6,6 +6,7 @@ using TMPro;
 using System.Diagnostics;
 using System.Reflection;
 using System;
+using System.Collections;
 
 
 public class Player : MonoBehaviour
@@ -27,8 +28,10 @@ public class Player : MonoBehaviour
     public UIManager UIManagerScript;
     //public GameObject playeric2; 
     public Sprite newSprite; 
-    public float scaleFactor = 2.0f; 
-    
+    public float scaleFactor = 2.0f;
+    private SpriteRenderer spriteRenderer;
+    private Color originalColor;
+
     //ublic int Score; 
     //public TextMeshProUGUI textDisplay; 
     //public Shooter bulletPrefab; 
@@ -40,9 +43,11 @@ public class Player : MonoBehaviour
         isGrounded = false;
         health = maxHealth; 
         UIManagerScript.UpdateHealthUI(maxHealth);
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        originalColor = spriteRenderer.color;
 
         //textDisplay = GetComponent<TextMeshProUGUI>(); 
-      
+
     }
 
     void Update()
@@ -198,8 +203,22 @@ public class Player : MonoBehaviour
         health -= amount; 
         UIManagerScript.UpdateHealthUI(health);
         if(health <= 0){
-            Destroy(gameObject); 
+            Destroy(gameObject);
+            return;
         }
+        StartCoroutine(ChangeColorCoroutine(Color.red, 0.2f));
+    }
+
+    IEnumerator ChangeColorCoroutine(Color newColor, float duration)
+    {
+        // Change the color to the new color
+        spriteRenderer.color = newColor;
+
+        // Wait for the specified duration
+        yield return new WaitForSeconds(duration);
+
+        // Change the color back to the original color
+        spriteRenderer.color = originalColor;
     }
 
     // private void ScorePointsInternal(int delta)

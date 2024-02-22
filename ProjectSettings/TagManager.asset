@@ -9,6 +9,7 @@ TagManager:
   - Bullet
   - Bomb
   - playerc
+  - powerup
   layers:
   - Default
   - TransparentFX
