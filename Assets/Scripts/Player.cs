@@ -25,13 +25,13 @@ public class Player : MonoBehaviour
     public float switchDistance = 5f;
     public int health; 
     public int maxHealth = 10; 
-    public UIManager UIManagerScript;
     //public GameObject playeric2; 
     public Sprite newSprite; 
     public float scaleFactor = 2.0f;
     private SpriteRenderer spriteRenderer;
     private Color originalColor;
     private bool invuln = false;
+    public healthBar healthBarScript;
 
     //ublic int Score; 
     //public TextMeshProUGUI textDisplay; 
@@ -43,7 +43,6 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         isGrounded = false;
         health = maxHealth; 
-        UIManagerScript.UpdateHealthUI(maxHealth);
         spriteRenderer = GetComponent<SpriteRenderer>();
         originalColor = spriteRenderer.color;
 
@@ -164,7 +163,7 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("powerup") && collision.gameObject.name == "health") {
             health = maxHealth;
-            UIManagerScript.UpdateHealthUI(health);
+            healthBarScript.updateHealth(health, maxHealth);
             Destroy(collision.gameObject);
         }
 
@@ -208,14 +207,15 @@ public class Player : MonoBehaviour
     public void TakeDamage(int amount)
     {
         if (invuln) { return; }
-
-        health -= amount; 
-        UIManagerScript.UpdateHealthUI(health);
-        if(health <= 0){
+        
+        health -= amount;
+        healthBarScript.updateHealth(health, maxHealth);
+        StartCoroutine(ChangeColorCoroutine(Color.red, 0.2f));
+        if (health <= 0){
             Destroy(gameObject);
             return;
         }
-        StartCoroutine(ChangeColorCoroutine(Color.red, 0.2f));
+
     }
 
     IEnumerator ChangeColorCoroutine(Color newColor, float duration)
