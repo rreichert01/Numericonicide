@@ -31,6 +31,7 @@ public class Player : MonoBehaviour
     public float scaleFactor = 2.0f;
     private SpriteRenderer spriteRenderer;
     private Color originalColor;
+    private bool invuln = false;
 
     //ublic int Score; 
     //public TextMeshProUGUI textDisplay; 
@@ -167,6 +168,12 @@ public class Player : MonoBehaviour
             Destroy(collision.gameObject);
         }
 
+        if (collision.gameObject.CompareTag("powerup") && collision.gameObject.name == "invuln")
+        {
+            StartCoroutine(invulnPowerUp(Color.yellow));
+            Destroy(collision.gameObject);
+        }
+
         if (collision.gameObject.CompareTag("playerc"))
         {
             SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>(); 
@@ -200,6 +207,8 @@ public class Player : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
+        if (invuln) { return; }
+
         health -= amount; 
         UIManagerScript.UpdateHealthUI(health);
         if(health <= 0){
@@ -219,6 +228,30 @@ public class Player : MonoBehaviour
 
         // Change the color back to the original color
         spriteRenderer.color = originalColor;
+    }
+
+    IEnumerator invulnPowerUp(Color newColor)
+    {
+        invuln = true;
+        // Change the color to the new color
+        spriteRenderer.color = newColor;
+
+        // Wait for the specified duration
+        yield return new WaitForSeconds(8f);
+
+        // Change the color back to the original color
+        spriteRenderer.color = originalColor;
+
+        yield return new WaitForSeconds(1f);
+
+        spriteRenderer.color = newColor;
+
+        yield return new WaitForSeconds(1);
+
+        // Change the color back to the original color
+        spriteRenderer.color = originalColor;
+
+        invuln = false;
     }
 
     // private void ScorePointsInternal(int delta)
