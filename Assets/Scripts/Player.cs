@@ -161,7 +161,7 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("powerup")) {
+        if (collision.gameObject.CompareTag("powerup") && collision.gameObject.name == "health") {
             health = maxHealth;
             UIManagerScript.UpdateHealthUI(health);
             Destroy(collision.gameObject);
