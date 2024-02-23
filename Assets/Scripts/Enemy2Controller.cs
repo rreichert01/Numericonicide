@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class Enemy2Controller : MonoBehaviour
 {
@@ -17,6 +18,8 @@ public class Enemy2Controller : MonoBehaviour
     public float detectionDistance = 18f;
     public GameObject player;
     public Player playerScript;
+    private SpriteRenderer spriteRenderer;
+    private Color originalColor;
 
 
     private bool isGrounded;
@@ -25,6 +28,8 @@ public class Enemy2Controller : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>(); 
         isGrounded = false;
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        originalColor = spriteRenderer.color;
     }
 
     void Update()
@@ -103,7 +108,24 @@ public class Enemy2Controller : MonoBehaviour
     void HandleAttack(GameObject bullet)
     {
         Destroy(bullet);
-        if (--health <= 0) { Destroy(gameObject); }
+        if (--health <= 0) 
+        { 
+            Destroy(gameObject);
+            return;
+        }
+        StartCoroutine(ChangeColorCoroutine(Color.red, 0.2f));
+    }
+
+    IEnumerator ChangeColorCoroutine(Color newColor, float duration)
+    {
+        // Change the color to the new color
+        spriteRenderer.color = newColor;
+
+        // Wait for the specified duration
+        yield return new WaitForSeconds(duration);
+
+        // Change the color back to the original color
+        spriteRenderer.color = originalColor;
     }
 
     private void Jump()

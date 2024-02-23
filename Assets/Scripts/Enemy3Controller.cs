@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using UnityEngine;
+using System.Collections;
 
 public class Enemy3Controller : MonoBehaviour
 {
@@ -16,7 +17,9 @@ public class Enemy3Controller : MonoBehaviour
     private bool movingRight = true;
     public float movementDistance = 10f; 
     private float startingXPosition;
-   
+    private SpriteRenderer spriteRenderer;
+    private Color originalColor;
+
     public Player playerScript;
     
 
@@ -25,9 +28,11 @@ public class Enemy3Controller : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         startingXPosition = transform.position.x; 
         dropInterval = Random.Range(2f, 4f);
-        nextDropTime = Time.time + dropInterval; 
-         
-    
+        nextDropTime = Time.time + dropInterval;
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        originalColor = spriteRenderer.color;
+
+
     }
 
     void Update()
@@ -90,8 +95,23 @@ public class Enemy3Controller : MonoBehaviour
     void HandleAttack(GameObject bullet) 
     {
         Destroy(bullet);
-        if (--health <= 0) { Destroy(gameObject);}
+        if (--health <= 0) 
+        { 
+            Destroy(gameObject);
+            return;
+        }
+        StartCoroutine(ChangeColorCoroutine(Color.red, 0.2f));
     }
+    IEnumerator ChangeColorCoroutine(Color newColor, float duration)
+    {
+        // Change the color to the new color
+        spriteRenderer.color = newColor;
 
+        // Wait for the specified duration
+        yield return new WaitForSeconds(duration);
+
+        // Change the color back to the original color
+        spriteRenderer.color = originalColor;
+    }
 
 }
