@@ -28,7 +28,6 @@ public class Projectile : MonoBehaviour
         if (collision.collider.tag == "Platform" || collision.gameObject.CompareTag("Player"))
         {
            animator.SetTrigger("Explode");
-            UnityEngine.Debug.Log("Exploded");
             GetComponent<Rigidbody2D>().simulated = false;
             Destroy(gameObject, 1f); 
 
