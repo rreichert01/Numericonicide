@@ -64,10 +64,28 @@ public class enemy4controller : MonoBehaviour
     void SplitSprite()
     {
         spriteRenderer.sprite = lowHealthSprite1; 
-        GameObject newEnemy = new GameObject(); 
-        newEnemy.AddComponent<SpriteRenderer>().sprite = lowHealthSprite2; 
-        Vector3 scale = transform.localScale/ 6f; 
-        newEnemy.transform.localScale = scale; 
+        spriteRenderer.sprite = lowHealthSprite2; 
+
+        GameObject newEnemy1 = new GameObject(); 
+        newEnemy1.AddComponent<SpriteRenderer>().sprite = lowHealthSprite1; 
+        newEnemy1.AddComponent<Rigidbody2D>(); 
+        newEnemy1.AddComponent<BoxCollider2D>(); 
+        newEnemy1.AddComponent<Enemy2Controller>(); 
+
+        GameObject newEnemy2 = new GameObject(); 
+        newEnemy2.AddComponent<SpriteRenderer>().sprite = lowHealthSprite2; 
+        newEnemy2.AddComponent<Rigidbody2D>(); 
+        newEnemy2.AddComponent<BoxCollider2D>(); 
+        newEnemy2.AddComponent<Enemy2Controller>(); 
+        
+        Vector3 scale = transform.localScale/ 10f; 
+
+        newEnemy1.transform.localScale = scale; 
+        newEnemy2.transform.localScale = scale; 
+        newEnemy1.transform.position = transform.position; 
+        newEnemy2.transform.position = transform.position; 
+
+        Destroy(gameObject); 
     }
 
     
