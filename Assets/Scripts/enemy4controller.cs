@@ -9,6 +9,8 @@ public class enemy4controller : MonoBehaviour
     public float attackRange = 2.5f;
     public int health = 4;
     public int damage = 4; 
+    public Sprite lowHealthSprite1;
+    public Sprite lowHealthSprite2;  
     private Rigidbody2D rb;
     //private Vector2 movement;
     public float groundCheckDistance = 1f;
@@ -18,6 +20,8 @@ public class enemy4controller : MonoBehaviour
     public Player playerScript;
     private SpriteRenderer spriteRenderer;
     private Color originalColor;
+    private bool hasSplit = false; 
+    
      
 
     void Start()
@@ -38,6 +42,11 @@ public class enemy4controller : MonoBehaviour
         {
             AttackPlayer();
         }
+        if (health == 1 && !hasSplit)
+        {
+            SplitSprite(); 
+            hasSplit = true; 
+        }
     }
 
     void FixedUpdate()
@@ -52,6 +61,15 @@ public class enemy4controller : MonoBehaviour
 
     }
 
+    void SplitSprite()
+    {
+        spriteRenderer.sprite = lowHealthSprite1; 
+        GameObject newEnemy = new GameObject(); 
+        newEnemy.AddComponent<SpriteRenderer>().sprite = lowHealthSprite2; 
+        Vector3 scale = transform.localScale/ 6f; 
+        newEnemy.transform.localScale = scale; 
+    }
+
     
 
     void AttackPlayer()
@@ -63,11 +81,6 @@ public class enemy4controller : MonoBehaviour
     {
         RaycastHit2D[] hit = Physics2D.RaycastAll(transform.position, Vector2.down, groundCheckDistance, Physics.AllLayers);
         return hit.Length > 2;
-    }
-
-    private void Jump()
-    {
-        //rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
     }
 
     void OnCollisionEnter2D(Collision2D collision)
