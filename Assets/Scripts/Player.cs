@@ -191,6 +191,10 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if (collision.gameObject.CompareTag("enemybullet"))
+        {
+            HandleAttack(collision.gameObject);
+        }
         if (collision.collider.tag == "Platform")
         {
             isGrounded = true;
@@ -216,6 +220,17 @@ public class Player : MonoBehaviour
             return;
         }
 
+    }
+
+    void HandleAttack(GameObject enemybullet) 
+    {
+        Destroy(enemybullet);
+        if (--health <= 0) 
+        { 
+            Destroy(gameObject);
+            return;
+        }
+        StartCoroutine(ChangeColorCoroutine(Color.red, 0.2f));
     }
 
     IEnumerator ChangeColorCoroutine(Color newColor, float duration)

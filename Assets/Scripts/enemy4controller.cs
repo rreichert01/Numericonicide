@@ -13,14 +13,18 @@ public class enemy4controller : MonoBehaviour
     //private Vector2 movement;
     public float groundCheckDistance = 1f;
     private bool detectedPlayer = false;
-    public float detectionDistance = 18f;
+    public float detectionDistance = 8f;
     public GameObject player;
     public Player playerScript;
+    private SpriteRenderer spriteRenderer;
+    private Color originalColor;
      
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        originalColor = spriteRenderer.color;
     }
 
     void Update()
@@ -47,6 +51,8 @@ public class enemy4controller : MonoBehaviour
         detectedPlayer = Mathf.Abs(gameObject.transform.position.x - player.transform.position.x) < detectionDistance ? true : false;
 
     }
+
+    
 
     void AttackPlayer()
     {
@@ -85,7 +91,16 @@ public class enemy4controller : MonoBehaviour
     {
         Destroy(bullet);
         if (--health <= 0) { Destroy(gameObject);}
+        StartCoroutine(ChangeColorCoroutine(Color.red, 0.2f));
     }
+
+    IEnumerator ChangeColorCoroutine(Color newColor, float duration)
+    {
+        spriteRenderer.color = newColor;
+        yield return new WaitForSeconds(duration);
+        spriteRenderer.color = originalColor;
+    }
+    
 
 
 }

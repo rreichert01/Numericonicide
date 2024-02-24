@@ -5,7 +5,7 @@ using UnityEngine;
 public class enemyweapon : MonoBehaviour
 {
     public Transform firePoint; 
-    public GameObject bulletPrefab;
+    public GameObject enemyBulletPrefab;
 
     public Rigidbody2D rb; 
     public float speed = 20f;
@@ -34,7 +34,7 @@ public class enemyweapon : MonoBehaviour
     }
 
     void FireBullet(){
-        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation); 
+        GameObject bullet = Instantiate(enemyBulletPrefab, firePoint.position, firePoint.rotation); 
         Rigidbody2D bulletRB = bullet.GetComponent<Rigidbody2D>(); 
         bulletRB.velocity = -firePoint.right * speed; 
     }
