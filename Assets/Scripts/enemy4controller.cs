@@ -12,6 +12,7 @@ public class enemy4controller : MonoBehaviour
     public Sprite lowHealthSprite1;
     public Sprite lowHealthSprite2;  
     private Rigidbody2D rb;
+    public GameObject enemy2Prefab;
     //private Vector2 movement;
     public float groundCheckDistance = 1f;
     private bool detectedPlayer = false;
@@ -21,6 +22,7 @@ public class enemy4controller : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Color originalColor;
     private bool hasSplit = false; 
+    //public Enemy2Controller Enemy2Controller; 
     
      
 
@@ -63,27 +65,12 @@ public class enemy4controller : MonoBehaviour
 
     void SplitSprite()
     {
-        spriteRenderer.sprite = lowHealthSprite1; 
-        spriteRenderer.sprite = lowHealthSprite2; 
+        GameObject newEnemy1 = Instantiate(enemy2Prefab, transform.position, transform.rotation);
+        GameObject newEnemy2 = Instantiate(enemy2Prefab, transform.position, transform.rotation);
 
-        GameObject newEnemy1 = new GameObject(); 
-        newEnemy1.AddComponent<SpriteRenderer>().sprite = lowHealthSprite1; 
-        newEnemy1.AddComponent<Rigidbody2D>(); 
-        newEnemy1.AddComponent<BoxCollider2D>(); 
-        newEnemy1.AddComponent<Enemy2Controller>(); 
-
-        GameObject newEnemy2 = new GameObject(); 
-        newEnemy2.AddComponent<SpriteRenderer>().sprite = lowHealthSprite2; 
-        newEnemy2.AddComponent<Rigidbody2D>(); 
-        newEnemy2.AddComponent<BoxCollider2D>(); 
-        newEnemy2.AddComponent<Enemy2Controller>(); 
-        
-        Vector3 scale = transform.localScale/ 10f; 
-
-        newEnemy1.transform.localScale = scale; 
-        newEnemy2.transform.localScale = scale; 
-        newEnemy1.transform.position = transform.position; 
-        newEnemy2.transform.position = transform.position; 
+        // Set the health of the new enemies to 1
+        // newEnemy1.GetComponent<Enemy2Controller>().health = 1;
+        // newEnemy2.GetComponent<Enemy2Controller>().health = 1;
 
         Destroy(gameObject); 
     }
