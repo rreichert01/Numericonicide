@@ -49,12 +49,12 @@
      <Compile Include="Assets/Scripts/HandleScene.cs" />
      <Compile Include="Assets/healthBar.cs" />
      <Compile Include="Assets/Scripts/Projectile.cs" />
+     <Compile Include="Assets/Scripts/Enemy5Controller.cs" />
      <Compile Include="Assets/Scripts/CamController.cs" />
      <Compile Include="Assets/Scripts/upgradeWeapon.cs" />
      <Compile Include="Assets/Scripts/EnemyController.cs" />
      <Compile Include="Assets/Scripts/Weapon.cs" />
      <Compile Include="Assets/Scripts/playerc.cs" />
-     <Compile Include="Assets/Scripts/Enemy5Controller.cs" />
      <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader" />
