@@ -38,4 +38,5 @@ public class enemyweapon : MonoBehaviour
         Rigidbody2D bulletRB = bullet.GetComponent<Rigidbody2D>(); 
         bulletRB.velocity = -firePoint.right * speed; 
     }
+
 }

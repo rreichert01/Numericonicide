@@ -1,13 +1,14 @@
-using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-public class Enemy2Controller : MonoBehaviour
+public class Enemy2ForEnemy4 : MonoBehaviour
 {
     public Transform Player;
     public float moveSpeed = 2.5f;
     public float attackRange = 2.5f;
-    public int health = 2;
-    public int damage = 2; 
+    public int health = 1;
+    public int damage = 1; 
     private Rigidbody2D rb;
     private Vector2 movement;
     public float groundCheckDistance = 1.5f;
@@ -20,8 +21,10 @@ public class Enemy2Controller : MonoBehaviour
     public Player playerScript;
     private SpriteRenderer spriteRenderer;
     private Color originalColor;
-
     private bool isGrounded;
+    private bool isActivated = false;
+    public Transform enemy4; 
+    public enemy4controller enemy4script; 
     
     void Start()
     {
@@ -29,10 +32,25 @@ public class Enemy2Controller : MonoBehaviour
         isGrounded = false;
         spriteRenderer = GetComponent<SpriteRenderer>();
         originalColor = spriteRenderer.color;
+
+        gameObject.SetActive(false); 
     }
 
     void Update()
     {
+        
+        // Debug.Log("Enemy 4 Health: " + enemy4script.GetHealth());
+        // if (!isActivated && enemy4script.GetHealth() == 1)
+        // {
+        //     Debug.Log("Activating Enemy 2");
+        //     gameObject.SetActive(true); 
+        //     isActivated = true; 
+        // }
+
+        // if (!isActivated){
+        //     return; 
+        // }
+
         isDetected();
 
         Vector2 direction = new Vector2((Player.position.x - transform.position.x)/2, 0).normalized;
@@ -131,4 +149,9 @@ public class Enemy2Controller : MonoBehaviour
     {
         rb.velocity = Vector2.up * jumpForce;
     }
+
+    // private void Activate(){
+    //     gameObject.SetActive(true); 
+    //     isActivated = true; 
+    // }
 }
