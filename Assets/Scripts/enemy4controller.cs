@@ -22,9 +22,9 @@ public class enemy4controller : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Color originalColor;
     private bool hasSplit = false; 
-    //public Enemy2Controller Enemy2Controller; 
+    public GameObject npc2; 
+    public GameObject npc22; 
     
-     
 
     void Start()
     {
@@ -37,17 +37,15 @@ public class enemy4controller : MonoBehaviour
     {
         isDetected();
 
-        // Vector2 direction = new Vector2((Player.position.x - transform.position.x)/2, 0).normalized;
-        // movement = direction;
-
         if (Vector3.Distance(transform.position, Player.position) < attackRange)
         {
             AttackPlayer();
         }
-        if (health == 1 && !hasSplit)
+        if (health == 1)
         {
-            SplitSprite(); 
-            hasSplit = true; 
+            Destroy(gameObject); 
+            npc2.SetActive(true); 
+            npc22.SetActive(true);  
         }
     }
 
@@ -63,17 +61,10 @@ public class enemy4controller : MonoBehaviour
 
     }
 
-    void SplitSprite()
-    {
-        GameObject newEnemy1 = Instantiate(enemy2Prefab, transform.position, transform.rotation);
-        GameObject newEnemy2 = Instantiate(enemy2Prefab, transform.position, transform.rotation);
-
-        // Set the health of the new enemies to 1
-        // newEnemy1.GetComponent<Enemy2Controller>().health = 1;
-        // newEnemy2.GetComponent<Enemy2Controller>().health = 1;
-
-        Destroy(gameObject); 
-    }
+    // void SplitSprite()
+    // {
+        
+    // }
 
     
 
@@ -103,6 +94,11 @@ public class enemy4controller : MonoBehaviour
             }
              
         }
+    }
+
+    public int GetHealth()
+    {
+        return health; 
     }
 
     void HandleAttack(GameObject bullet) 
