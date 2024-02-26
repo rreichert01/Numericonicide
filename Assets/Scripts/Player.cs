@@ -184,7 +184,7 @@ public class Player : MonoBehaviour
         }
 
     private void OnTriggerEnter2D(Collider2D collision)
-    {
+        {
         if (collision.gameObject.CompareTag("powerup") && collision.gameObject.name == "health") {
             health = maxHealth;
             healthBarScript.updateHealth(health, maxHealth);
@@ -210,11 +210,16 @@ public class Player : MonoBehaviour
             // Destroy(collision.gameObject); 
             // Instantiate(playeric2, transform.position, Quaternion.identity);
         }
+        if (collision.gameObject.CompareTag("portal"))
+        {
+            UnityEngine.Debug.Log("Change Scene");
+            // Add logic to change scene.
+        }
     }
 
 
     private void OnCollisionEnter2D(Collision2D collision)
-    {
+       {
         if (collision.gameObject.CompareTag("enemybullet"))
         {
             HandleAttack(collision.gameObject);
@@ -223,7 +228,7 @@ public class Player : MonoBehaviour
         {
             isGrounded = true;
         }
-    }
+      }
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.collider.tag == "Platform")

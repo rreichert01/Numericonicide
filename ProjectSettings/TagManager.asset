@@ -12,6 +12,7 @@ TagManager:
   - powerup
   - enemybullet
   - wall
+  - portal
   layers:
   - Default
   - TransparentFX
