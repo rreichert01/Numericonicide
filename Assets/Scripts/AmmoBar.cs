@@ -8,12 +8,18 @@ public class AmmoBar : MonoBehaviour
     private Vector3 originalScale;
     private Vector2 originalPosition;
     private RectTransform rectTransform;
+    void Awake() 
+    {
+        rectTransform = GetComponent<RectTransform>();
+        originalScale = transform.localScale;
+        originalPosition = rectTransform.anchoredPosition;
+    }
 
     void Start() 
     {
-        originalScale = transform.localScale;
+       /*  originalScale = transform.localScale;
         rectTransform = GetComponent<RectTransform>();
-        originalPosition = rectTransform.anchoredPosition;
+        originalPosition = rectTransform.anchoredPosition; */
     }
 
     public void updateAmmo(float ammo, float maxAmmo) {
