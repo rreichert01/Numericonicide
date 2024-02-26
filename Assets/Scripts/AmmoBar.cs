@@ -13,6 +13,7 @@ public class AmmoBar : MonoBehaviour
         rectTransform = GetComponent<RectTransform>();
         originalScale = transform.localScale;
         originalPosition = rectTransform.anchoredPosition;
+        
     }
 
     void Start() 
