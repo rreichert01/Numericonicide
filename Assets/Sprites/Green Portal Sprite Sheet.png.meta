@@ -1,0 +1,969 @@
+fileFormatVersion: 2
+guid: 23336bd2a9645af44803edfb1b346565
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    sRGBTexture: 0
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 0
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 0
+  spriteTessellationDetail: 0
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Green Portal Sprite Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 129
+        width: 44
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 978b41b65d553124a8de98e531507b49
+      internalID: 1155805921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green Portal Sprite Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 135
+        width: 20
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43caef24b76da7d468053bd5df080821
+      internalID: 2138669612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green Portal Sprite Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 135
+        width: 29
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 851aa7b7f2ab90142a6640b439e028b9
+      internalID: 524966566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green Portal Sprite Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 135
+        width: 33
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99ca1474f12e04d49b7ba65f3d3feff8
+      internalID: -2100709252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green Portal Sprite Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 135
+        width: 27
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dac1a7dc6ef6264589a6efc6219e026
+      internalID: -1869516785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green Portal Sprite Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 132
+        width: 39
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ee3faf4246392548b54ea999f4c88c9
+      internalID: 887981015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green Portal Sprite Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 135
+        width: 19
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1de0a7b8df90834b9b0d822df6a91f2
+      internalID: 208100548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green Portal Sprite Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 135
+        width: 23
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac3b9b238f7d53f40aeef6c163c20fc6
+      internalID: 1120402076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green Portal Sprite Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 88
+        width: 31
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0aa90629189b4645a6e1c17144ebd8d
+      internalID: -157352182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green Portal Sprite Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 69
+        width: 18
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e053dcad4b938e4e97b328d14225505
+      internalID: -251180898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green Portal Sprite Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 85
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5adc1e89a13518468ad047a305cdbaf
+      internalID: -211922664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green Portal Sprite Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 77
+        width: 13
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cf428af8ed3a6e4e8c8ea165c76cb33
+      internalID: 849900083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green Portal Sprite Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 71
+        width: 13
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c755456943e0e0244a4128a6e9659432
+      internalID: 1722777106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green Portal Sprite Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 473
+        y: 72
+        width: 13
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0442cf41a3268548bdc9dec2892367e
+      internalID: -67767720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green Portal Sprite Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 13
+        width: 41
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 433c47ee22231694b9dee2aac1a886a5
+      internalID: 311973581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green Portal Sprite Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 21
+        width: 29
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 859d929e60870d94ea6d105b6a702b03
+      internalID: -681396338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green Portal Sprite Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 27
+        width: 27
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20513ccc09de3cd4293f8eceab07b426
+      internalID: -964642838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green Portal Sprite Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 93
+        width: 27
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bac8f7287ded75749bc8895605eccd12
+      internalID: -1294760835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green Portal Sprite Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 87
+        width: 40
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 455a0a1c2da21514794507443ee843be
+      internalID: 997248022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green Portal Sprite Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 27
+        width: 29
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f12147b38b32c242a38d0d3358a5629
+      internalID: -859858068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green Portal Sprite Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 30
+        width: 17
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40b6fb283cf6d8541932d6f2dbfbc398
+      internalID: -1303312529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green Portal Sprite Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 29
+        width: 14
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 995dff6983a1ba44fa472b4d0fc2238a
+      internalID: 305041166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green Portal Sprite Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 31
+        width: 12
+        height: 3
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7dff94028cef0bc409a5b5c50f409377
+      internalID: -1342006757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green Portal Sprite Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 30
+        width: 13
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff3776b3231c38741afb7886439234a3
+      internalID: 599032392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline:
+    - - {x: -228, y: -47}
+      - {x: -233, y: -51}
+      - {x: -233, y: -83}
+      - {x: -230, y: -85}
+      - {x: -218, y: -85}
+      - {x: -213, y: -71}
+      - {x: -213, y: -48}
+      - {x: -215, y: -47}
+    - - {x: -235, y: -84}
+      - {x: -232, y: -83}
+      - {x: -232, y: -80}
+      - {x: -235, y: -79}
+      - {x: -237, y: -81}
+    - - {x: -173, y: -77}
+      - {x: -170, y: -76}
+      - {x: -170, y: -73}
+      - {x: -173, y: -72}
+      - {x: -175, y: -74}
+    - - {x: -172, y: -56}
+      - {x: -172, y: -77}
+      - {x: -158, y: -77}
+      - {x: -149, y: -75}
+      - {x: -149, y: -56}
+    - - {x: -240, y: -71}
+      - {x: -237, y: -70}
+      - {x: -237, y: -67}
+      - {x: -240, y: -66}
+      - {x: -242, y: -68}
+    - - {x: -109, y: -59}
+      - {x: -113, y: -62}
+      - {x: -113, y: -70}
+      - {x: -109, y: -71}
+      - {x: -84, y: -71}
+      - {x: -82, y: -69}
+      - {x: -82, y: -59}
+    - - {x: -148, y: -70}
+      - {x: -145, y: -68}
+      - {x: -147, y: -63}
+      - {x: -150, y: -63}
+      - {x: -151, y: -66}
+    - - {x: -45, y: -61}
+      - {x: -49, y: -64}
+      - {x: -49, y: -67}
+      - {x: -45, y: -68}
+      - {x: -19, y: -68}
+      - {x: -18, y: -65}
+      - {x: -18, y: -64}
+      - {x: -22, y: -61}
+    - - {x: 10, y: -63}
+      - {x: 11, y: -66}
+      - {x: 25, y: -66}
+      - {x: 27, y: -64}
+      - {x: 26, y: -61}
+      - {x: 12, y: -61}
+    - - {x: 34, y: -61}
+      - {x: 33, y: -63}
+      - {x: 33, y: -66}
+      - {x: 50, y: -66}
+      - {x: 51, y: -64}
+      - {x: 50, y: -61}
+    - - {x: 71, y: -63}
+      - {x: 72, y: -66}
+      - {x: 77, y: -66}
+      - {x: 79, y: -64}
+      - {x: 78, y: -61}
+      - {x: 73, y: -61}
+    - - {x: 81, y: -66}
+      - {x: 84, y: -65}
+      - {x: 84, y: -62}
+      - {x: 81, y: -61}
+      - {x: 79, y: -63}
+    - - {x: 105, y: -61}
+      - {x: 103, y: -62}
+      - {x: 103, y: -64}
+      - {x: 105, y: -66}
+      - {x: 116, y: -66}
+      - {x: 118, y: -64}
+      - {x: 117, y: -61}
+    - - {x: -244, y: -63}
+      - {x: -241, y: -62}
+      - {x: -241, y: -59}
+      - {x: -244, y: -58}
+      - {x: -246, y: -60}
+    - - {x: -236, y: -51}
+      - {x: -233, y: -50}
+      - {x: -233, y: -47}
+      - {x: -236, y: -46}
+      - {x: -238, y: -48}
+    - - {x: 92, y: 20}
+      - {x: 87, y: 12}
+      - {x: 87, y: -19}
+      - {x: 92, y: -27}
+      - {x: 99, y: -27}
+      - {x: 104, y: -19}
+      - {x: 104, y: 12}
+      - {x: 99, y: 20}
+    - - {x: 162, y: 17}
+      - {x: 158, y: 17}
+      - {x: 152, y: 15}
+      - {x: 151, y: 9}
+      - {x: 151, y: -21}
+      - {x: 154, y: -27}
+      - {x: 166, y: -27}
+      - {x: 168, y: -26}
+      - {x: 168, y: 8}
+      - {x: 167, y: 11}
+    - - {x: 215, y: -19}
+      - {x: 219, y: -26}
+      - {x: 228, y: -26}
+      - {x: 232, y: -25}
+      - {x: 232, y: 15}
+      - {x: 231, y: 19}
+      - {x: 220, y: 19}
+      - {x: 215, y: 11}
+    - - {x: 27, y: 17}
+      - {x: 23, y: 11}
+      - {x: 23, y: -18}
+      - {x: 30, y: -21}
+      - {x: 37, y: -21}
+      - {x: 40, y: -19}
+      - {x: 40, y: 11}
+      - {x: 39, y: 17}
+    - - {x: -39, y: 8}
+      - {x: -44, y: 4}
+      - {x: -44, y: -6}
+      - {x: -42, y: -13}
+      - {x: -27, y: -13}
+      - {x: -23, y: -9}
+      - {x: -23, y: 1}
+      - {x: -25, y: 8}
+    - - {x: -84, y: 5}
+      - {x: -106, y: 5}
+      - {x: -113, y: 4}
+      - {x: -113, y: -7}
+      - {x: -84, y: -7}
+      - {x: -82, y: -5}
+      - {x: -82, y: 1}
+      - {x: -83, y: 4}
+    - - {x: -173, y: 3}
+      - {x: -177, y: 0}
+      - {x: -177, y: -1}
+      - {x: -173, y: -4}
+      - {x: -150, y: -4}
+      - {x: -146, y: -1}
+      - {x: -146, y: 0}
+      - {x: -150, y: 3}
+    - - {x: -239, y: 1}
+      - {x: -238, y: -2}
+      - {x: -214, y: -2}
+      - {x: -212, y: 0}
+      - {x: -213, y: 3}
+      - {x: -237, y: 3}
+    - - {x: 92, y: 82}
+      - {x: 87, y: 74}
+      - {x: 87, y: 42}
+      - {x: 96, y: 34}
+      - {x: 104, y: 34}
+      - {x: 104, y: 79}
+      - {x: 99, y: 82}
+    - - {x: -221, y: 83}
+      - {x: -228, y: 83}
+      - {x: -234, y: 75}
+      - {x: -237, y: 48}
+      - {x: -237, y: 39}
+      - {x: -229, y: 37}
+      - {x: -221, y: 37}
+      - {x: -216, y: 45}
+      - {x: -213, y: 67}
+      - {x: -213, y: 77}
+    - - {x: -149, y: 80}
+      - {x: -156, y: 82}
+      - {x: -164, y: 82}
+      - {x: -169, y: 76}
+      - {x: -169, y: 37}
+      - {x: -157, y: 37}
+      - {x: -149, y: 44}
+      - {x: -148, y: 48}
+      - {x: -148, y: 77}
+    - - {x: -93, y: 81}
+      - {x: -100, y: 81}
+      - {x: -108, y: 72}
+      - {x: -108, y: 52}
+      - {x: -105, y: 38}
+      - {x: -102, y: 37}
+      - {x: -92, y: 37}
+      - {x: -86, y: 45}
+      - {x: -86, y: 73}
+    - - {x: -38, y: 82}
+      - {x: -45, y: 65}
+      - {x: -45, y: 51}
+      - {x: -44, y: 49}
+      - {x: -37, y: 37}
+      - {x: -29, y: 37}
+      - {x: -20, y: 47}
+      - {x: -20, y: 64}
+      - {x: -27, y: 82}
+    - - {x: 28, y: 83}
+      - {x: 23, y: 75}
+      - {x: 23, y: 40}
+      - {x: 28, y: 37}
+      - {x: 39, y: 37}
+      - {x: 42, y: 41}
+      - {x: 42, y: 70}
+      - {x: 36, y: 83}
+    - - {x: 153, y: 81}
+      - {x: 148, y: 75}
+      - {x: 147, y: 70}
+      - {x: 147, y: 67}
+      - {x: 149, y: 66}
+      - {x: 147, y: 65}
+      - {x: 151, y: 43}
+      - {x: 156, y: 37}
+      - {x: 161, y: 37}
+      - {x: 167, y: 39}
+      - {x: 168, y: 45}
+      - {x: 168, y: 78}
+      - {x: 163, y: 81}
+    - - {x: 220, y: 82}
+      - {x: 214, y: 76}
+      - {x: 214, y: 37}
+      - {x: 229, y: 37}
+      - {x: 232, y: 40}
+      - {x: 232, y: 74}
+      - {x: 229, y: 82}
+    - - {x: -169, y: 38}
+      - {x: -166, y: 39}
+      - {x: -166, y: 42}
+      - {x: -169, y: 43}
+      - {x: -171, y: 41}
+    - - {x: 104, y: 40}
+      - {x: 107, y: 41}
+      - {x: 107, y: 44}
+      - {x: 104, y: 45}
+      - {x: 102, y: 43}
+    - - {x: 76, y: 52}
+      - {x: 75, y: 50}
+      - {x: 75, y: 47}
+      - {x: 78, y: 45}
+      - {x: 82, y: 45}
+      - {x: 84, y: 46}
+      - {x: 84, y: 50}
+      - {x: 81, y: 52}
+    - - {x: 17, y: 57}
+      - {x: 17, y: 50}
+      - {x: 20, y: 48}
+      - {x: 23, y: 49}
+      - {x: 23, y: 55}
+      - {x: 21, y: 57}
+    - - {x: 43, y: 48}
+      - {x: 46, y: 49}
+      - {x: 46, y: 52}
+      - {x: 43, y: 53}
+      - {x: 41, y: 51}
+    - - {x: -240, y: 54}
+      - {x: -237, y: 55}
+      - {x: -237, y: 58}
+      - {x: -240, y: 59}
+      - {x: -242, y: 57}
+    - - {x: -84, y: 55}
+      - {x: -81, y: 56}
+      - {x: -81, y: 59}
+      - {x: -84, y: 60}
+      - {x: -86, y: 58}
+    - - {x: -17, y: 55}
+      - {x: -14, y: 56}
+      - {x: -14, y: 59}
+      - {x: -17, y: 60}
+      - {x: -19, y: 58}
+    - - {x: 211, y: 59}
+      - {x: 214, y: 60}
+      - {x: 214, y: 63}
+      - {x: 211, y: 64}
+      - {x: 209, y: 62}
+    - - {x: -85, y: 62}
+      - {x: -82, y: 63}
+      - {x: -82, y: 66}
+      - {x: -85, y: 67}
+      - {x: -87, y: 65}
+    - - {x: -19, y: 63}
+      - {x: -16, y: 64}
+      - {x: -16, y: 67}
+      - {x: -19, y: 68}
+      - {x: -21, y: 66}
+    - - {x: -244, y: 64}
+      - {x: -241, y: 65}
+      - {x: -241, y: 68}
+      - {x: -244, y: 69}
+      - {x: -246, y: 67}
+    - - {x: -46, y: 68}
+      - {x: -43, y: 69}
+      - {x: -43, y: 72}
+      - {x: -46, y: 73}
+      - {x: -48, y: 71}
+    - - {x: 212, y: 68}
+      - {x: 215, y: 69}
+      - {x: 215, y: 72}
+      - {x: 212, y: 73}
+      - {x: 210, y: 71}
+    - - {x: 213, y: 75}
+      - {x: 216, y: 76}
+      - {x: 216, y: 79}
+      - {x: 213, y: 80}
+      - {x: 211, y: 78}
+    - - {x: -82, y: 78}
+      - {x: -79, y: 79}
+      - {x: -79, y: 82}
+      - {x: -82, y: 83}
+      - {x: -84, y: 81}
+    - - {x: -236, y: 79}
+      - {x: -233, y: 80}
+      - {x: -233, y: 83}
+      - {x: -236, y: 84}
+      - {x: -238, y: 82}
+    - - {x: -89, y: 79}
+      - {x: -86, y: 80}
+      - {x: -86, y: 83}
+      - {x: -89, y: 84}
+      - {x: -91, y: 82}
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 1537655665
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Green Portal Sprite Sheet_16: -964642838
+      Green Portal Sprite Sheet_22: -1342006757
+      Green Portal Sprite Sheet_3: -2100709252
+      Green Portal Sprite Sheet_11: 849900083
+      Green Portal Sprite Sheet_10: -211922664
+      Green Portal Sprite Sheet_18: 997248022
+      Green Portal Sprite Sheet_23: 599032392
+      Green Portal Sprite Sheet_17: -1294760835
+      Green Portal Sprite Sheet_19: -859858068
+      Green Portal Sprite Sheet_5: 887981015
+      Green Portal Sprite Sheet_15: -681396338
+      Green Portal Sprite Sheet_9: -251180898
+      Green Portal Sprite Sheet_21: 305041166
+      Green Portal Sprite Sheet_6: 208100548
+      Green Portal Sprite Sheet_0: 1155805921
+      Green Portal Sprite Sheet_2: 524966566
+      Green Portal Sprite Sheet_4: -1869516785
+      Green Portal Sprite Sheet_14: 311973581
+      Green Portal Sprite Sheet_1: 2138669612
+      Green Portal Sprite Sheet_12: 1722777106
+      Green Portal Sprite Sheet_8: -157352182
+      Green Portal Sprite Sheet_13: -67767720
+      Green Portal Sprite Sheet_7: 1120402076
+      Green Portal Sprite Sheet_20: -1303312529
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
