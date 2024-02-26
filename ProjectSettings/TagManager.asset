@@ -10,6 +10,8 @@ TagManager:
   - Bomb
   - playerc
   - powerup
+  - enemybullet
+  - wall
   layers:
   - Default
   - TransparentFX
