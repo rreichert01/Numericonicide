@@ -14,7 +14,7 @@ public class upgradeWeapon : MonoBehaviour
     public float fireRate = 10f;
     private float nextTimeToFire = 0f;
     public UIManager uiManager;
-
+    public AmmoBar AmmoBarScript;
     public float reloadTime = 2f; // Length of reload time
     public int magazineCapacity = 20; // Number of rounds in the magazine
     private int currentAmmo; // Current ammo count in the magazine
@@ -23,6 +23,7 @@ public class upgradeWeapon : MonoBehaviour
     void Start()
     {
         currentAmmo = magazineCapacity; // Initialize current ammo count to full magazine
+    
     }
 
 
@@ -50,6 +51,7 @@ public class upgradeWeapon : MonoBehaviour
         var bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         bullet.GetComponent<Rigidbody2D>().velocity = transform.right * speed;
         uiManager.UpdateBulletCountUI(currentAmmo);
+        AmmoBarScript.updateAmmo(currentAmmo, magazineCapacity);
     }
 
 
@@ -67,6 +69,7 @@ public class upgradeWeapon : MonoBehaviour
         // Set reloading flag to false
         isReloading = false;
         uiManager.UpdateBulletCountUI(currentAmmo);
+        AmmoBarScript.updateAmmo(currentAmmo, magazineCapacity);
     }
 
 
