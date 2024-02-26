@@ -90,12 +90,7 @@ public class enemy4controller : MonoBehaviour
              
         }
     }
-
-    public int GetHealth()
-    {
-        return health; 
-    }
-
+    
     void HandleAttack(GameObject bullet) 
     {
         Destroy(bullet);
