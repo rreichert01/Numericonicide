@@ -61,12 +61,7 @@ public class enemy4controller : MonoBehaviour
 
     }
 
-    // void SplitSprite()
-    // {
-        
-    // }
 
-    
 
     void AttackPlayer()
     {
