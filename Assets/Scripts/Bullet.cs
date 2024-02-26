@@ -6,7 +6,7 @@ public class Bullet : MonoBehaviour
 {
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.tag == "Platform")
+        if (collision.collider.tag == "Platform" || collision.collider.tag == "wall")
         {
             Destroy(gameObject);
         }
