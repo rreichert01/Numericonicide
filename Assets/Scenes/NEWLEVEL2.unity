@@ -4026,7 +4026,7 @@ MonoBehaviour:
   detectionDistance: 18
   player: {fileID: 1937855794}
   playerScript: {fileID: 1937855795}
-  spawnRadius: 5
+  spawnRadius: 10
 --- !u!61 &1359198342
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4312,7 +4312,7 @@ MonoBehaviour:
   detectionDistance: 18
   player: {fileID: 1937855794}
   playerScript: {fileID: 1937855795}
-  spawnRadius: 5
+  spawnRadius: 10
 --- !u!1 &1429729599
 GameObject:
   m_ObjectHideFlags: 0
@@ -4369,7 +4369,7 @@ MonoBehaviour:
   detectionDistance: 18
   player: {fileID: 1937855794}
   playerScript: {fileID: 1937855795}
-  spawnRadius: 5
+  spawnRadius: 10
 --- !u!61 &1429729602
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6352,7 +6352,7 @@ MonoBehaviour:
   upgradeGun: {fileID: 443158063}
   switchDistance: 2
   health: 0
-  maxHealth: 25
+  maxHealth: 200
   newSprite: {fileID: 21300000, guid: 651fe56fdcb3c44aba62b3c883acef7a, type: 3}
   scaleFactor: 2
   healthBarScript: {fileID: 1593736614}
