@@ -66,48 +66,34 @@ public class Player : MonoBehaviour
 
         float speedMultiplier = isSprinting ? 2.0f : 1.0f;
 
+        // if (isMovingLeft)
+        // {
+        //     move.x -= moveSpeed * Time.deltaTime * speedMultiplier;
+        //     if (transform.localScale.x > 0) //if player facing right
+        //     {
+        //         transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z); //flip
+        //     }
+        // }
+
+        // if (isMovingRight)
+        // {
+        //     move.x += moveSpeed * Time.deltaTime * speedMultiplier;
+        //     if (transform.localScale.x < 0)
+        //     {
+        //         transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+        //     }
+        // }
         if (isMovingLeft)
         {
             move.x -= moveSpeed * Time.deltaTime * speedMultiplier;
-            if (transform.localScale.x > 0) //if player facing right
-            {
-                transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z); //flip
-            }
+            transform.eulerAngles = new Vector3(0f, 180f, 0);
         }
 
         if (isMovingRight)
         {
             move.x += moveSpeed * Time.deltaTime * speedMultiplier;
-            if (transform.localScale.x < 0)
-            {
-                transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
-            }
+            transform.eulerAngles = Vector3.zero;
         }
-        // if (Input.GetKey(KeyCode.A))
-        // {
-        //     if (Input.GetKey(KeyCode.RightShift) || Input.GetKey(KeyCode.LeftShift))
-        //     {
-        //         move.x -= moveSpeed * Time.deltaTime * 2;
-        //     }
-        //     else
-        //     {
-        //         move.x -= moveSpeed * Time.deltaTime;
-        //     }
-        //     transform.eulerAngles = new Vector3(0f, 180f, 0);
-        // }
-
-        // if (Input.GetKey(KeyCode.D))
-        // {
-        //     if (Input.GetKey(KeyCode.RightShift) || Input.GetKey(KeyCode.LeftShift))
-        //     {
-        //         move.x += moveSpeed * Time.deltaTime * 2;
-        //     }
-        //     else
-        //     {
-        //         move.x += moveSpeed * Time.deltaTime;
-        //     }
-        //     transform.eulerAngles = Vector3.zero;
-        // }
         transform.position += move;
 
         if (!isGrounded && Input.GetKey(KeyCode.S))
