@@ -20,11 +20,14 @@ public class Enemy5Controller : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Color originalColor;
     private bool isGrounded;
+    private float followDuration = 5f; 
+    private float roamDuration = 5f; 
+    private float lastActionTime = 5f; 
     private float changePositionInterval = 5f; 
     private float lastPositionChangeTime; 
-
+    
     // Start is called before the first frame update
-
+    
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -103,7 +106,7 @@ public class Enemy5Controller : MonoBehaviour
             {
                 playerScript.TakeDamage(damage);
             }
-
+             
         }
     }
 
@@ -121,21 +124,17 @@ public class Enemy5Controller : MonoBehaviour
         spriteRenderer.color = originalColor;
     }
 
-    // IEnumerator SpawnEnemies()
-    // {
-    //     while (true){
-    //         Vector3 spawnPosition = GetRandomSpawnPosition(); 
-    //         Instantiate(enemy5Prefab, spawnPosition, Quaternion.identity);
-    //         //SpawnEnemy(spawnPosition); 
-    //         yield return new WaitForSeconds(spawnInterval); 
-    //     }
+    private Vector3 PositionAwayFromPlayer()
+    {
+        float RandomX = player.transform.position.x + Random.Range(-20, 30); 
+        float yPosition = player.transform.position.y + Random.Range(0, 10); 
+        Vector3 spawnPosition = new Vector3(RandomX, yPosition, 0f); 
 
-    // }
+        return spawnPosition; 
+    }
 
     private Vector3 GetRandomSpawnPosition()
     {
-        //Vector3 playerDirection = player.localScale.x > 0 ? Vector3.right : Vector3.left;
-       // float randomX = player.position.x + Random.Range(0f, spawnRadius) * playerDirection.x; 
         float randomX = player.transform.position.x + Random.Range(-spawnRadius, spawnRadius);
         float yPosition = player.transform.position.y; 
 
@@ -145,6 +144,6 @@ public class Enemy5Controller : MonoBehaviour
         return spawnPosition; 
     }
 
-
-
+    
+    
 }

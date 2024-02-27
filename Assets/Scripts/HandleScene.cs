@@ -13,5 +13,9 @@ public class HandleScene : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
+    public void OpenLevel2Scene()
+    {
+        SceneManager.LoadScene(2);
+    }
 }
 

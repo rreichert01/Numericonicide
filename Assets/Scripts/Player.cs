@@ -228,6 +228,12 @@ public class Player : MonoBehaviour
         {
             isGrounded = true;
         }
+        if (collision.collider.tag == "portal")
+        {
+            FindObjectOfType<HandleScene>().OpenLevel2Scene();
+            UnityEngine.Debug.Log("Level 2 Open");
+        }
+    
       }
     private void OnCollisionExit2D(Collision2D collision)
     {
