@@ -27,7 +27,7 @@ public class Player : MonoBehaviour
     public int maxHealth = 10; 
     //public GameObject playeric2; 
     public Sprite newSprite; 
-    public float scaleFactor = 2.0f;
+    public float scaleFactor = 0.5f;
     private SpriteRenderer spriteRenderer;
     private Color originalColor;
     private bool invuln = false;
@@ -192,10 +192,24 @@ public class Player : MonoBehaviour
                 spriteRenderer.sprite = newSprite; 
                 transform.localScale *= scaleFactor;
             }
+            
+        }
+        if (collision.gameObject.CompareTag("playere"))
+        {
+            SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>(); 
+            if (spriteRenderer != null && newSprite != null)
+            {
+                Destroy(collision.gameObject); 
+                spriteRenderer.sprite = newSprite; 
+                //Vector3 scaleFactor = new Vector3(1f / originalScale.x, 1f / originalScale.y, 1f / originalScale.z);
+                transform.localScale *= scaleFactor;
+            }
+            
             // Destroy(gameObject);
             // Destroy(collision.gameObject); 
             // Instantiate(playeric2, transform.position, Quaternion.identity);
         }
+
         if (collision.gameObject.CompareTag("portal"))
         {
             UnityEngine.Debug.Log("Change Scene");
