@@ -11,6 +11,7 @@ TagManager:
   - playerc
   - powerup
   - enemybullet
+  - wall
   - portal
   layers:
   - Default
