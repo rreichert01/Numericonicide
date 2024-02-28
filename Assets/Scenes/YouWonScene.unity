@@ -265,9 +265,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Play Again
-
-'
+  m_text: Title Screen
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b7b63ebf27ad2584b88d69136f2f1795, type: 2}
   m_sharedMaterial: {fileID: -743005173480216198, guid: b7b63ebf27ad2584b88d69136f2f1795, type: 2}
@@ -571,8 +569,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Game Over! \nYou Died\n\nIf you want to play Again press the play again
-    button"
+  m_text: "Game Over! \nYou WIN\n\nIf you would like to go back to the title screen,
+    press the button"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b7b63ebf27ad2584b88d69136f2f1795, type: 2}
   m_sharedMaterial: {fileID: -743005173480216198, guid: b7b63ebf27ad2584b88d69136f2f1795, type: 2}
@@ -771,8 +769,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 234, y: 113}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 220.9989, y: 113}
+  m_SizeDelta: {x: 186.0022, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &925587211
 MonoBehaviour:
