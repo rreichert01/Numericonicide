@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Weapon : MonoBehaviour
 {
@@ -47,7 +48,8 @@ public class Weapon : MonoBehaviour
     {
         currentAmmo--;
         var bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation); 
-        bullet.GetComponent<Rigidbody2D>().velocity = transform.right * speed; 
+        bullet.GetComponent<Rigidbody2D>().velocity = transform.right * speed * Math.Sign(transform.lossyScale.x);
+        UnityEngine.Debug.Log(transform.forward);
         uiManager.UpdateBulletCountUI(currentAmmo);
         AmmoBarScript.updateAmmo(currentAmmo, magazineCapacity);
     }

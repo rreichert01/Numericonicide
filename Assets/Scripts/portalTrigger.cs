@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class portalTrigger : MonoBehaviour
 {
+    public int nextScene;
     void Start()
     {
         
@@ -19,8 +21,7 @@ public class portalTrigger : MonoBehaviour
         UnityEngine.Debug.Log(collision.collider.tag);
         if (collision.collider.tag == "Player")
         {
-            FindObjectOfType<HandleScene>().OpenLevel2Scene();
-            UnityEngine.Debug.Log("Level 2 Open");
+            SceneManager.LoadScene(nextScene);
         }
     
       }

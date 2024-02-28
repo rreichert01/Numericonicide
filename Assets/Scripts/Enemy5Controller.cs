@@ -82,8 +82,11 @@ public class Enemy5Controller : MonoBehaviour
 
     void ChangePosition()
     {
-        Vector3 newPosition = GetRandomSpawnPosition(); 
-        transform.position = newPosition; 
+        if (detectedPlayer)
+        {
+            Vector3 newPosition = GetRandomSpawnPosition();
+            transform.position = newPosition;
+        }
     }
 
 
