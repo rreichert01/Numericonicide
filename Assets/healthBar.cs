@@ -9,19 +9,20 @@ public class healthBar : MonoBehaviour
     private Vector2 originalPosition;
     private RectTransform rectTransform;
 
-    void Start() 
+    void Start()
     {
         originalScale = transform.localScale;
         rectTransform = GetComponent<RectTransform>();
         originalPosition = rectTransform.anchoredPosition;
     }
 
-    public void updateHealth(float health, float maxHealth) {
+    public void updateHealth(float health, float maxHealth)
+    {
         float healthPercentage = health / maxHealth;
         Vector3 newScale = new Vector3(transform.localScale.x, healthPercentage * originalScale.y, transform.localScale.z);
         transform.localScale = newScale;
         float yOffset = (originalScale.y - healthPercentage * originalScale.y) / 2f;
-        
+
         Vector3 newPosition = new Vector2(originalPosition.x, originalPosition.y - yOffset);
         UnityEngine.Debug.Log((Vector3.up * yOffset));
         rectTransform.anchoredPosition = newPosition;

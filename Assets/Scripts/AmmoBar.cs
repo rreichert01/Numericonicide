@@ -1,4 +1,7 @@
 using UnityEngine;
+using System;
+using System.Collections;
+
 
 public class AmmoBar : MonoBehaviour
 {
@@ -8,12 +11,20 @@ public class AmmoBar : MonoBehaviour
     private Vector3 originalScale;
     private Vector2 originalPosition;
     private RectTransform rectTransform;
+    private bool isFlashing = false;
+    private SpriteRenderer spriteRenderer;
+    private Color originalColor;
+    private float _ammo = 1;
+
+
     void Awake() 
     {
         rectTransform = GetComponent<RectTransform>();
         originalScale = transform.localScale;
         originalPosition = rectTransform.anchoredPosition;
-        
+        GameObject obj = GameObject.Find("AmmoBarBack");
+        spriteRenderer = obj.GetComponent<SpriteRenderer>();
+        originalColor = spriteRenderer.color;
     }
 
     void Start() 
@@ -23,6 +34,21 @@ public class AmmoBar : MonoBehaviour
         originalPosition = rectTransform.anchoredPosition; */
     }
 
+    IEnumerator ChangeColorCoroutine(Color newColor, float duration)
+    {   
+        while (_ammo == 0) {
+        // Change the color go the new color
+        spriteRenderer.color = newColor;
+
+        // Wait for the specified duration
+        yield return new WaitForSeconds(duration / 2);
+
+        // Change the color back to the original color
+        spriteRenderer.color = originalColor;
+
+        yield return new WaitForSeconds(duration / 2);
+        }
+    }
     public void updateAmmo(float ammo, float maxAmmo) {
         float healthPercentage = ammo / maxAmmo;
         Vector3 newScale = new Vector3(transform.localScale.x, healthPercentage * originalScale.y, transform.localScale.z);
@@ -31,5 +57,9 @@ public class AmmoBar : MonoBehaviour
         
         Vector3 newPosition = new Vector2(originalPosition.x, originalPosition.y - yOffset);
         rectTransform.anchoredPosition = newPosition;
+        _ammo = ammo;
+        if (ammo == 0) {
+            StartCoroutine(ChangeColorCoroutine(Color.red, 0.6f));
+        }
     }
 }
