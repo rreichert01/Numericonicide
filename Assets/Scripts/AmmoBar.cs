@@ -49,6 +49,26 @@ public class AmmoBar : MonoBehaviour
         yield return new WaitForSeconds(duration / 2);
         }
     }
+    public void reloadAnimation(int maxAmmo, float reloadTime)
+    {
+        StartCoroutine(reloadAnim( reloadTime / (float) maxAmmo, maxAmmo));
+    }
+
+    IEnumerator reloadAnim(float waitTime, int maxAmmo)
+    {
+        int currentAmmo = 0;
+        spriteRenderer.color = originalColor;
+        while (currentAmmo < maxAmmo)
+        {
+            currentAmmo++;
+            updateAmmo(currentAmmo, maxAmmo);
+            yield return new WaitForSeconds(waitTime);
+        }
+        
+    }
+
+
+
     public void updateAmmo(float ammo, float maxAmmo) {
         float healthPercentage = ammo / maxAmmo;
         Vector3 newScale = new Vector3(transform.localScale.x, healthPercentage * originalScale.y, transform.localScale.z);

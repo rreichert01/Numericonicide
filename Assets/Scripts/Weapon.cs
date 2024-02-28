@@ -42,6 +42,7 @@ public class Weapon : MonoBehaviour
         // Check for input to reload if magazine is empty and not already reloading
         if (Input.GetKeyDown(KeyCode.R) && !isReloading && currentAmmo != magazineCapacity)
         {
+            AmmoBarScript.reloadAnimation(magazineCapacity, reloadTime);
             StartCoroutine(Reload());
         }
 

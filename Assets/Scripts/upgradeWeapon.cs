@@ -45,6 +45,7 @@ public class upgradeWeapon : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.R) && !isReloading && currentAmmo != magazineCapacity)
         {
+            AmmoBarScript.reloadAnimation(magazineCapacity, reloadTime);
             StartCoroutine(Reload());
         }
 
