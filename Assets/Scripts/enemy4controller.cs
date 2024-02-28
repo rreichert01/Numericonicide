@@ -74,6 +74,16 @@ public class enemy4controller : MonoBehaviour
         return hit.Length > 2;
     }
 
+    private void OnTriggerEnter2D(Collider2D collision) {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            if(playerScript != null)
+            {
+                playerScript.TakeDamage(damage);
+            }      
+        }
+    }
+
     void OnCollisionEnter2D(Collision2D collision)
     {
         // Check if the colliding object has the tag "Bullet"
