@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.Reflection;
 using System;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 
 public class Player : MonoBehaviour
@@ -251,8 +252,7 @@ public class Player : MonoBehaviour
         healthBarScript.updateHealth(health, maxHealth);
         StartCoroutine(ChangeColorCoroutine(Color.red, 0.2f));
         if (health <= 0){
-            Destroy(gameObject);
-            return;
+            SceneManager.LoadScene(4);
         }
          
     }
@@ -261,9 +261,8 @@ public class Player : MonoBehaviour
     {
         Destroy(enemybullet);
         if (--health <= 0) 
-        { 
-            Destroy(gameObject);
-            return;
+        {
+            SceneManager.LoadScene(4);
         }
         StartCoroutine(ChangeColorCoroutine(Color.red, 0.2f));
     }
