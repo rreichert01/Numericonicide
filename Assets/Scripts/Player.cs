@@ -254,7 +254,7 @@ public class Player : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-
+         
     }
 
     void HandleAttack(GameObject enemybullet) 

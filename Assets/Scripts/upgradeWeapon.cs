@@ -19,6 +19,7 @@ public class upgradeWeapon : MonoBehaviour
     public int magazineCapacity = 20; // Number of rounds in the magazine
     private int currentAmmo; // Current ammo count in the magazine
     private bool isReloading; // Flag to indicate if the gun is currently reloading
+    private bool isUp;
 
     void Start()
     {
@@ -30,7 +31,11 @@ public class upgradeWeapon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-            // Check if space bar is pressed and if enough time has passed since the last shot
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            rotateGun();
+        }
+        // Check if space bar is pressed and if enough time has passed since the last shot
         if (Input.GetKey(KeyCode.Space) && Time.time >= nextTimeToFire && IsChild() && currentAmmo > 0 && !isReloading)
         {
             nextTimeToFire = Time.time + 1f / fireRate; // Update next allowed shot time
@@ -50,10 +55,24 @@ public class upgradeWeapon : MonoBehaviour
         currentAmmo--;
         var bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         bullet.GetComponent<Rigidbody2D>().velocity = transform.right * speed;
-        uiManager.UpdateBulletCountUI(currentAmmo);
+        //uiManager.UpdateBulletCountUI(currentAmmo);
         AmmoBarScript.updateAmmo(currentAmmo, magazineCapacity);
     }
 
+    void rotateGun()
+    {
+        if (!isUp)
+        {
+            firePoint.localRotation = new UnityEngine.Quaternion(firePoint.localRotation.x, firePoint.localRotation.y, 1, firePoint.localRotation.w);
+            isUp = true;
+        }
+        else
+        {
+            firePoint.rotation = new UnityEngine.Quaternion(firePoint.localRotation.x, firePoint.localRotation.y, 0, firePoint.localRotation.w);
+            isUp = false;
+        }
+
+    }
 
     IEnumerator Reload()
     {
@@ -68,7 +87,7 @@ public class upgradeWeapon : MonoBehaviour
 
         // Set reloading flag to false
         isReloading = false;
-        uiManager.UpdateBulletCountUI(currentAmmo);
+        //uiManager.UpdateBulletCountUI(currentAmmo);
         AmmoBarScript.updateAmmo(currentAmmo, magazineCapacity);
     }
 
