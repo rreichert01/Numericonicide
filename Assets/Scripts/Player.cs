@@ -163,7 +163,8 @@ public class Player : MonoBehaviour
     private void Jump()
         {
             rb.velocity = Vector2.up * jumpForce;
-        }
+            isGrounded = false;
+    }
 
         private void Down()
         {
@@ -240,7 +241,7 @@ public class Player : MonoBehaviour
     {
         if (collision.collider.tag == "Platform")
         {
-            isGrounded = false;
+            //isGrounded = false;
         }
     }
 
