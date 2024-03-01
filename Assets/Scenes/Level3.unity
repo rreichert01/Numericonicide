@@ -7204,14 +7204,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 892e7fc4f707d470c9458d822dd6ac39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
+  Player: {fileID: 1937855797}
   moveSpeed: 2.5
   attackRange: 2.5
   health: 6
   damage: 6
   detectionDistance: 18
-  player: {fileID: 0}
-  playerScript: {fileID: 0}
+  player: {fileID: 1937855794}
+  playerScript: {fileID: 1937855795}
   verticalRange: 2
 --- !u!61 &1071982097
 BoxCollider2D:
@@ -12273,14 +12273,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 892e7fc4f707d470c9458d822dd6ac39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
+  Player: {fileID: 1937855797}
   moveSpeed: 2.5
   attackRange: 2.5
   health: 6
   damage: 6
   detectionDistance: 18
-  player: {fileID: 0}
-  playerScript: {fileID: 0}
+  player: {fileID: 1937855794}
+  playerScript: {fileID: 1937855795}
   verticalRange: 2
 --- !u!61 &1889801977
 BoxCollider2D:
