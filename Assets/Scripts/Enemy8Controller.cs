@@ -21,57 +21,46 @@ public class Enemy8Controller : MonoBehaviour
     public Player playerScript;
     private SpriteRenderer spriteRenderer;
     private Color originalColor;
-    private bool isGrounded;
-    public float pullForce = 10f; 
-    public float pullRadius = 5f; 
-    //public LayerMask pullLayers; 
+    public float influenceRange; 
+    public float intensity; 
+    public float distanceToPlayer; 
+    private bool isGrounded; 
+    Vector2 pullForce;  
+    Rigidbody2D playerBody;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>(); 
+        playerBody = Player.GetComponent<Rigidbody2D>(); 
         isGrounded = false;
         spriteRenderer = GetComponent<SpriteRenderer>();
         originalColor = spriteRenderer.color;
     }
 
-    // Update is called once per frame
+
     void Update()
     {
+        distanceToPlayer = Vector2.Distance(Player.position, transform.position); 
         isDetected();
+        if(detectedPlayer)
+        {
+            if (distanceToPlayer <= influenceRange)
+            {
+            pullForce = (transform.position - Player.position).normalized / distanceToPlayer * intensity; 
+            playerBody.AddForce(pullForce, ForceMode2D.Force); 
+            }
+
+        }
         
     }
+
 
     public void isDetected()
     {
         detectedPlayer = Mathf.Abs(gameObject.transform.position.x - player.transform.position.x) < detectionDistance ? true : false;
-        // if (detectedPlayer)
-        // {
-        //     ApplyGravitationalPull(); 
-        // }
+      
     }
-
-    // void ApplyGravitationalPull()
-    // {
-
-    //     void ApplyGravitationalPull()
-    //     {
-    //         Vector2 direction = (transform.position - player.transform.position).normalized;
-    //         player.GetComponent<Rigidbody2D>().AddForce(direction * gravityForce * Time.deltaTime);
-    //     }
-
-    //     // Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, pullRadius, pullLayers);
-
-    //     // foreach (Collider2D collider in colliders)
-    //     // {
-    //     //     Rigidbody2D rb = collider.GetComponent<Rigidbody2D>();
-    //     //     if (rb != null)
-    //     //     {
-    //     //         Vector2 direction = (transform.position - collider.transform.position).normalized;
-    //     //         rb.AddForce(direction * gravityForce * Time.deltaTime);
-    //     //     }
-    //     // }
-    // }
 
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -105,24 +94,29 @@ public class Enemy8Controller : MonoBehaviour
 
     }
 
+
+
     void OnTriggerStay2D(Collider2D other)
     {
         Rigidbody2D otherRigidbody = other.attachedRigidbody;
-        if (otherRigidbody != null && other.gameObject == player)
+        if (otherRigidbody)
         {
             otherRigidbody.gravityScale = 0;
 
-            Vector2 direction = (Vector2)transform.position - otherRigidbody.position;
-            otherRigidbody.AddForce(direction.normalized * pullForce);
+            Vector2 direction = (otherRigidbody.transform.position - transform.position).normalized; 
+            otherRigidbody.AddForce(direction * pullForce); 
+            //(Vector2)transform.position - otherRigidbody.position;
+            //otherRigidbody.AddForce(direction.normalized * pullForce);
         }
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
         Rigidbody2D otherRigidbody = other.attachedRigidbody;
-        if (otherRigidbody != null && other.gameObject == player)
+        if (otherRigidbody)
         {
             otherRigidbody.gravityScale = 1; 
+            otherRigidbody.velocity = Vector2.zero; 
         }
     }
 
