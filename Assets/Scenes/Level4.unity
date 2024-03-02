@@ -4148,6 +4148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BulletCountText: {fileID: 0}
   PlayerHealthText: {fileID: 0}
+  text: {fileID: 0}
 --- !u!1 &754923980
 GameObject:
   m_ObjectHideFlags: 0
@@ -4740,6 +4741,7 @@ MonoBehaviour:
   influenceRange: 10
   intensity: 30
   distanceToPlayer: 0
+  timeRemaining: 45
 --- !u!1 &801215226
 GameObject:
   m_ObjectHideFlags: 0
@@ -7384,7 +7386,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.6, y: -0.7}
@@ -9129,7 +9131,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.6, y: -0.7}
@@ -12453,7 +12455,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.6, y: -0.7}

@@ -25,6 +25,9 @@ public class Enemy8Controller : MonoBehaviour
     Vector2 pullForce;  
     Rigidbody2D playerBody;
     private bool destroyed = false; 
+    public float timeRemaining = 45f; 
+    
+    // [SerializeField] private TMP_Text text; 
 
     // Start is called before the first frame update
     void Start()
@@ -44,9 +47,18 @@ public class Enemy8Controller : MonoBehaviour
         
     }
 
+    // public void UpdateBulletCountUI(int count) {
+    //     if(count == 0){
+    //        BulletCountText.text = "Reload!"; 
+    //     }
+    //     else{
+    //         BulletCountText.text = "Ammo: " + count.ToString();
+    //     }
+
     // Update is called once per frame
     void Update()
     {
+        
         distanceToPlayer = Vector2.Distance(Player.position, transform.position); 
         isDetected();
         if(detectedPlayer)
@@ -190,12 +202,12 @@ public class Enemy8Controller : MonoBehaviour
         yield return  new WaitForSeconds(10f);
         if (!destroyed)
         {
-            transform.Rotate(0,0,90); 
+            transform.Rotate(0,0,-90); 
             // Vector3 middlePosition = new Vector3(Screen.width / 2f, Screen.height / 2f, transform.position.z);
             // transform.position = Camera.main.ScreenToWorldPoint(middlePosition);
             // influenceRange = 100; 
             // intensity = 100; 
-            transform.localScale *= 7; 
+            transform.localScale *= 5; 
         }
     }
 

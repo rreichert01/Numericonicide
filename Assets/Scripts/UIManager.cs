@@ -7,6 +7,8 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     public TextMeshProUGUI BulletCountText;
     public TextMeshProUGUI PlayerHealthText;
+    public TextMeshProUGUI text;
+    
     public void UpdateBulletCountUI(int count) {
         if(count == 0){
            BulletCountText.text = "Reload!"; 
@@ -18,6 +20,17 @@ public class UIManager : MonoBehaviour
     public void UpdateHealthUI(int health) {
         PlayerHealthText.text = "Health: " + health.ToString(); 
     }
+
+    public void UpdateTimer(float countdown)
+    {
+        if (countdown > 0)
+        {
+            countdown -= Time.deltaTime; 
+        }
+        text.text = countdown.ToString(); 
+
+    }
+
     
     void Start()
     {
