@@ -94,10 +94,11 @@ public class Enemy8Controller : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.gameObject.CompareTag("Player"))
         {
-            if(playerScript != null)
-            {
-                playerScript.TakeDamage(damage);
-            }          
+            Destroy(collision.gameObject); 
+            // if(playerScript != null)
+            // {
+            //     playerScript.TakeDamage(damage);
+            // }          
         }
         if (collision.gameObject.CompareTag("Bullet"))
         {
@@ -186,11 +187,15 @@ public class Enemy8Controller : MonoBehaviour
 
     IEnumerator EnhanceEnemy()
     {
-        yield return  new WaitForSeconds(45f);
+        yield return  new WaitForSeconds(10f);
         if (!destroyed)
         {
             transform.Rotate(0,0,90); 
-            transform.localScale *= 3; 
+            // Vector3 middlePosition = new Vector3(Screen.width / 2f, Screen.height / 2f, transform.position.z);
+            // transform.position = Camera.main.ScreenToWorldPoint(middlePosition);
+            // influenceRange = 100; 
+            // intensity = 100; 
+            transform.localScale *= 7; 
         }
     }
 
