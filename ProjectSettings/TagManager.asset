@@ -14,10 +14,7 @@ TagManager:
   - wall
   - portal
   - playere
-
-  - Laser
   - enemy
-
   layers:
   - Default
   - TransparentFX
