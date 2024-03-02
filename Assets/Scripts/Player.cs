@@ -33,6 +33,7 @@ public class Player : MonoBehaviour
     private Color originalColor;
     private bool invuln = false;
     public healthBar healthBarScript;
+    private Vector3 originalScale; 
 
     //ublic int Score; 
     //public TextMeshProUGUI textDisplay; 
@@ -46,6 +47,7 @@ public class Player : MonoBehaviour
         health = maxHealth; 
         spriteRenderer = GetComponent<SpriteRenderer>();
         originalColor = spriteRenderer.color;
+        originalScale = transform.localScale; 
 
         //textDisplay = GetComponent<TextMeshProUGUI>(); 
 
@@ -203,8 +205,8 @@ public class Player : MonoBehaviour
             {
                 Destroy(collision.gameObject); 
                 spriteRenderer.sprite = newSprite; 
-                //Vector3 scaleFactor = new Vector3(1f / originalScale.x, 1f / originalScale.y, 1f / originalScale.z);
-                transform.localScale *= scaleFactor;
+                Vector3 quarterScale = originalScale * 0.5f; 
+                transform.localScale = quarterScale;
             }
             
             // Destroy(gameObject);

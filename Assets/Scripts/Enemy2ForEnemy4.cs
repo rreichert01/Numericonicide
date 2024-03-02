@@ -90,6 +90,16 @@ public class Enemy2ForEnemy4 : MonoBehaviour
         //Destroy(Player.gameObject);
     }
 
+    private void OnTriggerEnter2D(Collider2D collision) {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            if(playerScript != null)
+            {
+                playerScript.TakeDamage(damage);
+            }
+             
+        }
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
