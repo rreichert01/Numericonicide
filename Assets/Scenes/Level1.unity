@@ -3321,7 +3321,7 @@ GameObject:
   - component: {fileID: 754535185}
   - component: {fileID: 754535184}
   - component: {fileID: 754535183}
-  m_Layer: 1
+  m_Layer: 8
   m_Name: npc3 (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4841,7 +4841,7 @@ GameObject:
   - component: {fileID: 1148727832}
   - component: {fileID: 1148727831}
   - component: {fileID: 1148727830}
-  m_Layer: 1
+  m_Layer: 8
   m_Name: npc3 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5455,7 +5455,7 @@ GameObject:
   - component: {fileID: 1305619976}
   - component: {fileID: 1305619975}
   - component: {fileID: 1305619974}
-  m_Layer: 1
+  m_Layer: 8
   m_Name: npc3 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6101,7 +6101,7 @@ GameObject:
   - component: {fileID: 1482762768}
   - component: {fileID: 1482762767}
   - component: {fileID: 1482762766}
-  m_Layer: 1
+  m_Layer: 8
   m_Name: npc3 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9294,7 +9294,7 @@ GameObject:
   - component: {fileID: 2106250050}
   - component: {fileID: 2106250049}
   - component: {fileID: 2106250048}
-  m_Layer: 1
+  m_Layer: 8
   m_Name: npc3 (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

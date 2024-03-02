@@ -8392,7 +8392,7 @@ GameObject:
   - component: {fileID: 754535185}
   - component: {fileID: 754535184}
   - component: {fileID: 754535183}
-  m_Layer: 1
+  m_Layer: 8
   m_Name: npc3 (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
