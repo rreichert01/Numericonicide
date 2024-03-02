@@ -41,7 +41,8 @@ public class Enemy6Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        isDetected();
+        //isDetected();
+        MoveVertically(); 
 
         Vector2 direction = new Vector2((Player.position.x - transform.position.x)/2, 0).normalized;
         movement = direction;
@@ -71,15 +72,15 @@ public class Enemy6Controller : MonoBehaviour
     }
 
 
-    void FixedUpdate()
-    {
-        if (detectedPlayer) 
-        {
-            //MoveEnemy(movement); 
-            MoveVertically(); 
-        }
+    // void FixedUpdate()
+    // {
+    //     if (detectedPlayer) 
+    //     {
+    //         //MoveEnemy(movement); 
+            
+    //     }
          
-    }
+    // }
 
     void Flip() 
     {
