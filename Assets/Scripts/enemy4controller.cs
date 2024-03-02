@@ -91,6 +91,11 @@ public class enemy4controller : MonoBehaviour
         {
             HandleAttack(collision.gameObject);
         }
+        if (collision.gameObject.CompareTag("Laser"))
+        {
+            Destroy(gameObject);
+           
+        }
         if (collision.gameObject.CompareTag("Player"))
         {
             if(playerScript != null)

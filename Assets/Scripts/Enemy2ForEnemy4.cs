@@ -113,6 +113,10 @@ public class Enemy2ForEnemy4 : MonoBehaviour
         {
             HandleAttack(collision.gameObject);
         }
+        if (collision.gameObject.CompareTag("Laser"))
+        {
+            Destroy(gameObject);
+        }
 
         if (collision.gameObject.CompareTag("Player"))
         {
@@ -123,6 +127,7 @@ public class Enemy2ForEnemy4 : MonoBehaviour
              
         }
     }
+   
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.collider.tag == "Platform")
