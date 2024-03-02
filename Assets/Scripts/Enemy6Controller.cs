@@ -121,6 +121,10 @@ public class Enemy6Controller : MonoBehaviour
         {
             HandleAttack(collision.gameObject);
         }
+        if (collision.gameObject.CompareTag("Laser"))
+        {
+            Destroy(gameObject);
+        }
 
         if (collision.gameObject.CompareTag("Player"))
         {

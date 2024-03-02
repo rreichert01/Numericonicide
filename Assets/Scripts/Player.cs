@@ -265,6 +265,7 @@ public class Player : MonoBehaviour
         {
             SceneManager.LoadScene(4);
         }
+        healthBarScript.updateHealth(health, maxHealth);
         StartCoroutine(ChangeColorCoroutine(Color.red, 0.2f));
     }
 
