@@ -7,7 +7,8 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     public TextMeshProUGUI BulletCountText;
     public TextMeshProUGUI PlayerHealthText;
-    public TextMeshProUGUI text;
+    public TextMeshProUGUI DialogueBoxText; 
+    public TextMeshProUGUI text; 
     
     public void UpdateBulletCountUI(int count) {
         if(count == 0){
@@ -30,6 +31,20 @@ public class UIManager : MonoBehaviour
         text.text = countdown.ToString(); 
 
     }
+
+    // [SerializeField] List<string> lines; 
+
+    // public void showDialogue(Dialogue Dialogue)
+    // {
+    //     dialogueBox.setActive(true);
+    //     dialogueText.text = dialogue.Lines[0];  
+
+    // }
+
+    // public void UpdateDialogue(List<string> lines)
+    // {
+    //     get { return lines; };
+    // }
 
     
     void Start()

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy7Controller : MonoBehaviour
+public abstract class Enemy7Controller : MonoBehaviour, Dialogue
 {
 
     public float moveSpeed = 1.5f;
@@ -32,6 +32,11 @@ public class Enemy7Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        // if(Keyboard.current.eKey.wasPressedThisFrame)
+        // {
+        //     //interact
+        // }
         
     }
 
