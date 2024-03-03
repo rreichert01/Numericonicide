@@ -47,29 +47,30 @@ public class Enemy8Controller : MonoBehaviour
         
     }
 
-    // public void UpdateBulletCountUI(int count) {
-    //     if(count == 0){
-    //        BulletCountText.text = "Reload!"; 
-    //     }
-    //     else{
-    //         BulletCountText.text = "Ammo: " + count.ToString();
-    //     }
-
     // Update is called once per frame
     void Update()
     {
-        
-        distanceToPlayer = Vector2.Distance(Player.position, transform.position); 
-        isDetected();
-        if(detectedPlayer)
+        Vector2 directionToPlayer = Player.position - transform.position;
+        float distanceToPlayer = directionToPlayer.magnitude;
+        if (distanceToPlayer <= detectionDistance)
         {
-            if (distanceToPlayer <= influenceRange)
-            {
-            pullForce = (transform.position - Player.position).normalized / distanceToPlayer * intensity; 
-            playerBody.AddForce(pullForce, ForceMode2D.Force); 
-            }
-
+            float horizontalPull = directionToPlayer.normalized.x * intensity / distanceToPlayer;
+            float verticalPull = directionToPlayer.normalized.y * intensity / distanceToPlayer * 0.5f;
+            playerBody.AddForce(new Vector2(-horizontalPull, -verticalPull), ForceMode2D.Force) ;
         }
+
+
+        // distanceToPlayer = Vector2.Distance(Player.position, transform.position); 
+        // isDetected();
+        // if(detectedPlayer)
+        // {
+        //     if (distanceToPlayer <= influenceRange)
+        //     {
+        //     pullForce = (transform.position - Player.position).normalized / distanceToPlayer * intensity; 
+        //     playerBody.AddForce(pullForce, ForceMode2D.Force); 
+        //     }
+
+        // }
         
     }
 
@@ -203,6 +204,9 @@ public class Enemy8Controller : MonoBehaviour
         if (!destroyed)
         {
             transform.Rotate(0,0,-90); 
+            Vector3 newPosition = transform.position;
+            newPosition += new Vector3(-3, -3, 0); 
+            transform.position = newPosition;
             // Vector3 middlePosition = new Vector3(Screen.width / 2f, Screen.height / 2f, transform.position.z);
             // transform.position = Camera.main.ScreenToWorldPoint(middlePosition);
             // influenceRange = 100; 
