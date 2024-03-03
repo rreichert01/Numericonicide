@@ -186,6 +186,11 @@ public class Player : MonoBehaviour
             StartCoroutine(invulnPowerUp(Color.yellow));
             Destroy(collision.gameObject);
         }
+        if (collision.gameObject.CompareTag("powerup") && collision.gameObject.name == "droppedhealth") {
+            health = maxHealth;
+            healthBarScript.updateHealth(health, maxHealth);
+            Destroy(collision.gameObject);
+        }
 
         if (collision.gameObject.CompareTag("playerc"))
         {

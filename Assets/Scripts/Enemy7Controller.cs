@@ -2,26 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Enemy7Controller : MonoBehaviour, Dialogue
+public class Enemy7Controller : MonoBehaviour
 {
-
-    public float moveSpeed = 1.5f;
+    public Transform Player;
     public float attackRange = 2.5f;
-    public int health = 1;
-    public int damage = 1; 
+    public int health = 7;
     private Rigidbody2D rb;
-    private Vector2 movement;
-    public GameObject projectilePrefab;
-    public float dropInterval = 3f; 
-    private float nextDropTime = 3f;
-    private bool movingRight = true;
-    public float movementDistance = 10f; 
-    private float startingXPosition;
+    public float groundCheckDistance = 1f;
+    private bool detectedPlayer = false;
+    public float detectionDistance = 8f;
+    public GameObject player;
+    public Player playerScript;
     private SpriteRenderer spriteRenderer;
     private Color originalColor;
-    public Player playerScript;
-    
-    private bool betrayed = false; 
 
     // Start is called before the first frame update
     void Start()
@@ -33,17 +26,9 @@ public abstract class Enemy7Controller : MonoBehaviour, Dialogue
     void Update()
     {
 
-        // if(Keyboard.current.eKey.wasPressedThisFrame)
-        // {
-        //     //interact
-        // }
         
     }
 
-    public void Betray()
-    {
-        betrayed = true; 
-    }
     private void OnTriggerEnter(Collider other)
     {
         // if (other.CompareTag("Player"))
@@ -62,14 +47,14 @@ public abstract class Enemy7Controller : MonoBehaviour, Dialogue
         {
             HandleAttack(collision.gameObject);
         }
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            if(playerScript != null)
-            {
-                playerScript.TakeDamage(damage);
-            }
+    //     if (collision.gameObject.CompareTag("Player"))
+    //     {
+    //         if(playerScript != null)
+    //         {
+    //             playerScript.TakeDamage(damage);
+    //         }
              
-        }
+    //     }
     }
 
     void HandleAttack(GameObject bullet) 

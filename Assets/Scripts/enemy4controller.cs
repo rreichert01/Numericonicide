@@ -16,7 +16,7 @@ public class enemy4controller : MonoBehaviour
     //private Vector2 movement;
     public float groundCheckDistance = 1f;
     private bool detectedPlayer = false;
-    public float detectionDistance = 8f;
+    public float detectionDistance = 3f;
     public GameObject player;
     public Player playerScript;
     private SpriteRenderer spriteRenderer;

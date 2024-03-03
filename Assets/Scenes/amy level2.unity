@@ -2277,7 +2277,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &308250272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5553,6 +5553,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BulletCountText: {fileID: 575215390}
   PlayerHealthText: {fileID: 0}
+  DialogueBoxText: {fileID: 0}
   text: {fileID: 0}
 --- !u!1 &754535181
 GameObject:
