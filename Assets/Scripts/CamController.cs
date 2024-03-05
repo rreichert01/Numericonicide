@@ -38,23 +38,25 @@ public class CamController : MonoBehaviour
 
     void Update()
     {
-        float xMoveDelta = player.position.x - lastTargetPosition.x;
-        bool updateLookAheadTarget = Mathf.Abs(xMoveDelta) > lookAheadMoveThreshold;
+        if (!startCutscene.isCutsceneOn) {
+            float xMoveDelta = player.position.x - lastTargetPosition.x;
+            bool updateLookAheadTarget = Mathf.Abs(xMoveDelta) > lookAheadMoveThreshold;
 
-        if (updateLookAheadTarget)
-        {
-            lookAheadPos = lookAheadFactor * Vector3.right * Mathf.Sign(xMoveDelta);
+            if (updateLookAheadTarget)
+            {
+                lookAheadPos = lookAheadFactor * Vector3.right * Mathf.Sign(xMoveDelta);
+            }
+            else
+            {
+                lookAheadPos = Vector3.MoveTowards(lookAheadPos, Vector3.zero, Time.deltaTime * lookAheadReturnSpeed);
+            }
+
+            Vector3 aheadTargetPos = player.position + lookAheadPos + Vector3.forward * offsetZ;
+            Vector3 newPos = Vector3.SmoothDamp(transform.position, aheadTargetPos, ref currentVelocity, damping);
+
+
+            transform.position = newPos;
+            lastTargetPosition = player.position;
         }
-        else
-        {
-            lookAheadPos = Vector3.MoveTowards(lookAheadPos, Vector3.zero, Time.deltaTime * lookAheadReturnSpeed);
-        }
-
-        Vector3 aheadTargetPos = player.position + lookAheadPos + Vector3.forward * offsetZ;
-        Vector3 newPos = Vector3.SmoothDamp(transform.position, aheadTargetPos, ref currentVelocity, damping);
-
-
-        transform.position = newPos;
-        lastTargetPosition = player.position;
     }
 }

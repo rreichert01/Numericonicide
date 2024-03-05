@@ -38,28 +38,38 @@
   <ItemGroup>
      <Compile Include="Assets/Scripts/enemy4controller.cs" />
      <Compile Include="Assets/Scripts/Enemy2ForEnemy4.cs" />
-     <Compile Include="Assets/Scripts/Enemy3Controller.cs" />
      <Compile Include="Assets/Scripts/Bullet.cs" />
+     <Compile Include="Assets/Scripts/Enemy3Controller.cs" />
      <Compile Include="Assets/Scripts/Shoot.cs" />
+     <Compile Include="Assets/Scripts/Dialogue.cs" />
      <Compile Include="Assets/Scripts/UIManager.cs" />
      <Compile Include="Assets/Scripts/Enemy5Controller.cs" />
+     <Compile Include="Assets/Scripts/Enemy7Controller.cs" />
+     <Compile Include="Assets/Scripts/Laser.cs" />
      <Compile Include="Assets/Scripts/enemyweapon.cs" />
+     <Compile Include="Assets/Scripts/DialogueBox.cs" />
      <Compile Include="Assets/Scripts/Player.cs" />
+     <Compile Include="Assets/Scripts/startCutscene.cs" />
+     <Compile Include="Assets/Scripts/playere.cs" />
+     <Compile Include="Assets/Scripts/DialogueSystem/DialogueLine.cs" />
      <Compile Include="Assets/Scripts/toggleInstructions.cs" />
      <Compile Include="Assets/Scripts/Enemy2Controller.cs" />
+     <Compile Include="Assets/Scripts/droppedhealth.cs" />
+     <Compile Include="Assets/Scripts/Enemy6Controller.cs" />
      <Compile Include="Assets/Scripts/AmmoBar.cs" />
+     <Compile Include="Assets/Scripts/upgradeWeapon2.cs" />
      <Compile Include="Assets/Scripts/playeric.cs" />
      <Compile Include="Assets/Scripts/HandleScene.cs" />
      <Compile Include="Assets/healthBar.cs" />
+     <Compile Include="Assets/Scripts/Enemy8Controller.cs" />
      <Compile Include="Assets/Scripts/portalTrigger.cs" />
      <Compile Include="Assets/Scripts/Projectile.cs" />
      <Compile Include="Assets/Scripts/CamController.cs" />
+     <Compile Include="Assets/Scripts/DialogueSystem/DialogueBaseClass.cs" />
      <Compile Include="Assets/Scripts/upgradeWeapon.cs" />
      <Compile Include="Assets/Scripts/EnemyController.cs" />
      <Compile Include="Assets/Scripts/Weapon.cs" />
      <Compile Include="Assets/Scripts/playerc.cs" />
-     <Compile Include="Assets/Scripts/Enemy6Controller.cs" />
-     <Compile Include="Assets/Scripts/playere.cs" />
      <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader" />
@@ -771,11 +781,17 @@
     <Reference Include="Unity.Analytics.DataPrivacy">
         <HintPath>/Users/amybao/Documents/GitHub/Numericonicide/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
+    <Reference Include="Cinemachine">
+        <HintPath>/Users/amybao/Documents/GitHub/Numericonicide/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Services.Core.Analytics">
         <HintPath>/Users/amybao/Documents/GitHub/Numericonicide/Library/ScriptAssemblies/Unity.Services.Core.Analytics.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Purchasing.SecurityCore">
         <HintPath>/Users/amybao/Documents/GitHub/Numericonicide/Library/ScriptAssemblies/UnityEngine.Purchasing.SecurityCore.dll</HintPath>
+    </Reference>
+    <Reference Include="com.unity.cinemachine.editor">
+        <HintPath>/Users/amybao/Documents/GitHub/Numericonicide/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Purchasing.Codeless">
         <HintPath>/Users/amybao/Documents/GitHub/Numericonicide/Library/ScriptAssemblies/UnityEngine.Purchasing.Codeless.dll</HintPath>

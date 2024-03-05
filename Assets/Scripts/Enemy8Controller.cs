@@ -38,7 +38,7 @@ public class Enemy8Controller : MonoBehaviour
         isGrounded = false;
         spriteRenderer = GetComponent<SpriteRenderer>();
         originalColor = spriteRenderer.color;
-        StartCoroutine(EnhanceEnemy()); 
+        //StartCoroutine(EnhanceEnemy()); 
 
         // rb = GetComponent<Rigidbody2D>(); 
         // spriteRenderer = GetComponent<SpriteRenderer>();
