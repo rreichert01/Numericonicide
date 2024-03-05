@@ -61,14 +61,14 @@ public class Enemy6Controller : MonoBehaviour
             movingUp = true; 
         }
 
-        healthOneposition = transform.position; 
+        //healthOneposition = transform.position; 
 
         if (health == 1 && !hasFlipped)
         {
             
             Flip(); 
             //healthOneposition += new Vector3(-1.3f, -3f, 0f); 
-            transform.position = healthOneposition; 
+            //transform.position = healthOneposition; 
             //transform.position = healthOneposition; 
             //Vector3 newPosition = new Vector3(transform.position.x - 1.3f, transform.position.y - 2f, transform.position.z);
             //transform.position = healthOneposition; 
@@ -89,15 +89,31 @@ public class Enemy6Controller : MonoBehaviour
 
     void Flip() 
     {
-        //Vector3 currentPos = transform.position; 
 
-        transform.localScale = new Vector3(-transform.localScale.x, -transform.localScale.y , transform.localScale.z);
-        
-        // Vector3 newPosition = new Vector3(transform.position.x - 1.3f, transform.position.y - 1.5f, transform.position.z);
-        // transform.position = newPosition;
+        Vector3 currentPosition = transform.position;
+
+        // Flip the scale
+        transform.localScale = new Vector3(-transform.localScale.x, -transform.localScale.y, transform.localScale.z);
+    
+        // Calculate the position adjustment based on the change in scale
+        float positionAdjustmentX = (transform.localScale.x > 0) ? 1.3f : -1.3f; // Adjust as needed
+        float positionAdjustmentY = 2f; // Adjust as needed
+
+        // Apply the position adjustment
+        Vector3 newPosition = new Vector3(currentPosition.x + positionAdjustmentX, currentPosition.y - positionAdjustmentY, currentPosition.z);
+        transform.position = newPosition;
 
         hasFlipped = true; 
-    }
+    }   
+        //Vector3 currentPos = transform.position; 
+
+    //     transform.localScale = new Vector3(-transform.localScale.x, -transform.localScale.y , transform.localScale.z);
+        
+    //     // Vector3 newPosition = new Vector3(transform.position.x - 1.3f, transform.position.y - 1.5f, transform.position.z);
+    //     // transform.position = newPosition;
+
+    //     hasFlipped = true; 
+    // }
 
     public void isDetected()
     {

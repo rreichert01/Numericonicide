@@ -7,8 +7,8 @@ public class Enemy2ForEnemy4 : MonoBehaviour
     public Transform Player;
     public float moveSpeed = 2.5f;
     public float attackRange = 2.5f;
-    public int health = 1;
-    public int damage = 1; 
+    public int health = 2;
+    public int damage = 2; 
     private Rigidbody2D rb;
     private Vector2 movement;
     public float groundCheckDistance = 1.5f;
