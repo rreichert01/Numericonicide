@@ -174,8 +174,8 @@ MonoBehaviour:
   Player: {fileID: 1937855797}
   moveSpeed: 2.5
   attackRange: 2.5
-  health: 1
-  damage: 1
+  health: 2
+  damage: 2
   groundCheckDistance: 1.5
   jumpForce: 5
   detectionDistance: 18
@@ -534,7 +534,7 @@ MonoBehaviour:
   lowHealthSprite2: {fileID: 21300000, guid: 97c6449557f3b4eba8285539a86fbeab, type: 3}
   enemy2Prefab: {fileID: 8191008855498537703, guid: 6ab4bf174aac44286accf7df28292bc1, type: 3}
   groundCheckDistance: 1
-  detectionDistance: 8
+  detectionDistance: 1.5
   player: {fileID: 1937855794}
   playerScript: {fileID: 1937855795}
   npc2: {fileID: 134206987}
@@ -1205,8 +1205,8 @@ MonoBehaviour:
   Player: {fileID: 1937855797}
   moveSpeed: 2.5
   attackRange: 2.5
-  health: 1
-  damage: 1
+  health: 2
+  damage: 2
   groundCheckDistance: 1.5
   jumpForce: 5
   detectionDistance: 18
@@ -1767,8 +1767,8 @@ MonoBehaviour:
   Player: {fileID: 1937855797}
   moveSpeed: 2.5
   attackRange: 2.5
-  health: 1
-  damage: 1
+  health: 2
+  damage: 2
   groundCheckDistance: 1.5
   jumpForce: 5
   detectionDistance: 18
@@ -3839,8 +3839,8 @@ MonoBehaviour:
   Player: {fileID: 1937855797}
   moveSpeed: 2.5
   attackRange: 2.5
-  health: 1
-  damage: 1
+  health: 2
+  damage: 2
   groundCheckDistance: 1.5
   jumpForce: 5
   detectionDistance: 18
@@ -5097,8 +5097,8 @@ MonoBehaviour:
   Player: {fileID: 1937855797}
   moveSpeed: 2.5
   attackRange: 2.5
-  health: 1
-  damage: 1
+  health: 2
+  damage: 2
   groundCheckDistance: 1.5
   jumpForce: 5
   detectionDistance: 18
@@ -6051,8 +6051,8 @@ MonoBehaviour:
   Player: {fileID: 1937855797}
   moveSpeed: 2.5
   attackRange: 2.5
-  health: 1
-  damage: 1
+  health: 2
+  damage: 2
   groundCheckDistance: 1.5
   jumpForce: 5
   detectionDistance: 18
@@ -10445,7 +10445,7 @@ MonoBehaviour:
   lowHealthSprite2: {fileID: 21300000, guid: 97c6449557f3b4eba8285539a86fbeab, type: 3}
   enemy2Prefab: {fileID: 8191008855498537703, guid: 6ab4bf174aac44286accf7df28292bc1, type: 3}
   groundCheckDistance: 1
-  detectionDistance: 8
+  detectionDistance: 1.5
   player: {fileID: 1937855794}
   playerScript: {fileID: 1937855795}
   npc2: {fileID: 25849171}
@@ -11956,7 +11956,7 @@ MonoBehaviour:
   lowHealthSprite2: {fileID: 21300000, guid: 97c6449557f3b4eba8285539a86fbeab, type: 3}
   enemy2Prefab: {fileID: 8191008855498537703, guid: 6ab4bf174aac44286accf7df28292bc1, type: 3}
   groundCheckDistance: 1
-  detectionDistance: 8
+  detectionDistance: 1.5
   player: {fileID: 1937855794}
   playerScript: {fileID: 1937855795}
   npc2: {fileID: 593853825}
@@ -12176,7 +12176,7 @@ MonoBehaviour:
   lowHealthSprite2: {fileID: 21300000, guid: 97c6449557f3b4eba8285539a86fbeab, type: 3}
   enemy2Prefab: {fileID: 8191008855498537703, guid: 6ab4bf174aac44286accf7df28292bc1, type: 3}
   groundCheckDistance: 1
-  detectionDistance: 8
+  detectionDistance: 1.5
   player: {fileID: 1937855794}
   playerScript: {fileID: 1937855795}
   npc2: {fileID: 25849171}
@@ -12387,8 +12387,8 @@ MonoBehaviour:
   Player: {fileID: 1937855797}
   moveSpeed: 2.5
   attackRange: 2.5
-  health: 1
-  damage: 1
+  health: 2
+  damage: 2
   groundCheckDistance: 1.5
   jumpForce: 5
   detectionDistance: 18

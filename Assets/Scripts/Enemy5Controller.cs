@@ -149,7 +149,7 @@ public class Enemy5Controller : MonoBehaviour
     private Vector3 GetRandomSpawnPosition()
     {
         float randomX = player.transform.position.x + Random.Range(-spawnRadius, spawnRadius);
-        float yPosition = player.transform.position.y; 
+        float yPosition = player.transform.position.y - 1f; 
 
         //Vector2 randomOffset = Random.insideUnitCircle * spawnRadius; 
         Vector3 spawnPosition = new Vector3(randomX, yPosition, 0f); 
