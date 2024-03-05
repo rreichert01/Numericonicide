@@ -2600,8 +2600,8 @@ MonoBehaviour:
   Player: {fileID: 1937855797}
   moveSpeed: 2.5
   attackRange: 2.5
-  health: 1
-  damage: 1
+  health: 2
+  damage: 2
   groundCheckDistance: 1.5
   jumpForce: 5
   detectionDistance: 18
@@ -6506,8 +6506,8 @@ MonoBehaviour:
   Player: {fileID: 1937855797}
   moveSpeed: 2.5
   attackRange: 2.5
-  health: 1
-  damage: 1
+  health: 2
+  damage: 2
   groundCheckDistance: 1.5
   jumpForce: 5
   detectionDistance: 18
@@ -7980,8 +7980,8 @@ MonoBehaviour:
   Player: {fileID: 1937855797}
   moveSpeed: 2.5
   attackRange: 2.5
-  health: 1
-  damage: 1
+  health: 2
+  damage: 2
   groundCheckDistance: 1.5
   jumpForce: 5
   detectionDistance: 18
@@ -8313,8 +8313,8 @@ MonoBehaviour:
   Player: {fileID: 1937855797}
   moveSpeed: 2.5
   attackRange: 2.5
-  health: 1
-  damage: 1
+  health: 2
+  damage: 2
   groundCheckDistance: 1.5
   jumpForce: 5
   detectionDistance: 18
@@ -12394,8 +12394,8 @@ MonoBehaviour:
   Player: {fileID: 1937855797}
   moveSpeed: 2.5
   attackRange: 2.5
-  health: 1
-  damage: 1
+  health: 2
+  damage: 2
   groundCheckDistance: 1.5
   jumpForce: 5
   detectionDistance: 18
@@ -17193,8 +17193,8 @@ MonoBehaviour:
   Player: {fileID: 1937855797}
   moveSpeed: 2.5
   attackRange: 2.5
-  health: 1
-  damage: 1
+  health: 2
+  damage: 2
   groundCheckDistance: 1.5
   jumpForce: 5
   detectionDistance: 18
@@ -17410,8 +17410,8 @@ MonoBehaviour:
   Player: {fileID: 1937855797}
   moveSpeed: 2.5
   attackRange: 2.5
-  health: 1
-  damage: 1
+  health: 2
+  damage: 2
   groundCheckDistance: 1.5
   jumpForce: 5
   detectionDistance: 18
@@ -20760,8 +20760,8 @@ MonoBehaviour:
   Player: {fileID: 1937855797}
   moveSpeed: 2.5
   attackRange: 2.5
-  health: 1
-  damage: 1
+  health: 2
+  damage: 2
   groundCheckDistance: 1.5
   jumpForce: 5
   detectionDistance: 18
@@ -23178,8 +23178,8 @@ MonoBehaviour:
   Player: {fileID: 1937855797}
   moveSpeed: 2.5
   attackRange: 2.5
-  health: 1
-  damage: 1
+  health: 2
+  damage: 2
   groundCheckDistance: 1.5
   jumpForce: 5
   detectionDistance: 18
@@ -23353,8 +23353,8 @@ MonoBehaviour:
   Player: {fileID: 1937855797}
   moveSpeed: 2.5
   attackRange: 2.5
-  health: 1
-  damage: 1
+  health: 2
+  damage: 2
   groundCheckDistance: 1.5
   jumpForce: 5
   detectionDistance: 18

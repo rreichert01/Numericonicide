@@ -216,9 +216,19 @@ public class Player : MonoBehaviour
                 transform.localScale = quarterScale;
             }
             
-            // Destroy(gameObject);
-            // Destroy(collision.gameObject); 
-            // Instantiate(playeric2, transform.position, Quaternion.identity);
+        }
+
+        if (collision.gameObject.CompareTag("playert"))
+        {
+            SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>(); 
+            if (spriteRenderer != null && newSprite != null)
+            {
+                Destroy(collision.gameObject); 
+                spriteRenderer.sprite = newSprite; 
+                Vector3 quarterScale = originalScale; 
+                transform.localScale = quarterScale;
+            }
+            
         }
 
         if (collision.gameObject.CompareTag("portal"))
