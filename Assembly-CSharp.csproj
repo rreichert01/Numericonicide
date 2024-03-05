@@ -46,6 +46,7 @@
      <Compile Include="Assets/Scripts/Enemy5Controller.cs" />
      <Compile Include="Assets/Scripts/Enemy7Controller.cs" />
      <Compile Include="Assets/Scripts/Laser.cs" />
+     <Compile Include="Assets/Scripts/DialogueSystem/DialogueHolder.cs" />
      <Compile Include="Assets/Scripts/enemyweapon.cs" />
      <Compile Include="Assets/Scripts/DialogueBox.cs" />
      <Compile Include="Assets/Scripts/Player.cs" />

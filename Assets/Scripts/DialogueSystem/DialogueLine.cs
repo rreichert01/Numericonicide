@@ -1,18 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class DialogueLine : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
+namespace DialogueSystem {
+    public class DialogueLine : DialogueBaseClass
     {
-        
-    }
+        private Text textHolder;
+        [SerializeField] private string input;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        private void Awake() {
+            textHolder = GetComponent<Text>();
+
+            StartCoroutine(WriteText(input, textHolder));
+        }
+
     }
 }

@@ -55,59 +55,61 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        //textDisplay.SetText("health"); 
-        
-        if (isGrounded && Input.GetKeyDown(KeyCode.W))
+        //textDisplay.SetText("health");
+        if (!startCutscene.isCutsceneOn) 
         {
-            Jump();
-        }
-        Vector3 move = new Vector3(0f, 0f, 0f);
+            if (isGrounded && Input.GetKeyDown(KeyCode.W))
+            {
+                Jump();
+            }
+            Vector3 move = new Vector3(0f, 0f, 0f);
 
-        bool isMovingLeft = Input.GetKey(KeyCode.A);
-        bool isMovingRight = Input.GetKey(KeyCode.D);
-        bool isSprinting = Input.GetKey(KeyCode.RightShift) || Input.GetKey(KeyCode.LeftShift);
+            bool isMovingLeft = Input.GetKey(KeyCode.A);
+            bool isMovingRight = Input.GetKey(KeyCode.D);
+            bool isSprinting = Input.GetKey(KeyCode.RightShift) || Input.GetKey(KeyCode.LeftShift);
 
-        float speedMultiplier = isSprinting ? 2.0f : 1.0f;
+            float speedMultiplier = isSprinting ? 2.0f : 1.0f;
 
-        // if (isMovingLeft)
-        // {
-        //     move.x -= moveSpeed * Time.deltaTime * speedMultiplier;
-        //     if (transform.localScale.x > 0) //if player facing right
-        //     {
-        //         transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z); //flip
-        //     }
-        // }
+            // if (isMovingLeft)
+            // {
+            //     move.x -= moveSpeed * Time.deltaTime * speedMultiplier;
+            //     if (transform.localScale.x > 0) //if player facing right
+            //     {
+            //         transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z); //flip
+            //     }
+            // }
 
-        // if (isMovingRight)
-        // {
-        //     move.x += moveSpeed * Time.deltaTime * speedMultiplier;
-        //     if (transform.localScale.x < 0)
-        //     {
-        //         transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
-        //     }
-        // }
-        if (isMovingLeft)
-        {
-            move.x -= moveSpeed * Time.deltaTime * speedMultiplier;
-            transform.eulerAngles = new Vector3(0f, 180f, 0);
-        }
+            // if (isMovingRight)
+            // {
+            //     move.x += moveSpeed * Time.deltaTime * speedMultiplier;
+            //     if (transform.localScale.x < 0)
+            //     {
+            //         transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+            //     }
+            // }
+            if (isMovingLeft)
+            {
+                move.x -= moveSpeed * Time.deltaTime * speedMultiplier;
+                transform.eulerAngles = new Vector3(0f, 180f, 0);
+            }
 
-        if (isMovingRight)
-        {
-            move.x += moveSpeed * Time.deltaTime * speedMultiplier;
-            transform.eulerAngles = Vector3.zero;
-        }
-        transform.position += move;
+            if (isMovingRight)
+            {
+                move.x += moveSpeed * Time.deltaTime * speedMultiplier;
+                transform.eulerAngles = Vector3.zero;
+            }
+            transform.position += move;
 
-        if (!isGrounded && Input.GetKey(KeyCode.S))
-        {
-            Down();
-        }
-        if (Input.GetKeyDown(KeyCode.Q) && isCloseEnough())
-        {
+            if (!isGrounded && Input.GetKey(KeyCode.S))
+            {
+                Down();
+            }
+            if (Input.GetKeyDown(KeyCode.Q) && isCloseEnough())
+            {
 
-            SwitchHierarchiesAndPositions();
+                SwitchHierarchiesAndPositions();
 
+            }
         }
 
     }
