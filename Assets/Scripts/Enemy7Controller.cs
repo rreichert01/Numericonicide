@@ -15,6 +15,7 @@ public class Enemy7Controller : MonoBehaviour
     public Player playerScript;
     private SpriteRenderer spriteRenderer;
     private Color originalColor;
+    public Timer timer; 
 
     // Start is called before the first frame update
     void Start()
@@ -63,7 +64,13 @@ public class Enemy7Controller : MonoBehaviour
         if (--health <= 0) 
         { 
             Destroy(gameObject);
-            return;
+            //return;
+            if (timer != null)
+            {
+                timer.gameObject.SetActive(true); 
+                timer.StartTimer(); 
+            }
+            return; 
         }
         StartCoroutine(ChangeColorCoroutine(Color.red, 0.2f));
     }
