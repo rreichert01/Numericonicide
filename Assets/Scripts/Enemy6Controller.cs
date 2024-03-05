@@ -26,6 +26,7 @@ public class Enemy6Controller : MonoBehaviour
     private bool movingUp = true; 
     private bool isGrounded; 
     private bool hasFlipped = false; 
+    private Vector3 healthOnePosition; 
 
     // Start is called before the first frame update
     void Start()
@@ -42,6 +43,7 @@ public class Enemy6Controller : MonoBehaviour
     void Update()
     {
         //isDetected();
+
         MoveVertically(); 
 
         Vector2 direction = new Vector2((Player.position.x - transform.position.x)/2, 0).normalized;
@@ -60,10 +62,13 @@ public class Enemy6Controller : MonoBehaviour
             movingUp = true; 
         }
 
+        healthOnePosition = transform.position; 
+
         if (health == 1 && !hasFlipped)
         {
             
             Flip(); 
+            transform.position = healthOnePosition; 
             //transform.localScale = new Vector3(-transform.localScale.x, -transform.localScale.y, transform.localScale.z);
 
             //transform.Rotate(0, 0, 180);
@@ -84,6 +89,8 @@ public class Enemy6Controller : MonoBehaviour
 
     void Flip() 
     {
+
+        
         //Vector3 currentPos = transform.position; 
         transform.localScale = new Vector3(-transform.localScale.x, -transform.localScale.y , transform.localScale.z);
         
