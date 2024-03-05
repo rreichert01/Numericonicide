@@ -140,7 +140,8 @@ public class Enemy5Controller : MonoBehaviour
     private Vector3 PositionAwayFromPlayer()
     {
         float RandomX = player.transform.position.x + Random.Range(-20, 30); 
-        float yPosition = player.transform.position.y + Random.Range(0, 10); 
+        float yPosition = player.transform.position.y - 4f; 
+        //float yPosition = player.transform.position.y + Random.Range(0, 10); 
         Vector3 spawnPosition = new Vector3(RandomX, yPosition, 0f); 
 
         return spawnPosition; 
@@ -149,7 +150,7 @@ public class Enemy5Controller : MonoBehaviour
     private Vector3 GetRandomSpawnPosition()
     {
         float randomX = player.transform.position.x + Random.Range(-spawnRadius, spawnRadius);
-        float yPosition = player.transform.position.y; 
+        float yPosition = player.transform.position.y - 1f; 
 
         //Vector2 randomOffset = Random.insideUnitCircle * spawnRadius; 
         Vector3 spawnPosition = new Vector3(randomX, yPosition, 0f); 

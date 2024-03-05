@@ -210,7 +210,7 @@ public class Player : MonoBehaviour
             {
                 Destroy(collision.gameObject); 
                 spriteRenderer.sprite = newSprite; 
-                Vector3 quarterScale = originalScale * 0.5f; 
+                Vector3 quarterScale = originalScale; 
                 transform.localScale = quarterScale;
             }
             

@@ -1160,7 +1160,7 @@ MonoBehaviour:
   lowHealthSprite2: {fileID: 21300000, guid: 97c6449557f3b4eba8285539a86fbeab, type: 3}
   enemy2Prefab: {fileID: 8191008855498537703, guid: 6ab4bf174aac44286accf7df28292bc1, type: 3}
   groundCheckDistance: 1
-  detectionDistance: 8
+  detectionDistance: 3
   player: {fileID: 1937855794}
   playerScript: {fileID: 1937855795}
   npc2: {fileID: 527875606}
@@ -4144,6 +4144,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BulletCountText: {fileID: 0}
   PlayerHealthText: {fileID: 0}
+  DialogueBoxText: {fileID: 0}
+  text: {fileID: 0}
 --- !u!1 &754923980
 GameObject:
   m_ObjectHideFlags: 0
@@ -8494,7 +8496,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &1206548323
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10734,7 +10736,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1630355859
 Transform:
   m_ObjectHideFlags: 0

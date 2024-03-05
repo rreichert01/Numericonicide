@@ -26,6 +26,7 @@ public class Enemy6Controller : MonoBehaviour
     private bool movingUp = true; 
     private bool isGrounded; 
     private bool hasFlipped = false; 
+    private Vector3 healthOneposition;
 
     // Start is called before the first frame update
     void Start()
@@ -60,13 +61,17 @@ public class Enemy6Controller : MonoBehaviour
             movingUp = true; 
         }
 
+        healthOneposition = transform.position; 
+
         if (health == 1 && !hasFlipped)
         {
             
             Flip(); 
-            //transform.localScale = new Vector3(-transform.localScale.x, -transform.localScale.y, transform.localScale.z);
-
-            //transform.Rotate(0, 0, 180);
+            //healthOneposition += new Vector3(-1.3f, -3f, 0f); 
+            transform.position = healthOneposition; 
+            //transform.position = healthOneposition; 
+            //Vector3 newPosition = new Vector3(transform.position.x - 1.3f, transform.position.y - 2f, transform.position.z);
+            //transform.position = healthOneposition; 
         }
         
     }
@@ -85,10 +90,11 @@ public class Enemy6Controller : MonoBehaviour
     void Flip() 
     {
         //Vector3 currentPos = transform.position; 
+
         transform.localScale = new Vector3(-transform.localScale.x, -transform.localScale.y , transform.localScale.z);
         
-        Vector3 newPosition = new Vector3(transform.position.x - 1f, transform.position.y - 1f, transform.position.z);
-        transform.position = newPosition;
+        // Vector3 newPosition = new Vector3(transform.position.x - 1.3f, transform.position.y - 1.5f, transform.position.z);
+        // transform.position = newPosition;
 
         hasFlipped = true; 
     }
