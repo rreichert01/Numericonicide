@@ -18,7 +18,8 @@ public class Weapon : MonoBehaviour
     private int currentAmmo; // Current ammo count in the magazine
     private bool isReloading; // Flag to indicate if the gun is currently reloading
     private bool isUp = false;
-    
+    public Transform parentObject;
+
 
     void Start()
     {
@@ -50,17 +51,15 @@ public class Weapon : MonoBehaviour
 
     void rotateGun()
     {
-        if (!isUp)
+        if (isUp)
         {
-            firePoint.localRotation = new UnityEngine.Quaternion(firePoint.localRotation.x, firePoint.localRotation.y, 1, firePoint.localRotation.w);
-            isUp = true;
+            transform.rotation = Quaternion.LookRotation(parentObject.forward, Vector3.up);
         }
         else
         {
-            firePoint.rotation = new UnityEngine.Quaternion(firePoint.localRotation.x, firePoint.localRotation.y, 0, firePoint.localRotation.w);
-            isUp = false;
+            transform.rotation = Quaternion.Euler(0, 0, 90);
         }
-
+        isUp = !isUp;
     }
 
     void Shoot() 

@@ -1759,6 +1759,7 @@ MonoBehaviour:
   AmmoBarScript: {fileID: 138721495}
   reloadTime: 2
   magazineCapacity: 20
+  parentObject: {fileID: 1937855797}
 --- !u!1 &460731085
 GameObject:
   m_ObjectHideFlags: 0
@@ -1865,6 +1866,7 @@ MonoBehaviour:
   AmmoBarScript: {fileID: 138721495}
   reloadTime: 1
   magazineCapacity: 8
+  parentObject: {fileID: 1937855797}
 --- !u!1 &517959630
 GameObject:
   m_ObjectHideFlags: 0
@@ -2914,6 +2916,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BulletCountText: {fileID: 575215390}
   PlayerHealthText: {fileID: 0}
+  DialogueBoxText: {fileID: 0}
+  text: {fileID: 0}
 --- !u!1 &754535181
 GameObject:
   m_ObjectHideFlags: 0

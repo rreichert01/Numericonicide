@@ -20,6 +20,7 @@ public class upgradeWeapon2 : MonoBehaviour
     private int currentAmmo; // Current ammo count in the magazine
     private bool isReloading; // Flag to indicate if the gun is currently reloading
     private bool isUp;
+    public Transform parentObject;
 
     void Start()
     {
@@ -45,7 +46,7 @@ public class upgradeWeapon2 : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.R) && !isReloading && currentAmmo != magazineCapacity)
         {
-            AmmoBarScript.reloadAnimation(magazineCapacity, reloadTime);
+            AmmoBarScript.reloadAnimation(20, reloadTime);
             StartCoroutine(Reload());
         }
 
@@ -63,17 +64,15 @@ public class upgradeWeapon2 : MonoBehaviour
 
     void rotateGun()
     {
-        if (!isUp)
+        if (isUp)
         {
-            firePoint.localRotation = new UnityEngine.Quaternion(firePoint.localRotation.x, firePoint.localRotation.y, 1, firePoint.localRotation.w);
-            isUp = true;
+            transform.rotation = Quaternion.LookRotation(parentObject.forward, Vector3.up);
         }
         else
         {
-            firePoint.rotation = new UnityEngine.Quaternion(firePoint.localRotation.x, firePoint.localRotation.y, 0, firePoint.localRotation.w);
-            isUp = false;
+            transform.rotation = Quaternion.Euler(0, 0, 90);
         }
-
+        isUp = !isUp;
     }
 
     IEnumerator Reload()

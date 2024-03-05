@@ -4594,6 +4594,7 @@ MonoBehaviour:
   AmmoBarScript: {fileID: 185737944}
   reloadTime: 1
   magazineCapacity: 300
+  parentObject: {fileID: 1937855797}
 --- !u!1 &466945143
 GameObject:
   m_ObjectHideFlags: 0
@@ -8853,6 +8854,7 @@ MonoBehaviour:
   AmmoBarScript: {fileID: 185737944}
   reloadTime: 2
   magazineCapacity: 20
+  parentObject: {fileID: 1937855797}
 --- !u!212 &954613044
 SpriteRenderer:
   m_ObjectHideFlags: 0

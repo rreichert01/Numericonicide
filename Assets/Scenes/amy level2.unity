@@ -3614,6 +3614,7 @@ MonoBehaviour:
   AmmoBarScript: {fileID: 1362497427}
   reloadTime: 1
   magazineCapacity: 8
+  parentObject: {fileID: 1937855797}
 --- !u!1 &470952367
 GameObject:
   m_ObjectHideFlags: 0
@@ -6066,6 +6067,7 @@ MonoBehaviour:
   AmmoBarScript: {fileID: 1362497427}
   reloadTime: 2
   magazineCapacity: 1
+  parentObject: {fileID: 1937855797}
 --- !u!1 &801956239
 GameObject:
   m_ObjectHideFlags: 0
