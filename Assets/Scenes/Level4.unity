@@ -21844,7 +21844,7 @@ MonoBehaviour:
   upgradeGun: {fileID: 954613042}
   switchDistance: 4
   health: 0
-  maxHealth: 200
+  maxHealth: 40
   newSprite: {fileID: 21300000, guid: 7d438282708d943f1ba32b85362fcc76, type: 3}
   scaleFactor: 2
   healthBarScript: {fileID: 1708001231}
