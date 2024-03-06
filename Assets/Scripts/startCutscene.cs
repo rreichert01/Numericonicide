@@ -10,6 +10,7 @@ public class startCutscene : MonoBehaviour
     public Player playerscript;
     public bool hasCut = false;
     public GameObject dialogueHolder;
+    public GameObject chatBubble;
 
     
     void Update()
@@ -17,6 +18,7 @@ public class startCutscene : MonoBehaviour
         if (DialogueHolder.isDialogueDone && !hasCut) {
             hasCut = true;
             canAnim.SetBool("cutscene1", true);
+            chatBubble.SetActive(false);
             Invoke(nameof(StopCutscene), 3f);
         }
     }
@@ -26,6 +28,7 @@ public class startCutscene : MonoBehaviour
             // playerscript.moveSpeed = 0;
             if(dialogueHolder != null) {
                 dialogueHolder.SetActive(true);
+                chatBubble.SetActive(true);
             }
             isCutsceneOn = true;
             // canAnim.SetBool("cutscene1", true);
