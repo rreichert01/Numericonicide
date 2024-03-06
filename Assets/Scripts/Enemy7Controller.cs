@@ -16,73 +16,81 @@ public class Enemy7Controller : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Color originalColor;
     public Timer timer; 
+    public startCutscene cutscenescript; 
+    public Transform invulnerable; 
 
     // Start is called before the first frame update
     void Start()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>(); 
+        invulnerable.gameObject.SetActive(false); 
         
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        if (cutscenescript == null || !cutscenescript.isActiveAndEnabled)
+        {
+            Destroy(gameObject); 
+            invulnerable.gameObject.SetActive(true); 
+            StartTimer(); 
+        }
         
     }
 
-    private void OnTriggerEnter(Collider other)
+    void HandlePlayerCollision()
     {
-        // if (other.CompareTag("Player"))
-        // {
-        //     if (betrayed)
-        //     {
-        //         DropWeapon(); 
-        //     }
-        // }
+        if (!startCutscene.isCutsceneOn)
+        {
+            Destroy(gameObject); 
+            invulnerable.gameObject.SetActive(true); 
+            StartTimer(); 
+        }
     }
+
+    void StartTimer()
+    {
+        if (timer != null)
+        {
+            timer.gameObject.SetActive(true); 
+            timer.StartTimer(); 
+        }
+    }
+
+    // private void OnTriggerEnter(Collider other)
+    // {
+    //     if (other.CompareTag("Player"))
+    //     {
+    //         HandlePlayerCollision(); // Call the method when the player enters the trigger
+    //     }
+    // }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+        
         // Check if the colliding object has the tag "Bullet"
-        if (collision.gameObject.CompareTag("Bullet"))
-        {
-            HandleAttack(collision.gameObject);
-        }
-    //     if (collision.gameObject.CompareTag("Player"))
-    //     {
-    //         if(playerScript != null)
+        // if (collision.gameObject.CompareTag("Bullet"))
+        // {
+        //     HandleAttack(collision.gameObject);
+        // }
+    }
+
+    // void HandleAttack(GameObject bullet) 
+    // {
+    //     Destroy(bullet);
+    //     if (--health <= 0) 
+    //     { 
+    //         Destroy(gameObject);
+    //         //return;
+    //         if (timer != null)
     //         {
-    //             playerScript.TakeDamage(damage);
+    //             timer.gameObject.SetActive(true); 
+    //             timer.StartTimer(); 
     //         }
-             
+    //         return; 
     //     }
-    }
-
-    void HandleAttack(GameObject bullet) 
-    {
-        Destroy(bullet);
-        if (--health <= 0) 
-        { 
-            Destroy(gameObject);
-            //return;
-            if (timer != null)
-            {
-                timer.gameObject.SetActive(true); 
-                timer.StartTimer(); 
-            }
-            return; 
-        }
-        StartCoroutine(ChangeColorCoroutine(Color.red, 0.2f));
-    }
-    IEnumerator ChangeColorCoroutine(Color newColor, float duration)
-    {
-        // Change the color to the new color
-        spriteRenderer.color = newColor;
-
-        // Wait for the specified duration
-        yield return new WaitForSeconds(duration);
-
-        // Change the color back to the original color
-        spriteRenderer.color = originalColor;
-    }
+    //     StartCoroutine(ChangeColorCoroutine(Color.red, 0.2f));
+    // }
+    
 }

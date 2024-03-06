@@ -44,6 +44,7 @@ public class Enemy5Controller : MonoBehaviour
 
     void Update()
     {
+        Freeze(); 
         isDetected();
 
         
