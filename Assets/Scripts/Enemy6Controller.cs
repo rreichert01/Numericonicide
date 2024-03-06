@@ -43,35 +43,40 @@ public class Enemy6Controller : MonoBehaviour
     void Update()
     {
         //isDetected();
+
+        if (!startCutscene.isCutsceneOn) {
         
-        MoveVertically(); 
+            MoveVertically(); 
 
-        Vector2 direction = new Vector2((Player.position.x - transform.position.x)/2, 0).normalized;
-        movement = direction;
+            Vector2 direction = new Vector2((Player.position.x - transform.position.x)/2, 0).normalized;
+            movement = direction;
 
-        if (Vector3.Distance(transform.position, Player.position) < attackRange)
-        {
-            AttackPlayer();
-        }
-        if (transform.position.y >= originalY + verticalRange)
-        {
-            movingUp = false; 
-        }
-        else if (transform.position.y <= originalY - verticalRange)
-        {
-            movingUp = true; 
-        }
+            if (Vector3.Distance(transform.position, Player.position) < attackRange)
+            {
+                AttackPlayer();
+            }
+            if (transform.position.y >= originalY + verticalRange)
+            {
+                movingUp = false; 
+            }
+            else if (transform.position.y <= originalY - verticalRange)
+            {
+                movingUp = true; 
+            }
 
-        healthOnePosition = transform.position; 
+            healthOnePosition = transform.position; 
 
-        if (health == 1 && !hasFlipped)
-        {
-            
-            Flip(); 
-            transform.position = healthOnePosition; 
-            //transform.localScale = new Vector3(-transform.localScale.x, -transform.localScale.y, transform.localScale.z);
+            if (health == 1 && !hasFlipped)
+            {
+                
+                Flip(); 
+                transform.position = healthOnePosition; 
+                //transform.localScale = new Vector3(-transform.localScale.x, -transform.localScale.y, transform.localScale.z);
 
-            //transform.Rotate(0, 0, 180);
+                //transform.Rotate(0, 0, 180);
+            }
+        } else {
+            rb.velocity = Vector2.zero; 
         }
         
     }

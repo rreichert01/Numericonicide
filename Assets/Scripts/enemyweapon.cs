@@ -25,13 +25,13 @@ public class enemyweapon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        fireTimer += Time.deltaTime; 
-        if (fireTimer >= fireRate){
-            FireBullet(); 
-            fireTimer = 0f; 
-        }
-        
+        if (!startCutscene.isCutsceneOn) {
+            fireTimer += Time.deltaTime; 
+            if (fireTimer >= fireRate){
+                FireBullet(); 
+                fireTimer = 0f; 
+            }
+        }     
     }
 
     void FireBullet(){

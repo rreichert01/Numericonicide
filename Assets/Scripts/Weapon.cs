@@ -31,20 +31,22 @@ public class Weapon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Tab))
-        {
-            rotateGun();
-        }
-        if (Input.GetKeyDown(KeyCode.Space) && currentAmmo > 0 && !isReloading && IsChild())
-        {
-            Shoot();
-        }
+        if (!startCutscene.isCutsceneOn) {
+            if (Input.GetKeyDown(KeyCode.Tab))
+            {
+                rotateGun();
+            }
+            if (Input.GetKeyDown(KeyCode.Space) && currentAmmo > 0 && !isReloading && IsChild())
+            {
+                Shoot();
+            }
 
-        // Check for input to reload if magazine is empty and not already reloading
-        if (Input.GetKeyDown(KeyCode.R) && !isReloading && currentAmmo != magazineCapacity)
-        {
-            AmmoBarScript.reloadAnimation(magazineCapacity, reloadTime);
-            StartCoroutine(Reload());
+            // Check for input to reload if magazine is empty and not already reloading
+            if (Input.GetKeyDown(KeyCode.R) && !isReloading && currentAmmo != magazineCapacity)
+            {
+                AmmoBarScript.reloadAnimation(magazineCapacity, reloadTime);
+                StartCoroutine(Reload());
+            }
         }
 
     }
