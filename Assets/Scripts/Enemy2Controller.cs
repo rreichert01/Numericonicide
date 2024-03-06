@@ -150,7 +150,7 @@ public class Enemy2Controller : MonoBehaviour
 
     public void Freeze()
     {
-        rb.velocity = Vector2.zero; 
+        movement = Vector2.zero; 
     }
 
 

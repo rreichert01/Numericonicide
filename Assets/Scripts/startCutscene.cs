@@ -38,7 +38,6 @@ public class startCutscene : MonoBehaviour
 
     void StopCutscene() {
         // playerscript.moveSpeed = 5f;
-        
         isCutsceneOn = false;
         canAnim.SetBool("cutscene1", false);
         Destroy(gameObject);

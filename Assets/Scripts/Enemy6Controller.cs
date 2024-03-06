@@ -43,7 +43,7 @@ public class Enemy6Controller : MonoBehaviour
     void Update()
     {
         //isDetected();
-
+        
         MoveVertically(); 
 
         Vector2 direction = new Vector2((Player.position.x - transform.position.x)/2, 0).normalized;
@@ -75,6 +75,7 @@ public class Enemy6Controller : MonoBehaviour
         }
         
     }
+
 
 
     // void FixedUpdate()
@@ -179,16 +180,6 @@ public class Enemy6Controller : MonoBehaviour
 
         // Change the color back to the original color
         spriteRenderer.color = originalColor;
-    }
-
-    public void Freeze() 
-    {
-        gameObject.SetActive(false); 
-    }
-
-    public void Unfreeze()
-    {
-        gameObject.SetActive(true); 
     }
 
 }

@@ -36,6 +36,7 @@ public class Enemy5Controller : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         originalColor = spriteRenderer.color;
         float delay = Random.Range(0f, 7f); 
+        
         InvokeRepeating("ChangePosition", delay, changePositionInterval);
 
     }
@@ -44,21 +45,19 @@ public class Enemy5Controller : MonoBehaviour
 
     void Update()
     {
-        Freeze(); 
         isDetected();
-
-        
 
         if (!startCutscene.isCutsceneOn)
         {
+            //Unfreeze(); 
             Vector2 direction = new Vector2((Player.position.x - transform.position.x)/2, 0).normalized;
             movement = direction;
             if (Vector3.Distance(transform.position, Player.position) < attackRange)
             {
                 AttackPlayer();
-                }
+            }
         }
-        else 
+        else
         {
             Freeze();
         
@@ -92,7 +91,7 @@ public class Enemy5Controller : MonoBehaviour
 
     void ChangePosition()
     {
-        if (detectedPlayer)
+        if (!startCutscene.isCutsceneOn && detectedPlayer)
         {
             Vector3 newPosition = GetRandomSpawnPosition();
             transform.position = newPosition;
@@ -169,17 +168,14 @@ public class Enemy5Controller : MonoBehaviour
 
     public void Freeze()
     {
-        rb.velocity = Vector2.zero; 
+        movement = Vector2.zero; 
+        rb.isKinematic = true; 
     }
 
-    // public void Unfreeze()
-    // {
-    //     if (startCutscene.isCutsceneOn == false)
-    //     {
-    //         Debug.Log("back to it");
-    //         gameObject.SetActive(true); 
-    //     }
-    // }
+    public void Unfreeze()
+    {
+        rb.isKinematic = false; 
+    }
 
 
     

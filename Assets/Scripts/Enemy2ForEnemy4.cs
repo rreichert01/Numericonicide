@@ -70,7 +70,7 @@ public class Enemy2ForEnemy4 : MonoBehaviour
 
     public void Freeze()
     {
-        rb.velocity = Vector2.zero; 
+        movement = Vector2.zero; 
     }
 
     public void isDetected()
