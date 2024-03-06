@@ -7,7 +7,10 @@ public class startCutscene : MonoBehaviour
     public Animator canAnim;
     public static bool isCutsceneOn;
     public Player playerscript;
-
+    
+    void Update()
+    {
+    }
     void OnTriggerEnter2D(Collider2D collision) {
         if (collision.tag == "Player") {
             // Debug.Log(collision.gameObject);
@@ -20,8 +23,13 @@ public class startCutscene : MonoBehaviour
 
     void StopCutscene() {
         // playerscript.moveSpeed = 5f;
+        
         isCutsceneOn = false;
         canAnim.SetBool("cutscene1", false);
         Destroy(gameObject);
     }
+
+
+
+    
 }

@@ -15,30 +15,30 @@ public class EnemyController : MonoBehaviour
     public float detectionDistance = 18f;
     public GameObject player;
     public Player playerScript;
-     
+    public startCutscene cutscenescript; 
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
 
-        // player = GameObject.FindWithTag("Player"); 
-        // if (player != null)
-        // {
-        //     playerScript = player.GetComponent<Player>(); 
-
-        //}
     }
 
     void Update()
     {
+
         isDetected();
 
-        Vector2 direction = new Vector2((Player.position.x - transform.position.x)/2, 0).normalized;
-        movement = direction;
-
-        if (Vector3.Distance(transform.position, Player.position) < attackRange)
+        if (!startCutscene.isCutsceneOn)
         {
-            AttackPlayer();
+            Vector2 direction = new Vector2((Player.position.x - transform.position.x)/2, 0).normalized;
+            movement = direction;
+            if (Vector3.Distance(transform.position, Player.position) < attackRange)
+            {
+                AttackPlayer();
+            }
+        }
+        else {
+            Freeze(); 
         }
     }
 
@@ -47,6 +47,12 @@ public class EnemyController : MonoBehaviour
         if (detectedPlayer) { MoveEnemy(movement); }
 
     }
+
+    public void Freeze()
+    {
+        rb.velocity = Vector2.zero; 
+    }
+
 
     public void isDetected()
     {

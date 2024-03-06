@@ -25,6 +25,8 @@ public class Enemy5Controller : MonoBehaviour
     private float lastActionTime = 5f; 
     private float changePositionInterval = 5f; 
     private float lastPositionChangeTime; 
+    public startCutscene cutscenescript; 
+
     
     // Start is called before the first frame update
     
@@ -39,22 +41,29 @@ public class Enemy5Controller : MonoBehaviour
     }
 
     // Update is called once per frame
+
     void Update()
     {
         isDetected();
 
-        Vector2 direction = new Vector2((Player.position.x - transform.position.x)/2, 0).normalized;
-        movement = direction;
+        
 
-        if (Vector3.Distance(transform.position, Player.position) < attackRange)
+        if (!startCutscene.isCutsceneOn)
         {
-            AttackPlayer();
+            Vector2 direction = new Vector2((Player.position.x - transform.position.x)/2, 0).normalized;
+            movement = direction;
+            if (Vector3.Distance(transform.position, Player.position) < attackRange)
+            {
+                AttackPlayer();
+                }
         }
+        else 
+        {
+            Freeze();
+        
+        }
+        
 
-        // if (Time.time - lastPositionChangeTime >= changePositionInterval){
-        //     ChangePosition(); 
-        //     lastPositionChangeTime = Time.time; 
-        // }
     }
 
     void AttackPlayer()
@@ -156,6 +165,21 @@ public class Enemy5Controller : MonoBehaviour
 
         return spawnPosition; 
     }
+
+    public void Freeze()
+    {
+        rb.velocity = Vector2.zero; 
+    }
+
+    // public void Unfreeze()
+    // {
+    //     if (startCutscene.isCutsceneOn == false)
+    //     {
+    //         Debug.Log("back to it");
+    //         gameObject.SetActive(true); 
+    //     }
+    // }
+
 
     
     

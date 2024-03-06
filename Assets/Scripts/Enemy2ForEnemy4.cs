@@ -25,6 +25,7 @@ public class Enemy2ForEnemy4 : MonoBehaviour
     private bool isActivated = false;
     public Transform enemy4; 
     public enemy4controller enemy4script; 
+    public startCutscene cutscenescript; 
     
     void Start()
     {
@@ -38,33 +39,26 @@ public class Enemy2ForEnemy4 : MonoBehaviour
 
     void Update()
     {
-        
-        // Debug.Log("Enemy 4 Health: " + enemy4script.GetHealth());
-        // if (!isActivated && enemy4script.GetHealth() == 1)
-        // {
-        //     Debug.Log("Activating Enemy 2");
-        //     gameObject.SetActive(true); 
-        //     isActivated = true; 
-        // }
-
-        // if (!isActivated){
-        //     return; 
-        // }
 
         isDetected();
 
-        Vector2 direction = new Vector2((Player.position.x - transform.position.x)/2, 0).normalized;
-        movement = direction;
-
-        if (Vector3.Distance(transform.position, Player.position) < attackRange)
+        if (!startCutscene.isCutsceneOn)
         {
-            AttackPlayer();
+            Vector2 direction = new Vector2((Player.position.x - transform.position.x)/2, 0).normalized;
+            movement = direction;
+            if (Vector3.Distance(transform.position, Player.position) < attackRange)
+            {
+                AttackPlayer();
+            }
+            if (isGrounded && Time.time - lastJumpTime > jumpCooldown && detectedPlayer)
+            {
+                Jump();
+                lastJumpTime = Time.time; 
+            }
         }
-       
-        if (isGrounded && Time.time - lastJumpTime > jumpCooldown && detectedPlayer)
+        else
         {
-            Jump();
-            lastJumpTime = Time.time; 
+            Freeze(); 
         }
     }
 
@@ -72,6 +66,11 @@ public class Enemy2ForEnemy4 : MonoBehaviour
     {
         if (detectedPlayer) { MoveEnemy(movement); }
          
+    }
+
+    public void Freeze()
+    {
+        rb.velocity = Vector2.zero; 
     }
 
     public void isDetected()
@@ -160,8 +159,4 @@ public class Enemy2ForEnemy4 : MonoBehaviour
         rb.velocity = Vector2.up * jumpForce;
     }
 
-    // private void Activate(){
-    //     gameObject.SetActive(true); 
-    //     isActivated = true; 
-    // }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 namespace DialogueSystem {
-    public class DialogueLine : DialogueBaseClass
+    public class DialogueLine: DialogueBaseClass
     {
         private Text textHolder;
         [SerializeField] private string input;
@@ -12,8 +12,15 @@ namespace DialogueSystem {
         private void Awake() {
             textHolder = GetComponent<Text>();
 
+            
+        }
+
+        private void Start()
+        {
             StartCoroutine(WriteText(input, textHolder));
         }
+
+
 
     }
 }

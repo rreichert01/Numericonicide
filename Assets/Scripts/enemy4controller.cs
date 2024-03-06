@@ -24,6 +24,7 @@ public class enemy4controller : MonoBehaviour
     private bool hasSplit = false; 
     public GameObject npc2; 
     public GameObject npc22; 
+    public startCutscene cutscenescript; 
     
 
     void Start()
@@ -37,15 +38,21 @@ public class enemy4controller : MonoBehaviour
     {
         isDetected();
 
-        if (Vector3.Distance(transform.position, Player.position) < attackRange)
+        if (!startCutscene.isCutsceneOn)
         {
-            AttackPlayer();
+            if (Vector3.Distance(transform.position, Player.position) < attackRange)
+            {
+                AttackPlayer();
+            }
+            if (health == 1)
+            {
+                Destroy(gameObject); 
+                npc2.SetActive(true); 
+                npc22.SetActive(true);  
+            }
         }
-        if (health == 1)
-        {
-            Destroy(gameObject); 
-            npc2.SetActive(true); 
-            npc22.SetActive(true);  
+        else{
+            Freeze(); 
         }
     }
 
@@ -66,6 +73,11 @@ public class enemy4controller : MonoBehaviour
     void AttackPlayer()
     {
        // Destroy(Player.gameObject);
+    }
+
+    public void Freeze()
+    {
+        rb.velocity = Vector2.zero; 
     }
 
     public bool IsOnTopOfObject()

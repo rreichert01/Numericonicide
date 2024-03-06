@@ -181,4 +181,14 @@ public class Enemy6Controller : MonoBehaviour
         spriteRenderer.color = originalColor;
     }
 
+    public void Freeze() 
+    {
+        gameObject.SetActive(false); 
+    }
+
+    public void Unfreeze()
+    {
+        gameObject.SetActive(true); 
+    }
+
 }

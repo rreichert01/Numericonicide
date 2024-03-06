@@ -20,6 +20,7 @@ public class Enemy2Controller : MonoBehaviour
     public Player playerScript;
     private SpriteRenderer spriteRenderer;
     private Color originalColor;
+    public startCutscene cutscenescript; 
 
     private bool isGrounded;
     
@@ -35,18 +36,23 @@ public class Enemy2Controller : MonoBehaviour
     {
         isDetected();
 
-        Vector2 direction = new Vector2((Player.position.x - transform.position.x)/2, 0).normalized;
-        movement = direction;
-
-        if (Vector3.Distance(transform.position, Player.position) < attackRange)
+        if (!startCutscene.isCutsceneOn)
         {
-            AttackPlayer();
+            Vector2 direction = new Vector2((Player.position.x - transform.position.x)/2, 0).normalized;
+            movement = direction;
+            if (Vector3.Distance(transform.position, Player.position) < attackRange)
+            {
+                AttackPlayer();
+            }
+            if (isGrounded && Time.time - lastJumpTime > jumpCooldown && detectedPlayer)
+            {
+                Jump();
+                lastJumpTime = Time.time; 
+            }
         }
-       
-        if (isGrounded && Time.time - lastJumpTime > jumpCooldown && detectedPlayer)
+        else
         {
-            Jump();
-            lastJumpTime = Time.time; 
+            Freeze(); 
         }
     }
 
@@ -141,4 +147,11 @@ public class Enemy2Controller : MonoBehaviour
     {
         rb.velocity = Vector2.up * jumpForce;
     }
+
+    public void Freeze()
+    {
+        rb.velocity = Vector2.zero; 
+    }
+
+
 }
