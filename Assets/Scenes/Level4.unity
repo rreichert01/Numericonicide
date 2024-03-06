@@ -8420,9 +8420,11 @@ MonoBehaviour:
   player: {fileID: 1937855794}
   playerScript: {fileID: 1937855795}
   influenceRange: 10
-  intensity: 50
+  intensity: 60
   distanceToPlayer: 0
-  timeRemaining: 45
+  enemy7: {fileID: 1831308078}
+  enemy7script: {fileID: 1831308079}
+  enhancementDuration: 60
 --- !u!1 &801215226
 GameObject:
   m_ObjectHideFlags: 0

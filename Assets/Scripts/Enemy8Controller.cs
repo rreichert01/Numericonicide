@@ -24,8 +24,12 @@ public class Enemy8Controller : MonoBehaviour
     private bool isGrounded; 
     Vector2 pullForce;  
     Rigidbody2D playerBody;
+    public Transform enemy7; 
+    public Enemy7Controller enemy7script; 
+    public float enhancementDuration = 60f;
+    private bool enhanced = false; 
     private bool destroyed = false; 
-    public float timeRemaining = 45f; 
+    private bool enemy7Destroyed = false;  
     
     // [SerializeField] private TMP_Text text; 
 
@@ -38,12 +42,9 @@ public class Enemy8Controller : MonoBehaviour
         isGrounded = false;
         spriteRenderer = GetComponent<SpriteRenderer>();
         originalColor = spriteRenderer.color;
-        StartCoroutine(EnhanceEnemy()); 
+        
+        //StartCoroutine(EnhanceEnemy()); 
 
-        // rb = GetComponent<Rigidbody2D>(); 
-        // spriteRenderer = GetComponent<SpriteRenderer>();
-        // originalColor = spriteRenderer.color;
-        // isGrounded = false; 
         
     }
 
@@ -59,44 +60,54 @@ public class Enemy8Controller : MonoBehaviour
             playerBody.AddForce(new Vector2(-horizontalPull, -verticalPull), ForceMode2D.Force) ;
         }
 
+        if (enemy7 == null && !enemy7Destroyed)
+        {
+            enemy7Destroyed = true; 
+            StartCoroutine(EnhancementTimer());
+        }
 
-        // distanceToPlayer = Vector2.Distance(Player.position, transform.position); 
-        // isDetected();
-        // if(detectedPlayer)
-        // {
-        //     if (distanceToPlayer <= influenceRange)
-        //     {
-        //     pullForce = (transform.position - Player.position).normalized / distanceToPlayer * intensity; 
-        //     playerBody.AddForce(pullForce, ForceMode2D.Force); 
-        //     }
+        
 
-        // }
+        
         
     }
 
-
-    void FixedUpdate()
+    IEnumerator EnhancementTimer()
     {
-        //detectedPlayer; 
-        // if (detectedPlayer) 
-        // {
-        //     MoveEnemy(movement); 
-        // }
-         
+        yield return new WaitForSeconds(enhancementDuration);
+
+        // Check if enemy8 is still alive and not already enhanced
+        if (!destroyed && !enhanced)
+        {
+            EnhanceEnemy();
+        }
     }
 
-    // void MoveEnemy(Vector2 direction)
+    void EnhanceEnemy()
+    {
+
+        
+        transform.Rotate(0, 0, -90);
+        Vector3 newPosition = transform.position;
+        newPosition += new Vector3(-3, -3, 0);
+        transform.position = newPosition;
+        transform.localScale *= 5;
+
+        enhanced = true; // Set flag to true to prevent multiple enhancements
+    }
+
+    void OnDestroy()
+    {
+        destroyed = true;
+    }
+
+
+
+    // public void isDetected()
     // {
-
-    //     rb.MovePosition((Vector2)transform.position + (direction * moveSpeed * Time.fixedDeltaTime));
-    // }
-
-
-    public void isDetected()
-    {
-        detectedPlayer = Mathf.Abs(gameObject.transform.position.x - player.transform.position.x) < detectionDistance ? true : false;
+    //     detectedPlayer = Mathf.Abs(gameObject.transform.position.x - player.transform.position.x) < detectionDistance ? true : false;
         
-    }
+    // }
 
 
     void AttackPlayer()
@@ -107,11 +118,7 @@ public class Enemy8Controller : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Destroy(collision.gameObject); 
-            // if(playerScript != null)
-            // {
-            //     playerScript.TakeDamage(damage);
-            // }          
+            Destroy(collision.gameObject);        
         }
         if (collision.gameObject.CompareTag("Bullet"))
         {
@@ -150,29 +157,7 @@ public class Enemy8Controller : MonoBehaviour
 
     }
 
-    // void OnTriggerStay2D(Collider2D other)
-    // {
-    //     Rigidbody2D otherRigidbody = other.attachedRigidbody;
-    //     if (otherRigidbody)
-    //     {
-    //         otherRigidbody.gravityScale = 0;
-
-    //         Vector2 direction = (otherRigidbody.transform.position - transform.position).normalized; 
-    //         otherRigidbody.AddForce(direction * pullForce); 
-    //         //(Vector2)transform.position - otherRigidbody.position;
-    //         //otherRigidbody.AddForce(direction.normalized * pullForce);
-    //     }
-    // }
-
-    // void OnTriggerExit2D(Collider2D other)
-    // {
-    //     Rigidbody2D otherRigidbody = other.attachedRigidbody;
-    //     if (otherRigidbody)
-    //     {
-    //         otherRigidbody.gravityScale = 1; 
-    //         otherRigidbody.velocity = Vector2.zero; 
-    //     }
-    // }
+   
 
 
     void HandleAttack(GameObject bullet)
@@ -198,22 +183,26 @@ public class Enemy8Controller : MonoBehaviour
         spriteRenderer.color = originalColor;
     }
 
-    IEnumerator EnhanceEnemy()
-    {
-        yield return  new WaitForSeconds(10f);
-        if (!destroyed)
-        {
-            transform.Rotate(0,0,-90); 
-            Vector3 newPosition = transform.position;
-            newPosition += new Vector3(-3, -3, 0); 
-            transform.position = newPosition;
-            // Vector3 middlePosition = new Vector3(Screen.width / 2f, Screen.height / 2f, transform.position.z);
-            // transform.position = Camera.main.ScreenToWorldPoint(middlePosition);
-            // influenceRange = 100; 
-            // intensity = 100; 
-            transform.localScale *= 5; 
-        }
-    }
+    // void StartEnhanceCoroutine()
+    // {
+    //     if(enemy7 == null && !enhanced)
+    //     {
+    //         StartCoroutine(EnhanceEnemy()); 
+    //     }
+    // }
+
+    // IEnumerator EnhanceEnemy()
+    // {
+    //     yield return  new WaitForSeconds(60f);
+    //     if (!destroyed)
+    //     {
+    //         transform.Rotate(0,0,-90); 
+    //         Vector3 newPosition = transform.position;
+    //         newPosition += new Vector3(-3, -3, 0); 
+    //         transform.position = newPosition;
+    //         transform.localScale *= 5; 
+    //     }
+    // }
 
 }
 
