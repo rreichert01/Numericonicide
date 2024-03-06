@@ -8420,7 +8420,7 @@ MonoBehaviour:
   player: {fileID: 1937855794}
   playerScript: {fileID: 1937855795}
   influenceRange: 10
-  intensity: 20
+  intensity: 30
   distanceToPlayer: 0
   enemy7: {fileID: 1831308078}
   enemy7script: {fileID: 1831308079}
@@ -16440,6 +16440,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeRemaining: 60
   timerText: {fileID: 1527096663}
+  enemy8: {fileID: 776204772}
 --- !u!114 &1527096663
 MonoBehaviour:
   m_ObjectHideFlags: 0
