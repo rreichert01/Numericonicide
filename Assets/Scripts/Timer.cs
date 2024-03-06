@@ -4,11 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
+
 public class Timer : MonoBehaviour
 {
     public float timeRemaining = 60f; 
     private bool timerIsRunning = false;
-    public Text timerText; 
+    public Text timerText;
+    public GameObject enemy8;
 
     // Update is called once per frame
     void Update()
@@ -27,6 +29,7 @@ public class Timer : MonoBehaviour
                 // Handle timer expiration here
             }
         }
+        if (!enemy8) { Destroy(gameObject); }
     }
 
     public void StartTimer()
