@@ -231,11 +231,6 @@ public class Player : MonoBehaviour
             
         }
 
-        if (collision.gameObject.CompareTag("portal"))
-        {
-            UnityEngine.Debug.Log("Change Scene");
-            // Add logic to change scene.
-        }
     }
 
 

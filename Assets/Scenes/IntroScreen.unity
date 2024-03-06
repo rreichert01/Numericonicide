@@ -451,7 +451,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.81568635, g: 0.3803922, b: 0.20392159, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -720,7 +720,9 @@ MonoBehaviour:
     to reload your weapon\nUse Space to shoot\nUse Shift to sprint\nUse Tab to point
     gun upwards.\n\n\nPowerups:\n\nThe heart powerup will restore you to full health.
     \nThe shield powerup will block all incoming damage for 10 seconds. \n\n\nGoal:\n\nCollect
-    the letters at the end of each level. \nForm the word iceT.\nDefeat 8!"
+    the letters at the end of each level. \nForm the word iceT.\nDefeat 8!\nWarning,
+    8 has a gravitational pull and will kill you instantly if it touches you. \nYou
+    must defeat 8 before the end of game timer runs out... or he becomes infinity."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b7b63ebf27ad2584b88d69136f2f1795, type: 2}
   m_sharedMaterial: {fileID: -743005173480216198, guid: b7b63ebf27ad2584b88d69136f2f1795, type: 2}
@@ -1126,7 +1128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8490566, g: 0.3967969, b: 0.21359909, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

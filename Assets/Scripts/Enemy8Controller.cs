@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+using UnityEngine.SceneManagement;
 
 public class Enemy8Controller : MonoBehaviour
 {
@@ -92,7 +94,8 @@ public class Enemy8Controller : MonoBehaviour
         newPosition += new Vector3(-3, -3, 0);
         transform.position = newPosition;
         transform.localScale *= 5;
-
+        health = 8;
+        intensity = 80;
         enhanced = true; // Set flag to true to prevent multiple enhancements
     }
 
@@ -118,6 +121,7 @@ public class Enemy8Controller : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.gameObject.CompareTag("Player"))
         {
+            SceneManager.LoadScene(4);
             Destroy(collision.gameObject);        
         }
         if (collision.gameObject.CompareTag("Bullet"))

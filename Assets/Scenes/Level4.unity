@@ -8420,7 +8420,7 @@ MonoBehaviour:
   player: {fileID: 1937855794}
   playerScript: {fileID: 1937855795}
   influenceRange: 10
-  intensity: 60
+  intensity: 40
   distanceToPlayer: 0
   enemy7: {fileID: 1831308078}
   enemy7script: {fileID: 1831308079}
