@@ -778,6 +778,7 @@ MonoBehaviour:
   detectionDistance: 18
   player: {fileID: 1937855794}
   playerScript: {fileID: 1937855795}
+  cutscenescript: {fileID: 0}
 --- !u!50 &80470987
 Rigidbody2D:
   serializedVersion: 4
@@ -1757,6 +1758,7 @@ MonoBehaviour:
   playerScript: {fileID: 1937855795}
   npc2: {fileID: 527875606}
   npc22: {fileID: 1185622616}
+  cutscenescript: {fileID: 0}
 --- !u!61 &233710282
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2242,6 +2244,7 @@ MonoBehaviour:
   player: {fileID: 1937855794}
   playerScript: {fileID: 1937855795}
   spawnRadius: 10
+  cutscenescript: {fileID: 0}
 --- !u!61 &298115479
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2398,6 +2401,7 @@ MonoBehaviour:
   detectionDistance: 18
   player: {fileID: 1937855794}
   playerScript: {fileID: 1937855795}
+  cutscenescript: {fileID: 0}
 --- !u!61 &298199906
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3373,6 +3377,7 @@ MonoBehaviour:
   player: {fileID: 1937855794}
   playerScript: {fileID: 1937855795}
   spawnRadius: 10
+  cutscenescript: {fileID: 0}
 --- !u!61 &496724581
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3865,6 +3870,7 @@ MonoBehaviour:
   playerScript: {fileID: 1937855795}
   enemy4: {fileID: 1675771249}
   enemy4script: {fileID: 1675771250}
+  cutscenescript: {fileID: 0}
 --- !u!61 &527875609
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4601,6 +4607,7 @@ MonoBehaviour:
   detectionDistance: 18
   player: {fileID: 1937855794}
   playerScript: {fileID: 1937855795}
+  cutscenescript: {fileID: 0}
 --- !u!61 &670436698
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4757,6 +4764,7 @@ MonoBehaviour:
   detectionDistance: 18
   player: {fileID: 1937855794}
   playerScript: {fileID: 1937855795}
+  cutscenescript: {fileID: 0}
 --- !u!61 &712361559
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5334,6 +5342,7 @@ MonoBehaviour:
   detectionDistance: 18
   player: {fileID: 1937855794}
   playerScript: {fileID: 1937855795}
+  cutscenescript: {fileID: 0}
 --- !u!61 &755446616
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5653,6 +5662,7 @@ MonoBehaviour:
   playerScript: {fileID: 1937855795}
   enemy4: {fileID: 1675771249}
   enemy4script: {fileID: 1675771250}
+  cutscenescript: {fileID: 0}
 --- !u!61 &801215229
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6011,6 +6021,7 @@ MonoBehaviour:
   detectionDistance: 18
   player: {fileID: 1937855794}
   playerScript: {fileID: 1937855795}
+  cutscenescript: {fileID: 0}
 --- !u!61 &819322188
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6182,6 +6193,7 @@ MonoBehaviour:
   detectionDistance: 18
   player: {fileID: 1937855794}
   playerScript: {fileID: 1937855795}
+  cutscenescript: {fileID: 0}
 --- !u!61 &841134382
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7537,6 +7549,7 @@ MonoBehaviour:
   detectionDistance: 18
   player: {fileID: 1937855794}
   playerScript: {fileID: 1937855795}
+  cutscenescript: {fileID: 0}
 --- !u!50 &977139192
 Rigidbody2D:
   serializedVersion: 4
@@ -9143,6 +9156,7 @@ MonoBehaviour:
   player: {fileID: 1937855794}
   playerScript: {fileID: 1937855795}
   spawnRadius: 10
+  cutscenescript: {fileID: 0}
 --- !u!61 &1139700410
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9474,6 +9488,7 @@ MonoBehaviour:
   playerScript: {fileID: 1937855795}
   enemy4: {fileID: 1675771249}
   enemy4script: {fileID: 1675771250}
+  cutscenescript: {fileID: 0}
 --- !u!61 &1185622618
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9714,6 +9729,7 @@ MonoBehaviour:
   player: {fileID: 1937855794}
   playerScript: {fileID: 1937855795}
   spawnRadius: 10
+  cutscenescript: {fileID: 0}
 --- !u!61 &1194954568
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9827,6 +9843,134 @@ Transform:
   m_Children: []
   m_Father: {fileID: 119141309}
   m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1201560101
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1201560103}
+  - component: {fileID: 1201560102}
+  m_Layer: 0
+  m_Name: soundtrack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &1201560102
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201560101}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 99b05b6296e8d468e8b30a16db62df5f, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &1201560103
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201560101}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 52
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1206212741
 GameObject:
@@ -10980,6 +11124,7 @@ MonoBehaviour:
   detectionDistance: 18
   player: {fileID: 1937855794}
   playerScript: {fileID: 1937855795}
+  cutscenescript: {fileID: 0}
 --- !u!50 &1385964703
 Rigidbody2D:
   serializedVersion: 4
@@ -11709,6 +11854,7 @@ MonoBehaviour:
   detectionDistance: 18
   player: {fileID: 1937855794}
   playerScript: {fileID: 1937855795}
+  cutscenescript: {fileID: 0}
 --- !u!61 &1517093320
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12880,6 +13026,7 @@ MonoBehaviour:
   player: {fileID: 1937855794}
   playerScript: {fileID: 1937855795}
   spawnRadius: 10
+  cutscenescript: {fileID: 0}
 --- !u!61 &1630355861
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13021,6 +13168,7 @@ MonoBehaviour:
   detectionDistance: 18
   player: {fileID: 1937855794}
   playerScript: {fileID: 1937855795}
+  cutscenescript: {fileID: 0}
 --- !u!61 &1631529084
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13503,6 +13651,7 @@ MonoBehaviour:
   playerScript: {fileID: 1937855795}
   npc2: {fileID: 2099082809}
   npc22: {fileID: 801215226}
+  cutscenescript: {fileID: 0}
 --- !u!61 &1675771251
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15478,6 +15627,7 @@ MonoBehaviour:
   detectionDistance: 18
   player: {fileID: 1937855794}
   playerScript: {fileID: 1937855795}
+  cutscenescript: {fileID: 0}
 --- !u!61 &1971707728
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16091,6 +16241,7 @@ MonoBehaviour:
   detectionDistance: 18
   player: {fileID: 1937855794}
   playerScript: {fileID: 1937855795}
+  cutscenescript: {fileID: 0}
 --- !u!61 &2098290337
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16249,6 +16400,7 @@ MonoBehaviour:
   playerScript: {fileID: 1937855795}
   enemy4: {fileID: 1675771249}
   enemy4script: {fileID: 1675771250}
+  cutscenescript: {fileID: 0}
 --- !u!61 &2099082811
 BoxCollider2D:
   m_ObjectHideFlags: 0

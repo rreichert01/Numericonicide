@@ -87,6 +87,10 @@ public class enemy4controller : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
+        if (collision.gameObject.CompareTag("Bullet"))
+        {
+            HandleAttack(collision.gameObject);
+        }
         if (collision.gameObject.CompareTag("Player"))
         {
             if(playerScript != null)
