@@ -1105,7 +1105,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1030418523}
         m_TargetAssemblyTypeName: HandleScene, Assembly-CSharp
-        m_MethodName: OpenStartScene
+        m_MethodName: OpenLevel4Scene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using TMPro;
 
 
 public class Timer : MonoBehaviour
 {
     public float timeRemaining = 60f; 
     private bool timerIsRunning = false;
-    public Text timerText;
+    public TextMeshProUGUI timerText;
     public GameObject enemy8;
 
     // Update is called once per frame
